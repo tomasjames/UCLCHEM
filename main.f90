@@ -1,4 +1,4 @@
-! 2015 UCL_CHEM by Serena Viti update by Jon Holdship
+! 2015 UCLCHEM by Serena Viti update by Jon Holdship
 ! Rewritten for FORTRAN 95 and modulised
 
 

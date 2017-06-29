@@ -13,7 +13,7 @@ physics=cloud.f90
 main: chem.o physics.o main.f90 dvode.o parameters.f90
 	${compile} -o uclchem physics.o dvode.o chem.o main.f90
 
-chem.o: odes.f90 chem.f90 physics.o dvode.o rates.f90
+chem.o: odes.f90 chem.f90 physics.o dvode.o rates.f90 odes.f90 jacob.f90
 	${compile} -c chem.f90
  
 physics.o: ${physics}

@@ -1,5 +1,7 @@
-!Physics module based on Holdship & Viti 2015. Models points along a 1d line from the centre
-!to edge of a core of gas. models core as it is created by isothermal shock.
+!Physics module based on Holdship & Viti 2015. 
+!Models points along a 1d line from the centre to edge of a core of gas.
+!THIS IS THE OPPOSITE OF HOW CLOUD COUNTS THE POINTS
+! models core as it is created by isothermal shock.
 !Assuming the cloud is spherical you can average over the points to get a 1d average 
 ! and then assume the rest of sphere is the same.
 
@@ -39,6 +41,7 @@ CONTAINS
         allocate(av(points),coldens(points),tshock(points))
         size=(rout-rin)*pc
         dens=initialDens
+        temp=initialTemp
         mbd=0.40
         call bdboundaries
     END SUBROUTINE
@@ -135,7 +138,6 @@ CONTAINS
             store=store*(((dens**4.0)/dshock)**(1.0/3.0))
             !tout and tageold are in seconds, the units ffc are years so 3.171d-8 converts
             dens=dens+((tout-tageold)*(3.171d-8)*0.8*store)
-            write(10,*) dens
         ENDIF
 
         tageold=tout

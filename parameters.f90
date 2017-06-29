@@ -3,7 +3,7 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !Initial physics variables and final  values. for temp, density and time
-initialTemp=10.0;;maxTemp=300;initialDens=1.00d3;finalDens=1.00d7;t0=0.0;finalTime=1.00d6
+initialTemp=10.0;maxTemp=300;initialDens=1.00d2;finalDens=1.00d4;t0=0.0;finalTime=1.00d6
 !radfield in habing, cosmic ray ionisation rates as multiple of standard
 radfield=1.0;zeta=1.0
 fr=1.0;
@@ -11,7 +11,6 @@ fr=1.0;
 !baseAv is extinction at cloud edge
 !points is number of parcels to run model for. spaced  evenly between rin and rout
 rout=0.05;rin=0;baseAv=2.0;points=1
-
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -68,7 +67,7 @@ outindx=(/73,260,262,220,219,274/);writestep=1
 
 !open files for reading=writing
 !output files
-open(10,file='output-full.dat',status='unknown') !full output
+open(10,file='output-jacob.dat',status='unknown') !full output
 open(11,file='output-column.dat',status='unknown')!columnated output based  on outindx
 open(12,file='analysis.dat',status='unknown') !analysis file showing main reacction and formation routes of outindx species.
 
@@ -76,7 +75,7 @@ open(12,file='analysis.dat',status='unknown') !analysis file showing main reacct
 open(21,file='species.csv',status='old')         !species file
 open(22,file='reactions.csv',status='old')       !reaction file
 open(23,file='evaplists.csv',status='old')       !lists of species to evaporate in different thermal desorption events
-open(7,file='startabund.dat',status='unknown')      !initialise abundance file. saved to at end or loaded from at start depending on first=(0/1)
+open(7,file='startabund-jacob.dat',status='unknown')      !initialise abundance file. saved to at end or loaded from at start depending on first=(0/1)
 
 open(79,file='debuglog',status='unknown')       !debug file.
 
@@ -102,16 +101,16 @@ dopw=3.0e10;radw=8.0e07;xl=1000.0;fosc  = 1.0d-2
 
 !DVODE SETTINGS
 !You may wish to change abstol and reltol. Larger values run faster but can lose accuracy. In extreme cases, the model will crash.     
-ISTATE=1;MF=22;ITOL=1;ITASK=1;IOPT=1;MESFLG=1
+ISTATE=1;MF=21;ITOL=1;ITASK=1;IOPT=1;MESFLG=1
 abstol=1e-20;reltol=1e-15;MXSTEP=10000
 
 !Arrays for phase 2 temp profiles. Parameters for equation chosen by index
-!arrays go [5 Msun, 10, 15, 25,60]
-tempa=(/4.8560d-2,7.8470d-3,9.6966d-4,1.706d-4,4.74d-7/)
-tempb=(/0.6255,0.8395,1.085,1.289,1.98/)
-solidtemp=(/19.6,19.45,19.3,19.5,20.35/)
-volctemp=(/86.3,88.2,89.5,90.4,92.2/)
-codestemp=(/97.5,99.4,100.8,101.6,103.4/)
+!arrays go [1Msun,5, 10, 15, 25,60]
+tempa=(/1.927d-1,4.8560d-2,7.8470d-3,9.6966d-4,1.706d-4,4.74d-7/)
+tempb=(/0.5339,0.6255,0.8395,1.085,1.289,1.98/)
+solidtemp=(/20.0,19.6,19.45,19.3,19.5,20.35/)
+volctemp=(/84.0,86.3,88.2,89.5,90.4,92.2/)
+codestemp=(/95.0,97.5,99.4,100.8,101.6,103.4/)
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !CO and H2 self-shielding

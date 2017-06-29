@@ -16,7 +16,7 @@ MODULE physics
     !variables either controlled by physics or that user may wish to change
     double precision :: initialDens,dens,tage,tout,t0,t0old,finalDens,finalTime,grainRadius,initialTemp
     double precision :: size,rout,rin,baseAv,bc,olddens,maxTemp
-    double precision :: tempa(5),tempb(5),codestemp(5),volctemp(5),solidtemp(5)
+    double precision :: tempa(6),tempb(6),codestemp(6),volctemp(6),solidtemp(6)
     double precision, allocatable :: av(:),coldens(:),temp(:)
     !Everything should be in cgs units. Helpful constants and conversions below
     double precision,parameter ::pi=3.141592654,mh=1.67e-24,kbolt=1.38d-23
@@ -48,25 +48,29 @@ CONTAINS
         !Also find maximum time value at which model must stop.
 
         SELECT CASE(collapse)
-            !freefall Rawlings 1992
+            !No collapse
             CASE(0)
                 dens=initialDens
+            !freefall Rawlings 1992
             CASE(1)
                 dens=1.001*initialDens
             !foster & chevalier 1993
+            !Bonnor-Ebert sphere with density 1.1xcritical density
             CASE(2)
                 unitrho = initialDens*mh
                 unitt = 1.0/sqrt(4.0*pi*G_N*unitrho)
                 unitr = c_s*unitt
                 maxdimt = 5.75 - (15.1/(14.0 + log10(finalDens/initialDens)))**(1.0/0.04)
             !ogino, tomisaka & nakamura 1999
+            !BE sphere with density 4x critical density
             CASE(3)
                 unitrho = initialDens*mh
                 unitt = 1.0/sqrt(G_N*unitrho)
                 unitr = c_s*unitt
                 maxdimt = 0.33 - (2.5/(2.5 + log10(finalDens/initialDens)))**(1.0/0.18)
+            !Nakamura, Hanawa & Nakano 1995
+            !Magnetically support filament collapsingfrom density perturbation
             CASE(4)
-
                 unitrho = initialDens*mh
                 unitt = 1.0/sqrt(2.0*pi*G_N*unitrho)
                 unitr = c_s*unitt
@@ -122,28 +126,15 @@ CONTAINS
         !Below we include temperature profiles for hot cores, selected using tempindx in parameters.f90
         !They are taken from Viti et al. 2004 with an additional distance dependence from Nomura and Millar 2004.
         !It takes the form T=A(t^B)*[(d/R)^-0.5], where A and B are given below for various stellar masses
-
-        ! 28,000    60 Msol
-                !temp(depth)=10. + (4.74d-7*tage**1.98)
-        ! 70,000    25 Msol
-                !td(depth)=10. + (1.706d-4*tage**1.289)
-        ! 115,000   15 Msol
-                !td(depth)=10. + (9.6966d-4*tage**1.085)
-        ! 288,000   10 Msol
-                !td(depth)=10. + (7.8470d-3*tage**0.8395)
-        !1.15e6     5 Msol
-                !td(depth)=10. + (4.8560d-2*tage**0.6255)
-
-            !temperature increase borrowed from sv for comparison 288.000
-            !will add general profile later, this works well for initialTemp=10 K
             temp(dstep)=(size/(rout*pc))*(real(dstep)/real(points))
             temp(dstep)=temp(dstep)**(-0.5)
             temp(dstep)=initialTemp + ((tempa(tempindx)*(t0*year)**tempb(tempindx))*temp(dstep))
-
-            if (temp(dstep) .gt. solidtemp(tempindx) .and. solidflag .ne. 2) solidflag=1
-            if (temp(dstep) .gt. volctemp(tempindx) .and. volcflag .ne. 2) volcflag=1
-            if (temp(dstep) .gt. codestemp(tempindx) .and. coflag .ne. 2) coflag=1
         END IF
+
+
+        if (temp(dstep) .gt. solidtemp(tempindx) .and. solidflag .ne. 2) solidflag=1
+        if (temp(dstep) .gt. volctemp(tempindx) .and. volcflag .ne. 2) volcflag=1
+        if (temp(dstep) .gt. codestemp(tempindx) .and. coflag .ne. 2) coflag=1
 
         !Density update for BE collapse modes
         !first calculate current radius and time in dimensionless units
@@ -154,21 +145,21 @@ CONTAINS
         !Then calculate central density and radius of central region
         !use this to find density at larger radii. Three different cases possible.
 
-        !foster & chevalier 1993
+        !Foster & Chevalier 1993
         if (collapse .eq. 2) then
             rho0 = 10**(15*(5.75-dimt)**(-0.04) - 14)
             r0 = 10**(-6.7*(5.75-dimt)**(-0.04) + 6.6)
             dimrho = rho0/(1 + (dimr/r0)**2.5)
             if (dimt .lt. 5.75) dens = dimrho*initialDens
 
-        !ogino, tomisaka & nakamura 1999
+        !Ogino, Tomisaka & Nakamura 1999
         else if (collapse .eq. 3) then
             rho0 = 10**(2.5*(0.33-dimt)**(-0.18) - 2.5)
             r0 = 10**(-1.2*(0.33-dimt)**(-0.18) + 1.3)
             dimrho = rho0/(1 + (dimr/r0)**2.5)
             if (dimt .lt. 0.33) dens = dimrho*initialDens
 
-        !nakamura, hanawa & takano 1995
+        !Nakamura, Hanawa & Nakano 1995
         else if (collapse .eq. 4) then
             rho0 = 10**(2.1*(5.5-dimt)**(-0.28) - 1.35)
             r0 = 10**(-0.7*(5.5-dimt)**(-0.28) + 0.75)

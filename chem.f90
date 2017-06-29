@@ -119,7 +119,7 @@ CONTAINS
         allocate(abund(nspec+1,points),specname(nspec),mass(nspec),bindener(nspec),vdiff(nspec))
         read(21,*)(specname(j),mass(j),bindener(j),j=1,nspec-1)
         !assign array indices for important species to the integers used to store them.
-        specname(nspec)='electr'
+        specname(nspec)='E-'
         DO i=1,nspec-1
             IF (specname(i).eq.'H')   nh  = i
             IF (specname(i).eq.'H2')  nh2 = i
@@ -483,7 +483,21 @@ CONTAINS
 !This is a dummy for DLSODE, it has to call it but we do not use it.
     subroutine JAC (NEQ,T,Y,ML,MU,PD,NROWPD)
          INTEGER  NEQ, ML, MU, NROWPD
-         DOUBLE PRECISION  T, Y(*), PD(NROWPD,*)
+         DOUBLE PRECISION  T, Y(*), PD(NROWPD,*),D
+            D=Y(nspec+1)
+            include "jacob.f90"
+
+            !H2 formation and dissociation as done in F
+            PD(nh,nh)=PD(nh,nh)-2.0*h2form*D
+            PD(nh,nh2)=PD(nh,nh2)+2.0*h2dis
+            PD(nh2,nh2)=PD(nh2,nh2)-h2dis
+            PD(nh2,nh)=PD(nh2,nh)-h2form*D
+
+            !H2 formation should occur at both steps - however note that here there is no 
+            !temperature dependence. y(nh) is hydrogen fractional abundance.
+            !ydot(nh)  = ydot(nh) - 2.0*( h2form*dens*y(nh) - h2dis*y(nh2) )
+            !                             h2 formation - h2-photodissociation
+            !ydot(nh2) = ydot(nh2) + h2form*dens*y(nh) - h2dis*y(nh2)
     END SUBROUTINE JAC        
 
     SUBROUTINE debugout

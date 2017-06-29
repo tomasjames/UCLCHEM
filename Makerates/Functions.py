@@ -91,7 +91,7 @@ def read_species_file(fileName):
 	return nSpecies,species, mass,evaptype,bindener,monoevap,volcevap
 
 def NANCheck(a):
-	aa  = a if a else 'NAN'
+	aa  = a if a.strip() else 'NAN'
 	return aa
 
 
@@ -99,7 +99,7 @@ def NANCheck(a):
 def read_reaction_file(fileName, species, ftype):
 	reactants = [] ; products = [] ; alpha = [] ; beta = [] ; gamma = [] ; templow = [] ;temphigh = []; keepList = []
 	# keeplist includes the elements that ALL the reactions should be formed from 
-	keepList.extend(['','NAN','#','E-','e-','ELECTR','PHOTON','CRP','CRPHOT','FREEZE','CRH','PHOTD','THERM','XRAY','XRSEC','XRLYA','XRPHOT','DESOH2','DESCR','DEUVCR'])
+	keepList.extend(['',' ','NAN','#','E-','e-','ELECTR','PHOTON','CRP','CRPHOT','FREEZE','CRH','PHOTD','THERM','XRAY','XRSEC','XRLYA','XRPHOT','DESOH2','DESCR','DEUVCR'])
 	keepList.extend(species)			                                  
 	if ftype == 'UMIST': # if it is a umist database file
 		f = open(fileName, 'rb')
@@ -113,7 +113,7 @@ def read_reaction_file(fileName, species, ftype):
 				gamma.append(row[11])
 				templow.append(row[12])
 				temphigh.append(row[13])
-	if ftype == 'UCL':	# if it is a ucl made (grain?) reaction file
+	elif ftype == 'UCL':	# if it is a ucl made (grain?) reaction file
 		f = open(fileName, 'rb')
 		reader = csv.reader(f, delimiter=',', quotechar='|')
 		for row in reader:
@@ -124,7 +124,19 @@ def read_reaction_file(fileName, species, ftype):
 				beta.append(row[9])
 				gamma.append(row[10])
 				templow.append('NAN')
-				temphigh.append('NAN')					
+				temphigh.append('NAN')
+	elif ftype == 'KIDA':
+		f = open(fileName, 'rb')
+		reader = csv.reader(f, delimiter=';', quotechar='|')
+		for row in reader:
+			if all(x in keepList for x in row[0:7]):	#if all the reaction elements belong to the keeplist
+				reactants.append([row[0],row[1],NANCheck(row[2])])
+				products.append([row[3],NANCheck(row[4]),NANCheck(row[5]),NANCheck(row[6])])
+				alpha.append(float(eval(row[8])))
+				beta.append(row[9])
+				gamma.append(row[10])
+				templow.append(row[15])
+				temphigh.append(row[16])
 	nReactions = len(reactants)
 	return nReactions, reactants, products, alpha, beta, gamma, templow, temphigh
 
@@ -320,76 +332,154 @@ def write_odes_f90(fileName, speciesList, constituentList, reactants, products):
 		output.write(ydotString)
 	output.close()
 
-# Write the ODEs file in F77 language format
-def write_odes_f77(fileName, speciesList, constituentList, reactants, products):
-    nSpecies = len(speciesList)
-    nReactions = len(reactants)
-    output = open(fileName, mode='w')
 
-    # Determine if X-ray reactions are present in the chemical network
-    if sum([reactantList.count('XRAY')+reactantList.count('XRSEC') for reactantList in reactants]) > 0:
-        xrayReactions = True
-    else:
-        xrayReactions = False
-
-
-    # Prepare and write the electron conservation equation
-    output.write(electron_eq(speciesList, codeFormat='F77'))
-
-    # Prepare and write the loss and formation terms for each ODE
-    output.write('\n')
-    for n in range(nSpecies):
-        species = speciesList[n]
-        lossString = '' ; formString = ''
-        for i in range(nReactions):
-            if reactants[i].count(species) > 0:
-				if is_H2_formation(reactants[i], products[i]):
-					lossString += '-2*K('+str(i+1)+')*D'
-					continue
-				lossString += '-'+multiple(reactants[i].count(species))+'K('+str(i+1)+')'
-				for reactant in speciesList:
-					if reactant == species:
-						for j in range(reactants[i].count(reactant)-1):
-							lossString += '*Y('+str(speciesList.index(reactant)+1)+')'
-						continue
-					for j in range(reactants[i].count(reactant)):
-						lossString += '*Y('+str(speciesList.index(reactant)+1)+')'
-				for j in range(reactants[i].count('E-')):
-					#lossString += '*Y('+str(nSpecies+1)+')'
-					lossString += '*X(1)'
-				if sum([speciesList.count(reactant) for reactant in reactants[i]]) > 1 or reactants[i].count('E-') > 0 or reactants[i].count('FREEZE') > 0 or reactants[i].count('DESOH2') > 0:
-						lossString += '*D'	
-            if products[i].count(species) > 0:
-                if is_H2_formation(reactants[i], products[i]):
-                    formString += '+K('+str(i+1)+')*Y('+str(speciesList.index('H')+1)+')*D'
-                    continue
-                for k in range(products[i].count(species)):
-                    formString += '+K('+str(i+1)+')'
-                    for reactant in speciesList:
-                        for j in range(reactants[i].count(reactant)):
-                            formString += '*Y('+str(speciesList.index(reactant)+1)+')'
-                    for j in range(reactants[i].count('E-')):
-                        formString += '*X(1)'
-                    if sum([speciesList.count(reactant) for reactant in reactants[i]]) > 1 or reactants[i].count('E-') > 0 or reactants[i].count('FREEZE') > 0 or reactants[i].count('DESOH2') > 0:
-                        formString += '*D'
-        if lossString != '':
-            lossString = '      LOSS = '+lossString+'\n'
-            lossString = truncate_line(lossString,codeFormat='F77')
-            output.write(lossString)
-        if formString != '':
-            formString = '      PROD = '+formString+'\n'
-            formString = truncate_line(formString,codeFormat='F77')
-            output.write(formString)
-        ydotString = '      YDOT('+str(n+1)+') = '
-        if formString != '':
-            ydotString += 'PROD'
-            if lossString != '': ydotString += '+'
-        if lossString != '':
-            ydotString += 'Y('+str(n+1)+')*LOSS'
-        ydotString += '\n'
-        ydotString = truncate_line(ydotString,codeFormat='F77')
-        output.write(ydotString)
-    output.close()
+def write_jacobian(fileName, speciesList, constituentList, reactants, products):
+	nSpec=len(speciesList)
+	nReactions = len(reactants)
+	output = open(fileName, mode='w')
+	#go down columns dn(spec1)/dtdn(spec2), 
+	for j,species2 in enumerate(speciesList):
+		for i,species1 in enumerate(speciesList):
+			written=False
+			for reacindx in  range(nReactions):
+				#species2 destroying species1
+				if (species2 in reactants[reacindx]):
+					if species1 in reactants[reacindx]:
+						if written:
+							outString=""
+						else:
+							outString="PD({0},{1})=".format(i+1,j+1)
+							written=True
+						outString+="-RATE({0})".format(reacindx+1)
+						for reactant in reactants[reacindx]:
+							if reactant in speciesList and reactant!=species2:
+								specIndx=speciesList.index(reactant)
+								specIndx+=1
+								outString+="*Y({0})".format(specIndx)
+							elif reactant=="E-":
+								specIndx=nSpec+1
+								outString+="*Y({0})".format(specIndx)
+						if sum([speciesList.count(reactant) for reactant in reactants[reacindx]]) > 1 or reactants[reacindx].count('E-') > 0 or reactants[reacindx].count('FREEZE') > 0 or reactants[reacindx].count('DESOH2') > 0:
+							outString += '*D'	
+						output.write(outString)
+					#species2 producing species1
+					elif species1 in products[reacindx]:
+						if written:
+							outString=""
+						else:
+							outString="PD({0},{1})=".format(i+1,j+1)
+							written=True
+						outString+="+RATE({0})".format(reacindx+1)
+						for reactant in reactants[reacindx]:
+							if reactant in speciesList and reactant!=species2:
+								specIndx=speciesList.index(reactant)
+								specIndx+=1
+								outString+="*Y({0})".format(specIndx)
+							elif reactant=="E-":
+								specIndx=nSpec+1
+								outString+="*Y({0})".format(specIndx)
+						if products[reacindx].count(species1)>1:
+							outString+="*{0}".format(products[reacindx].count(species1))
+						if sum([speciesList.count(reactant) for reactant in reactants[reacindx]]) > 1 or reactants[reacindx].count('E-') > 0 or reactants[reacindx].count('FREEZE') > 0 or reactants[reacindx].count('DESOH2') > 0:
+							outString += '*D'	
+						output.write(outString)
+			if written:
+				output.write("\n")
+	#second to last column, "species2" is E-
+	species2="E-"
+	j=nSpec
+	for i,species1 in enumerate(speciesList):
+		written=False
+		for reacindx in  range(nReactions):
+			#species2 destroying species1
+			if (species2 in reactants[reacindx]):
+				if species1 in reactants[reacindx]:
+					if written:
+						outString=""
+					else:
+						outString="PD({0},{1})=".format(i+1,j+1)
+						written=True
+					outString+="-RATE({0})".format(reacindx+1)
+					for reactant in reactants[reacindx]:
+						if reactant in speciesList and reactant!=species2:
+							specIndx=speciesList.index(reactant)
+							specIndx+=1
+							outString+="*Y({0})".format(specIndx)
+						elif reactant=="E-":
+							specIndx=nSpec+1
+							outString+="*Y({0})".format(specIndx)
+					if sum([speciesList.count(reactant) for reactant in reactants[reacindx]]) > 1 or reactants[reacindx].count('E-') > 0 or reactants[reacindx].count('FREEZE') > 0 or reactants[reacindx].count('DESOH2') > 0:
+						outString += '*D'	
+					output.write(outString)
+				#species2 producing species1
+				elif species1 in products[reacindx]:
+					if written:
+						outString=""
+					else:
+						outString="PD({0},{1})=".format(i+1,j+1)
+						written=True
+					outString+="+RATE({0})".format(reacindx+1)
+					for reactant in reactants[reacindx]:
+						if reactant in speciesList and reactant!=species2:
+							specIndx=speciesList.index(reactant)
+							specIndx+=1
+							outString+="*Y({0})".format(specIndx)
+						elif reactant=="E-":
+							specIndx=nSpec+1
+							outString+="*Y({0})".format(specIndx)
+					if products[reacindx].count(species1)>1:
+						outString+="*{0}".format(products[reacindx].count(species1))
+					if sum([speciesList.count(reactant) for reactant in reactants[reacindx]]) > 1 or reactants[reacindx].count('E-') > 0 or reactants[reacindx].count('FREEZE') > 0 or reactants[reacindx].count('DESOH2') > 0:
+						outString += '*D'	
+					output.write(outString)
+		if written:
+			output.write("\n")
+	#final column, how is density affecting each species
+	j=nSpec+1
+	for i,species1 in enumerate(speciesList):
+		written=False
+		for reacindx in  range(nReactions):
+			#if this reaction even has density
+			if sum([speciesList.count(reactant) for reactant in reactants[reacindx]]) > 1 or reactants[reacindx].count('E-') > 0 or reactants[reacindx].count('FREEZE') > 0 or reactants[reacindx].count('DESOH2') > 0:
+				#if species is a reactant, thus destroyed
+				if species1 in reactants[reacindx]:
+					if written:
+						outString=""
+					else:
+						outString="PD({0},{1})=".format(i+1,j+1)
+						written=True
+					outString+="-RATE({0})".format(reacindx+1)
+					for reactant in reactants[reacindx]:
+						if reactant in speciesList and reactant!=species2:
+							specIndx=speciesList.index(reactant)
+							specIndx+=1
+							outString+="*Y({0})".format(specIndx)
+						elif reactant=="E-":
+							specIndx=nSpec+1
+							outString+="*Y({0})".format(specIndx)	
+					output.write(outString)
+				#species is a product and thus created
+				elif species1 in products[reacindx]:
+					if written:
+						outString=""
+					else:
+						outString="PD({0},{1})=".format(i+1,j+1)
+						written=True
+					outString+="+RATE({0})".format(reacindx+1)
+					for reactant in reactants[reacindx]:
+						if reactant in speciesList and reactant!=species2:
+							specIndx=speciesList.index(reactant)
+							specIndx+=1
+							outString+="*Y({0})".format(specIndx)
+						elif reactant=="E-":
+							specIndx=nSpec+1
+							outString+="*Y({0})".format(specIndx)
+					if products[reacindx].count(species1)>1:
+						outString+="*{0}".format(products[reacindx].count(species1))
+					output.write(outString)
+		if written:
+			output.write("\n")
+	output.close()	
     
 def electron_eq(speciesList,codeFormat='F90'):
     elec_eq=''

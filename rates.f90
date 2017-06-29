@@ -116,7 +116,7 @@ integer :: ns,index1,index2
     rate(nrco)=knrco()
 END SUBROUTINE reacrates
 
-!Functions below are required by reacrates to calculate more complicated reactions.
+!Functions below are required by reacrates to calculate self shielding
 double precision FUNCTION h2d()
     double precision ::ch2
 

@@ -18,7 +18,7 @@ MODULE physics
     !variables either controlled by physics or that user may wish to change    
     double precision :: initialDens,dens,tage,tout,t0,t0old,finalDens,finalTime
     double precision :: size,rout,rin,baseAv,bc,tstart,maxTemp
-    double precision :: tempa(5),tempb(5),codestemp(5),volctemp(5),solidtemp(5)
+    double precision :: tempa(6),tempb(6),codestemp(6),volctemp(6),solidtemp(6)
     double precision, allocatable :: av(:),coldens(:),temp(:)
 
     !Everything should be in cgs units. Helpful constants and conversions below
@@ -247,7 +247,6 @@ CONTAINS
         !numerically derived as follows:
         v0=2.
         v01=0
-        write(*,*)"in loop1"
         DO WHILE (abs(v0-v01) .ge. 1e-6)
             v01=v0
             g1=-(vA**2*vs**2)/2
@@ -255,13 +254,11 @@ CONTAINS
 
             v0=sqrt(g1/g2)
         END DO
-        write(*,*)"out loop1"
 
         !We calculate the physical structure of the shock
         !set vn1 arbitrarily high to ensure while loop is done at least once
         vn1=1d30
         vn=vn0
-        write(*,*)"in loop2"
 
         DO WHILE (abs(vn-vn1).ge.1.e-14)
             vn1=vn
@@ -271,9 +268,7 @@ CONTAINS
             xcos=zn/z2
             acosh=0.5*(dexp(xcos)+dexp(-xcos))
             vn=(vs-v0)-((vs-v0)/acosh)
-            write(*,*) "looping"
         END  DO
-        write(*,*)"out loop2"
 
 
         xcos=zn/z1

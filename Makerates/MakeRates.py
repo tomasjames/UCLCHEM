@@ -86,6 +86,8 @@ print 'Writing system of ODEs in F95 format...'
 filename = 'outputFiles/odes.f90'
 write_odes_f90(filename, speciesList, constituentList, reactants, products)
 
+filename= 'outputFiles/jacob.f90'
+write_jacobian(filename, speciesList, constituentList, reactants, products)
 print 'Writing Evaporation lists...'
 filename= 'outputFiles/evaplists.csv'
 evap_lists(filename,speciesList,evaptypes,monoevap,volcevap)
