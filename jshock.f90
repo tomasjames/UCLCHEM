@@ -15,7 +15,7 @@ MODULE physics
 
     !variables either controlled by physics or that user may wish to change    
     double precision :: initialDens,timeInYears,initialTime,targetTime,currentTime,currentTimeold,finalDens,finalTime,d,dMin,dMax
-    double precision :: cloudSize,rout,rin,baseAv,bc,tstart,maxTemp,dCool,lambda
+    double precision :: cloudSize,rout,rin,baseAv,bc,tstart,maxTemp,maxDens,dCool,dWidth,t_lambda,n_lambda
     double precision, allocatable :: av(:),coldens(:),temp(:),dens(:),pressure(:)
 
     !Everything should be in cgs units. Helpful constants and conversions below
@@ -115,19 +115,19 @@ CONTAINS
             ENDIF
         ELSE
             IF (timeInYears .gt. 1.0d5) THEN
-                targetTime=(timeInYears+100)/year
+                targetTime=(timeInYears+10)/year
             ELSE IF (timeInYears.gt. 1.0d4) THEN
-                targetTime=(timeInYears+10.)/year
-            ELSE IF (timeInYears .gt. 1000) THEN
                 targetTime=(timeInYears+1.)/year
-            ELSE IF (timeInYears .gt. 10) THEN
+            ELSE IF (timeInYears .gt. 1000) THEN
                 targetTime=(timeInYears+0.1)/year
-            ELSE IF (timeInYears .gt. 1) THEN
+            ELSE IF (timeInYears .gt. 10) THEN
                 targetTime=(timeInYears+0.01)/year
-            ELSE IF (timeInYears .gt. 0.05) THEN
+            ELSE IF (timeInYears .gt. 1) THEN
                 targetTime=(timeInYears+0.001)/year
-            ELSE IF  (timeInYears.gt.0.0) THEN
+            ELSE IF (timeInYears .gt. 0.05) THEN
                 targetTime=(timeInYears+0.0001)/year
+            ELSE IF  (timeInYears.gt.0.0) THEN
+                targetTime=(timeInYears+0.00001)/year
             ELSE
                 targetTime=3.16d1
             ENDIF
@@ -153,35 +153,49 @@ CONTAINS
             ! write(*,*) "In phase 2."
             ! Determine the cooling length (of the order of the mean free path)
             dCool = 1/((2**0.5)*initialDens*(pi*(2*5.291d-09)**2))
-            ! Determine initial distance
-            dMin = initialTime*vs*1d5
+            ! Determine shock width
+            dWidth = 10**(10+(vs/5))
+            ! write(*,*) "dCool=",dCool," cm"
             ! Determine the final distance
-            dMax = finalTime*vs*1d5
+            dMax = (finalTime*(60*60*24*365))*(vs*1d5)
+            ! write(*,*) "dMax=",dMax," cm"
             ! Determine the current distance
             d = currentTime*vs*1d5
-            lambda = LOG(maxTemp/initialTemp)
-
+            ! write(*,*) "d=",d," cm"
+            ! Determine the maximum density attained
+            maxDens = vs*initialDens*(0.17d3)
+            ! Determine the rate constants
+            t_lambda = LOG(maxDens/initialDens)
+            n_lambda = LOG((maxDens)/(initialDens))
             ! Determine whether shock is still increasing the temperature
             ! Or whether it is in the post-shock cooling phase
             ! Or whether the temperature is now constant
-            ! write(*,*) "Beginning the temperature and density calculations."
-            IF (d - dMin .lt. dCool) THEN
-                ! write(*,*) "The condition d - initialTime*vs .lt. dCool has been met."
-                ! If it is in the initial temperature rise to max temp, then
-                tn(dstep) = ((d/dCool)**3)*(maxTemp - initialTemp) + initialTemp
-                dens = ((d/dCool)**2)*(4*initialDens) + initialDens
-                ! write(*,*) "d: ", d, ' cm'
-                ! write(*,*) "d/dCool: ", d/dCool
-                ! write(*,*) "(d/dCool)**2: ", (d/dCool)**2
-                ! write(*,*) "((d/dCool)**2)*(4*initialDens): ", ((d/dCool)**2)*(4*initialDens)
-            ELSE IF (d - dMin .gt. dCool .AND. d - dMin .lt. dCool*1d6) THEN
+            IF (d .le. dCool) THEN
+                tn(dstep) = ((d/dCool)**3)*(maxTemp-initialTemp) + initialTemp
+                dens = (((d/dCool)**2)*(4*initialDens))
+                
+                IF (dens(1) .lt. initialDens) THEN
+                    dens = initialDens
+                END IF
+
+            ELSE IF (d .gt. dCool .AND. d .le. dWidth) THEN
+                ! write(*,*) "d .gt. dCool .AND. d .le. dCool*1d8"
                 ! Otherwise we're in the cooling phase
                 ! Determine the decay constant for the cooling
-                tn(dstep) = maxTemp*EXP(-lambda*(d/(dCool*1d6)))
-                dens = 4*initialDens
+                tn(dstep) = maxTemp*EXP(-t_lambda*(d/(dWidth)))
+                dens = (4*initialDens)*EXP(n_lambda*(d/(dWidth)))
+
+                IF (tn(dstep) .le. initialTemp) THEN
+                    tn(dstep) = initialTemp
+                END IF
+
+                IF (dens(1) .gt. maxDens) THEN
+                    dens = maxDens
+                END IF
+
             ELSE 
                 tn(dstep) = initialTemp
-                dens = 4*initialDens
+                dens = maxDens
             END IF
             ! write(*,*) "Temperature, tn: ", tn(dstep)
             temp(dstep)=tn(dstep)
