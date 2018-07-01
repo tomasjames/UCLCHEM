@@ -13,9 +13,9 @@ MODULE physics
     !Flags let physics module control when evap takes place.flag=0/1/2 corresponding to not yet/evaporate/done
     integer :: evap,ion,solidflag,monoflag,volcflag,coflag,tempindx
 
-    !variables either controlled by physics or that user may wish to change    
+    !variables either controlled by physics or that user may wish to change
     double precision :: initialDens,timeInYears,initialTime,targetTime,currentTime,currentTimeold,finalDens,finalTime,d,dMin,dMax
-    double precision :: cloudSize,rout,rin,baseAv,bc,tstart,maxTemp,maxDens,dCool,dWidth,t_lambda,n_lambda
+    double precision :: cloudSize,rout,rin,baseAv,bc,tstart,maxTemp,maxDens,tHeat,dHeat,tShock,dShock,tMax,t_lambda,n_lambda
     double precision, allocatable :: av(:),coldens(:),temp(:),dens(:),pressure(:)
 
     !Everything should be in cgs units. Helpful constants and conversions below
@@ -27,7 +27,7 @@ MODULE physics
 
     !Cshock specific parameters
     !*******************************************************************
-    double precision :: initialTemp, z2,vs,v0,zn,vn,at,z3,targetTime0,tsat
+    double precision :: initialTemp, z2,vs,vMin,v0,zn,vn,at,z3,targetTime0,tsat
     double precision :: ucm,z1,dv,vi,tempi,vn0,zn0,vA,dlength
     double precision :: grainRadius5,grainRadius,dens6
     double precision, allocatable :: tn(:),ti(:),tgc(:),tgr(:),tg(:)
@@ -41,7 +41,7 @@ MODULE physics
 
 CONTAINS
 !THIS IS WHERE THE REQUIRED PHYSICS ELEMENTS BEGIN. YOU CAN CHANGE THEM TO REFLECT YOUR PHYSICS BUT THEY MUST BE NAMED ACCORDINGLY.
-    
+
     SUBROUTINE initializePhysics
     !Any initialisation logic steps go here
         allocate(av(points),coldens(points),temp(points),dens(points))
@@ -59,11 +59,23 @@ CONTAINS
             END IF
         ELSE
             dens=initialDens
-        ENDIF 
+        ENDIF
 
         write(*,*) "Setting temperature and cooling time."
         temp = initialTemp
         ! tstepCalc = real(vs*1d5)*real(points)/real(size)
+
+        ! Determine the maximum temperature
+        ! Uses polynomial fit from max temperature attained in mhd_vode as function of
+        ! shock velocity
+        ! maxTemp = 57.14*(vs**2) - 314.3*vs + 2500
+        maxTemp = -0.4986*(vs**3) + 107.8*(vs**2) - 1511*(vs) + 1.02e+04
+        write(*,*) "maxTemp=",maxTemp
+
+        ! Determine minimum velocity
+        ! vMin = -1.466d-08*(vs**5)+2.761d-06*(vs**4)-0.0001893*(vs**3)+0.00574*(vs**2)-0.07578*vs+0.4256 
+        vMin = ((-2.058e-07*(vs**4) + 3.844e-05*(vs**3) - 0.002478*(vs**2) + 0.06183*(vs) - 0.4254)**2)**0.5
+        write(*,*) 'vMin=',vMin
 
         !calculate initial column density as distance from core edge to current point * density
         DO dstep=1,points
@@ -81,11 +93,11 @@ CONTAINS
 
         !maxxtemp set by vs and pre-shock density, polynomial fits to values taken from Draine et al. 1983
         !have been made and coefficients placed here. Tested with log(dens)>3 <6
-        IF (initialDens .gt. 10**4.5) THEN
-            maxTemp=(2.91731*vs*vs)-(23.78974*vs)+225.204167337
-        ELSE
-            maxTemp=(0.47258*vs*vs)+(40.44161*vs)-128.635455216
-        END IF    
+        ! IF (initialDens .gt. 10**4.5) THEN
+        !     maxTemp=(2.91731*vs*vs)-(23.78974*vs)+225.204167337
+        ! ELSE
+        !     maxTemp=(0.47258*vs*vs)+(40.44161*vs)-128.635455216
+        ! END IF
         temp=initialTemp
 
         !tsat proportional to 1/pre-shock density. Fit to tsats from Jimenez-Serra 2008.
@@ -114,22 +126,33 @@ CONTAINS
                 targetTime=3.16d7*10.d-8
             ENDIF
         ELSE
+            ! IF (timeInYears.gt. 1.0d4) THEN
+            !     targetTime=(timeInYears+100)/year
+            ! ELSE IF (timeInYears .gt. 1000) THEN
+            !     targetTime=(timeInYears+1.)/year
+            ! ELSE IF (timeInYears .gt. 10) THEN
+            !     targetTime=(timeInYears+0.01)/year
+            ! ELSE IF (timeInYears .gt. 1) THEN
+            !     targetTime=(timeInYears+0.001)/year
+            ! ELSE IF (timeInYears .gt. 0.05) THEN
+            !     targetTime=(timeInYears+0.001)/year
+            ! ELSE IF  (timeInYears.gt.0.0) THEN
+            !     targetTime=(timeInYears+0.0000001)/year
+            ! ELSE
+            !     targetTime=3.16d6
+            ! ENDIF
             IF (timeInYears .gt. 1.0d5) THEN
-                targetTime=(timeInYears+10)/year
-            ELSE IF (timeInYears.gt. 1.0d4) THEN
-                targetTime=(timeInYears+1.)/year
+                targetTime=(timeInYears+100)/year
+            ELSE IF (timeInYears.gt. 5.0d4) THEN
+                targetTime=(timeInYears+10.)/year
             ELSE IF (timeInYears .gt. 1000) THEN
-                targetTime=(timeInYears+0.1)/year
+                targetTime=(timeInYears+1)/year
             ELSE IF (timeInYears .gt. 10) THEN
-                targetTime=(timeInYears+0.01)/year
-            ELSE IF (timeInYears .gt. 1) THEN
-                targetTime=(timeInYears+0.001)/year
-            ELSE IF (timeInYears .gt. 0.05) THEN
-                targetTime=(timeInYears+0.0001)/year
+                targetTime=(timeInYears+0.1)/year
             ELSE IF  (timeInYears.gt.0.0) THEN
-                targetTime=(timeInYears+0.00001)/year
+                targetTime=(timeInYears+0.1)/year
             ELSE
-                targetTime=3.16d1
+                targetTime=3.16d6
             ENDIF
         END IF
     END SUBROUTINE updateTargetTime
@@ -150,11 +173,19 @@ CONTAINS
 
         ! phase=2 for the J-shock specific calculations
         IF (phase .eq. 2) THEN
-            ! write(*,*) "In phase 2."
-            ! Determine the cooling length (of the order of the mean free path)
-            dCool = 1/((2**0.5)*initialDens*(pi*(2*5.291d-09)**2))
+            ! Determine the shock velocity at the current time
+            v0 = vs*(exp(LOG(vMin/vs)*(currentTime/(finalTime*60*60*24*365))))
+            IF (v0 .lt. vMin) THEN
+                v0 = vMin
+            END IF
+            ! Determine the shock width (of the order of the mean free path)
+            ! dCool = 1/((2**0.5)*initialDens*(pi*(2*5.291d-09)**2))
+            tHeat = initialTime + (1d0*60*60*24*354)
+            dHeat = tHeat*(v0*1d5)
             ! Determine shock width
-            dWidth = 10**(10+(vs/5))
+            ! dWidth = 10**(10+(vs/5))
+            tShock = (4*initialDens)*tHeat
+            dShock = tShock*(v0*1d5)
             ! write(*,*) "dCool=",dCool," cm"
             ! Determine the final distance
             dMax = (finalTime*(60*60*24*365))*(vs*1d5)
@@ -165,25 +196,24 @@ CONTAINS
             ! Determine the maximum density attained
             maxDens = vs*initialDens*(0.17d3)
             ! Determine the rate constants
-            t_lambda = LOG(maxDens/initialDens)
-            n_lambda = LOG((maxDens)/(initialDens))
+            t_lambda = LOG(maxTemp/initialTemp)
+            n_lambda = LOG(maxDens/initialDens)
             ! Determine whether shock is still increasing the temperature
             ! Or whether it is in the post-shock cooling phase
             ! Or whether the temperature is now constant
-            IF (d .le. dCool) THEN
-                tn(dstep) = ((d/dCool)**3)*(maxTemp-initialTemp) + initialTemp
-                dens = (((d/dCool)**2)*(4*initialDens))
-                
+            IF (currentTime .le. tHeat) THEN
+                tn(dstep) = ((currentTime/tHeat)**4)*maxTemp + initialTemp
+                dens = (((currentTime/tHeat)**4)*(4*initialDens))
+
                 IF (dens(1) .lt. initialDens) THEN
                     dens = initialDens
                 END IF
 
-            ELSE IF (d .gt. dCool .AND. d .le. dWidth) THEN
+            ELSE IF (currentTime .gt. tHeat .AND. currentTime .le. tShock) THEN
                 ! write(*,*) "d .gt. dCool .AND. d .le. dCool*1d8"
                 ! Otherwise we're in the cooling phase
-                ! Determine the decay constant for the cooling
-                tn(dstep) = maxTemp*EXP(-t_lambda*(d/(dWidth)))
-                dens = (4*initialDens)*EXP(n_lambda*(d/(dWidth)))
+                tn(dstep) = maxTemp*EXP(-t_lambda*(currentTime/(tShock)))
+                dens = (4*initialDens)*EXP(n_lambda*(currentTime/(tShock)))
 
                 IF (tn(dstep) .le. initialTemp) THEN
                     tn(dstep) = initialTemp
@@ -193,7 +223,7 @@ CONTAINS
                     dens = maxDens
                 END IF
 
-            ELSE 
+            ELSE
                 tn(dstep) = initialTemp
                 dens = maxDens
             END IF
@@ -202,7 +232,7 @@ CONTAINS
 
             IF (timeInYears .gt. 0) THEN
                 write(92,1234) tn(dstep),dens(dstep),timeInYears
-                1234 format(3(1x,ES12.4e2))
+                1234 format(3(e16.9))
             ENDIF
 
             !At tsat, all mantle species evaporated. These flags make chem module aware of it.
@@ -214,8 +244,8 @@ CONTAINS
 
     END SUBROUTINE updatePhysics
 
-    !This FUNCTION works out the time derivative of the density, allowing DLSODE to update density with the rest of our ODEs
-    !It get's called by F, the SUBROUTINE in chem.f90 that sets up the ODEs for DLSODE
+    !This function works out the time derivative of the density, allowing DVODE to update density with the rest of our ODEs
+    !It get's called by F, the SUBROUTINE in chem.f90 that sets up the ODEs for DVODE
     !Currently set to Rawlings 1992 freefall.
     pure FUNCTION densdot()
         double precision :: densdot
