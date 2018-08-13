@@ -42,10 +42,9 @@ def read_uclchem(filename,species):
                 tempi=float(bits[-2].replace('D','E'))
                 temp.append(tempi)
             #then read until we hit abundances
-            if bits .count('=')>2:
-                for specIndx,specName in enumerate(species):
-                    if specName in bits:
-                        abunds[specIndx].append(float(bits[2+bits.index(specName)].replace('D','E')))
+            for specIndx,specName in enumerate(species):
+                if specName in bits:
+                    abunds[specIndx].append(float(bits[2+bits.index(specName)].replace('D','E')))
 
     return time,dens,temp,abunds
 
@@ -95,7 +94,7 @@ def readTimestep(filename,chosenTime,cloud):
     return time,cloud,species,abunds 
 
 def write_cols(filename,times,dens,abundances):
-    f=open(filename,"wb")
+    f=open(filename,"w")
     for timeIndx,time in enumerate(times):
         outString="{0:.3e} {1:.3e}".format(time,dens[timeIndx])
         for i in range(0,len(abundances)):
@@ -233,8 +232,8 @@ def getChanges(speciesName,species,masses,abundances,network,cloud):
     return changes,reacIndxs
 
 def getNetwork(file,speciesName):
-    reactions=np.loadtxt("reactions.csv",dtype=str,skiprows=1,delimiter=',',usecols=[0,1,2,3,4,5,6],comments="%")
-    alpha,beta,gamma=np.loadtxt("reactions.csv",usecols=[7,8,9],unpack=True,skiprows=1,delimiter=',',comments="%")
+    reactions=np.loadtxt("src/reactions.csv",dtype=str,skiprows=1,delimiter=',',usecols=[0,1,2,3,4,5,6],comments="%")
+    alpha,beta,gamma=np.loadtxt("src/reactions.csv",usecols=[7,8,9],unpack=True,skiprows=1,delimiter=',',comments="%")
     network=[]
     for i,reaction in enumerate(reactions):
         if speciesName in reaction:
