@@ -1,6 +1,8 @@
 #A set of functions for working with UCLCHEM outputs
 # adding "from plotfunctions import * to any python script in scripts/ will allow their use"
 import numpy as np
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import csv

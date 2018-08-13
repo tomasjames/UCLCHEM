@@ -1,15 +1,15 @@
 from plotfunctions import *
-
+import matplotlib.pyplot as plt
 
 ################################################
 #User Inputs Go Here
 ################################################
 
-speciesName="C"
-resultFile="output/full.dat"
-reactionFile="reactions.csv"
-speciesFile="species.csv"
-parameterFile="parameters.f90"
+speciesName="H2O"
+resultFile="../../viti2011/jshock/v40n10000/full2.dat"
+reactionFile="../reactions.csv"
+speciesFile="../species.csv"
+parameterFile="../parameters.f90"
 
 
 ################################################################################################
@@ -26,13 +26,19 @@ cloud=getParameters(parameterFile)
 cloud['fr']=0.0
 times,dens,temp,specAbundances=read_uclchem(resultFile,[speciesName])
 
+# times = times[1::50]
+# dens = dens[1::50]
+# temp = temp[1::50]
+# specAbundances = specAbundances[1::50]
+
 oldMostForms=[]
 oldMostDestructs=[]
 plotTimes=[]
 oldTotalChange=0.0
 destructions=[]
 formations=[]
-for time in times:
+for time in times[0:100]:
+	print(time)
 	timeStep,cloud,species,abundances=readTimestep(resultFile,time,cloud)
 	abundances=np.asarray(abundances)
 	cloud['mantle']=sum(abundances[grains])
@@ -68,20 +74,26 @@ for time in times:
 	if set(oldMostDestructs)!=set(mostDestructs) or set(oldMostForms) !=set(mostForms):
 		oldMostDestructs=mostDestructs[:]
 		oldMostForms=mostForms[:]
-		print "\n***************************\nNew Important Reactions At: {0:.2e}\n".format(time)
-		print "Formation = {0:.2e} from:".format(totalProd)
-		for k in range(-1,i,-1):
-			outString="{x[0]} + {x[1]} -> {x[3]} + {x[4]}".format(x=network[reacIndxs[k]])
-			outString+=": {0:.2f}%".format(float(changes[k]/totalProd)*100)
-			print outString
+		with open(speciesName+'_analysis.txt', 'a') as output_file:
+			output_file.write("\n***************************\nNew Important Reactions At: {0:.2e}\n".format(time))
+			output_file.write("\n")
+			output_file.write("Formation = {0:.2e} from:".format(totalProd))
+			output_file.write("\n")
+			for k in range(-1,i,-1):
+				outString="{x[0]} + {x[1]} -> {x[3]} + {x[4]}".format(x=network[reacIndxs[k]])
+				outString+=": {0:.2f}%".format(float(changes[k]/totalProd)*100)
+				output_file.write(outString)
+				output_file.write("\n")
 
-		print "\nDestruction = {0:.2e} from:".format(totalDestruct)
-		for k in range(0,j):
-			outString="{x[0]} + {x[1]} -> {x[3]} + {x[4]}".format(x=network[reacIndxs[k]])
-			outString+=": {0:.2f}%".format(float(changes[k]/totalDestruct)*100)
-			print outString
-		plotTimes.append(time)
-		oldTotalChange=totalChange
+			output_file.write("\nDestruction = {0:.2e} from:".format(totalDestruct))
+			output_file.write("\n")
+			for k in range(0,j):
+				outString="{x[0]} + {x[1]} -> {x[3]} + {x[4]}".format(x=network[reacIndxs[k]])
+				outString+=": {0:.2f}%".format(float(changes[k]/totalDestruct)*100)
+				output_file.write(outString)
+				output_file.write("\n")
+			plotTimes.append(time)
+			oldTotalChange=totalChange
 
 fig,ax=plt.subplots()
 ax.plot(times,specAbundances[0],color="black")
