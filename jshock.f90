@@ -169,7 +169,7 @@ CONTAINS
             coldens(dstep)=cloudSize/real(points)*dens(dstep)
         END IF
                 !calculate the Av using an assumed extinction outside of core (baseAv), depth of point and density
-        av(dstep)= baseAv +coldens(dstep)/1.6d21
+        av(dstep)= baseAv + coldens(dstep)/1.6d21
 
         ! phase=2 for the J-shock specific calculations
         IF (phase .eq. 2) THEN

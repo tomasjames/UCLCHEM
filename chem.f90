@@ -265,7 +265,7 @@ CONTAINS
         8020 format(&
         &'age of cloud             time  = ',1pe10.3,' years',/,&
         &'total hydrogen density   dens  = ',1pe10.4,' cm-3',/,&
-        &'cloud temperature        temp  = ',0pf8.2,' k',/,&
+        &'cloud temperature        temp  = ',0pf10.2,' k',/,&
         &'visual extinction        av    = ',0pf12.4,' mags',/,&
         &'radiation field          rad   = ',0pf10.2,' (habing = 1)',/,&
         &'cosmic ray ioniz. rate   zeta  = ',0pf10.2,' (unit = 1.3e-17s-1)',/,&
