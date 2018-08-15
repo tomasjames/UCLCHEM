@@ -15,7 +15,7 @@ MODULE physics
 
     !variables either controlled by physics or that user may wish to change
     double precision :: initialDens,timeInYears,initialTime,targetTime,currentTime,currentTimeold,finalDens,finalTime,d,dMin,dMax
-    double precision :: cloudSize,rout,rin,baseAv,bc,tstart,maxTemp,maxDens,tHeat,dHeat,tShock,dShock,tMax,t_lambda,n_lambda
+    double precision :: cloudSize,rout,rin,baseAv,bc,tstart,maxTemp,maxDens,mfp,tShock,dShock,tCool,dCool,tMax,t_lambda,n_lambda
     double precision, allocatable :: av(:),coldens(:),temp(:),dens(:),pressure(:)
 
     !Everything should be in cgs units. Helpful constants and conversions below
@@ -183,12 +183,12 @@ CONTAINS
             END IF
             ! Determine the shock width (of the order of the mean free path)
             ! dCool = 1/((2**0.5)*initialDens*(pi*(2*5.291d-09)**2))
-            tHeat = initialTime + (1d0*60*60*24*354)
-            dHeat = tHeat*(v0*1d5)
+            mfp = (SQRT(2.0)*initialDens*(pi*(2.4e-8)**2))**(-1)
+            tShock = mfp/(vs*1d5)
             ! Determine shock width
             ! dWidth = 10**(10+(vs/5))
-            tShock = (4*initialDens)*tHeat
-            dShock = tShock*(v0*1d5)
+            tCool = (4*initialDens)*tShock
+            dCool = tShock*(v0*1d5)
             ! write(*,*) "dCool=",dCool," cm"
             ! Determine the final distance
             dMax = (finalTime*(60*60*24*365))*(vs*1d5)
@@ -204,19 +204,19 @@ CONTAINS
             ! Determine whether shock is still increasing the temperature
             ! Or whether it is in the post-shock cooling phase
             ! Or whether the temperature is now constant
-            IF (currentTime .le. tHeat) THEN
-                tn(dstep) = ((currentTime/tHeat)**4)*(maxTemp-initialTemp) + initialTemp
-                dens = (((currentTime/tHeat)**4)*(4*initialDens))
+            IF (currentTime .le. tShock) THEN
+                tn(dstep) = ((currentTime/tShock)**4)*(maxTemp-initialTemp) + initialTemp
+                dens = (((currentTime/tShock)**4)*(4*initialDens))
 
                 IF (dens(1) .lt. initialDens) THEN
                     dens = initialDens
                 END IF
 
-            ELSE IF (currentTime .gt. tHeat .AND. currentTime .le. tShock) THEN
+            ELSE IF (currentTime .gt. tShock .AND. currentTime .le. tCool) THEN
                 ! write(*,*) "d .gt. dCool .AND. d .le. dCool*1d8"
                 ! Otherwise we're in the cooling phase
-                tn(dstep) = maxTemp*EXP(-t_lambda*(currentTime/(tShock)))
-                dens = (4*initialDens)*EXP(n_lambda*(currentTime/(tShock)))
+                tn(dstep) = maxTemp*EXP(-t_lambda*(currentTime/(tCool)))
+                dens = (4*initialDens)*EXP(n_lambda*(currentTime/(tCool)))
 
                 IF (tn(dstep) .le. initialTemp) THEN
                     tn(dstep) = initialTemp
