@@ -4,8 +4,8 @@
 
 !Initial physics variables and final  values. for temp, density and time
 initialTemp=10.0;maxTemp=300
-initialDens=2.00d4;finalDens=2.00d4
-currentTime=0.0;finalTime=1.00d6
+initialDens=2.00d2;finalDens=2.00d4
+currentTime=0.0;finalTime=1.00d7
 
 !radfield in habing, cosmic ray ionisation rates as multiple of standard
 radfield=1.0;zeta=1.0
@@ -16,14 +16,14 @@ fr=1.0;
 !Size of cloud set by inner and outer radii (rin and rout). used to calculate extinction.
 !baseAv is extinction at cloud edge
 !points is number of parcels to run model for. spaced  evenly between rin and rout
-rout=0.05;rin=0;baseAv=2.0;points=1
+rout=0.05;rin=0;baseAv=0.0;points=1
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !Behavioural switches
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !switch (0/1) -> finish model run at (finalTime/finalDens)
-switch=1
+switch=0
 
 !collapse (0/1/2/3/4) 1/0 are on/off for standard free-fall. 2/3/4 are different collapse modes noted in cloud.f90
 !collape=0/1 ONLY if not using cloud.f90

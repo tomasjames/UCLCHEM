@@ -160,6 +160,11 @@ CONTAINS
             ELSE IF (timeInYears .gt. 100) THEN
                 targetTime=(timeInYears+10.)/year
             ELSE IF (timeInYears .gt. 10) THEN
+<<<<<<< HEAD:src/cshock.f90
+=======
+                targetTime=(timeInYears+1.)/year
+            ELSE IF  (timeInYears.gt.0.0) THEN
+>>>>>>> upstream/master:src/cshock.f90
                 targetTime=(timeInYears+1.)/year
             ELSE IF  (timeInYears.gt.0.0) THEN
                 targetTime=(timeInYears+0.1)/year

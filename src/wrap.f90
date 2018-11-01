@@ -2,6 +2,7 @@
 !THIS IS A SERIES OF SUBROUTINES THAT CAN BE COMPILED WITH F2PY TO PRODUCE A PYTHON MODULE
 !EACH SUBROUTINE BECOMES A PYTHON FUNCTION
 
+<<<<<<< HEAD
 SUBROUTINE uclchem(init_dens,final_dens,shock_vel,phase_flag,outFile,startFile)
     USE physics
     USE chemistry
@@ -12,6 +13,17 @@ SUBROUTINE uclchem(init_dens,final_dens,shock_vel,phase_flag,outFile,startFile)
     character(LEN=100):: abundFile,outputFile,columnFile
 
     !f2py intent(in) init_dens,final_dens,max_temp,shock_vel,phase_flag,outFile,startFile
+=======
+SUBROUTINE CLOUD(initDens,finDens,finTime,intemp,outFile,startFile)
+    USE physics
+    USE chemistry
+    IMPLICIT NONE
+    DOUBLE PRECISION, INTENT(IN) :: initDens,finDens,finTime,intemp
+    CHARACTER(LEN=*), INTENT(IN) :: outFile,startFile
+    CHARACTER (LEN=100):: abundFile,outputFile,columnFile
+    !f2py intent(in) initDens,finDens,finTime,intemp,outFile
+
+>>>>>>> upstream/master
     include 'defaultparameters.f90'
     close(10)
     close(11)
@@ -19,6 +31,7 @@ SUBROUTINE uclchem(init_dens,final_dens,shock_vel,phase_flag,outFile,startFile)
 
     open(10,file=outFile,status='unknown') 
     columnFlag=.False.
+<<<<<<< HEAD
     open(7,file=startFile,status='unknown') 
 
     initialDens=init_dens
@@ -54,12 +67,31 @@ SUBROUTINE uclchem(init_dens,final_dens,shock_vel,phase_flag,outFile,startFile)
         baseAv=baseAv
     END IF
 
+=======
+    open(7,file=outFile//"-start.dat",status='unknown') 
+    initialDens=initDens
+    IF (ABS(initDens-finDens) .GT. 0.01) THEN
+        collapse=1
+        finalDens=finDens
+    ELSE
+        collapse=0
+    END IF
+    initialTemp=intemp
+    finalTime=finTime
+    switch=0
+
+    abundFile=startFile
+>>>>>>> upstream/master
     CALL initializePhysics
     CALL initializeChemistry
 
     dstep=1
     currentTime=0.0
     timeInYears=0.0
+<<<<<<< HEAD
+=======
+    
+>>>>>>> upstream/master
     !loop until the end condition of the model is reached 
     DO WHILE ((switch .eq. 1 .and. dens(1) < finalDens) .or. (switch .eq. 0 .and. timeInYears < finalTime))
 
@@ -90,4 +122,8 @@ SUBROUTINE uclchem(init_dens,final_dens,shock_vel,phase_flag,outFile,startFile)
             CALL output
         END DO
     END DO 
+<<<<<<< HEAD
 END SUBROUTINE uclchem
+=======
+END SUBROUTINE CLOUD
+>>>>>>> upstream/master
