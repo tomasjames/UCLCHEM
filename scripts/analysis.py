@@ -6,10 +6,10 @@ import matplotlib.pyplot as plt
 ################################################
 
 speciesName="H2O"
-resultFile="../../viti2011/jshock/v40n10000/full2.dat"
-reactionFile="../reactions.csv"
-speciesFile="../species.csv"
-parameterFile="../parameters.f90"
+resultFile="../output/jshock/data/v25n100000.dat"
+reactionFile="../src/reactions.csv"
+speciesFile="../src/species.csv"
+parameterFile="../src/defaultparameters.f90"
 
 
 ################################################################################################
