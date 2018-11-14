@@ -46,6 +46,7 @@ CONTAINS
     !Any initialisation logic steps go here
         if (allocated(av)) deallocate(av,coldens,temp,dens)
         allocate(av(points),coldens(points),temp(points),dens(points))
+        
         cloudSize=(rout-rin)*pc
         write(*,*) "rout=",rout
         write(*,*) "cloudSize=",cloudSize
@@ -129,33 +130,18 @@ CONTAINS
                 targetTime=3.16d7*10.d-8
             ENDIF
         ELSE
-            ! IF (timeInYears.gt. 1.0d4) THEN
-            !     targetTime=(timeInYears+100)/year
-            ! ELSE IF (timeInYears .gt. 1000) THEN
-            !     targetTime=(timeInYears+1.)/year
-            ! ELSE IF (timeInYears .gt. 10) THEN
-            !     targetTime=(timeInYears+0.01)/year
-            ! ELSE IF (timeInYears .gt. 1) THEN
-            !     targetTime=(timeInYears+0.001)/year
-            ! ELSE IF (timeInYears .gt. 0.05) THEN
-            !     targetTime=(timeInYears+0.001)/year
-            ! ELSE IF  (timeInYears.gt.0.0) THEN
-            !     targetTime=(timeInYears+0.0000001)/year
-            ! ELSE
-            !     targetTime=3.16d6
-            ! ENDIF
             IF (timeInYears .gt. 1.0d4) THEN
                 targetTime=(timeInYears+1000)/year
             ELSE IF (timeInYears.gt. 1.0d3) THEN
                 targetTime=(timeInYears+100.)/year
-            ELSE IF (timeInYears .gt. 1.0d2) THEN
-                targetTime=(timeInYears+10)/year
-            ELSE IF (timeInYears .gt. 1) THEN
-               targetTime=(timeInYears+0.1)/year
+            ELSE IF (timeInYears .gt. 0.1) THEN
+                targetTime=(timeInYears+1.0)/year
+            ELSE IF (timeInYears .gt. 0.0001) THEN
+               targetTime=(timeInYears+0.01)/year
             ELSE IF  (timeInYears.gt.0.0) THEN
-                targetTime=(timeInYears+0.001)/year
+                targetTime=(timeInYears+0.00000001)/year
             ELSE
-                targetTime=3.16d6
+                targetTime=3.16d-03
             ENDIF
         END IF
     END SUBROUTINE updateTargetTime
@@ -183,13 +169,11 @@ CONTAINS
             END IF
             ! Determine the shock width (of the order of the mean free path)
             ! dCool = 1/((2**0.5)*initialDens*(pi*(2*5.291d-09)**2))
-            mfp = (SQRT(2.0)*initialDens*(pi*(2.4e-8)**2))**(-1)
+            mfp = ((SQRT(2.0)*initialDens*(pi*(2.4e-8)**2))**(-1))/100
             tShock = mfp/(vs*1d5)
             ! Determine shock width
-            ! dWidth = 10**(10+(vs/5))
-            tCool = (4*initialDens)*tShock
-            dCool = tShock*(v0*1d5)
-            ! write(*,*) "dCool=",dCool," cm"
+            !tCool = (4*initialDens)*tShock*(1d2)
+            tCool = (1/initialDens)*1d7*(60*60*24*365)
             ! Determine the final distance
             dMax = (finalTime*(60*60*24*365))*(vs*1d5)
             ! write(*,*) "dMax=",dMax," cm"
@@ -205,7 +189,8 @@ CONTAINS
             ! Or whether it is in the post-shock cooling phase
             ! Or whether the temperature is now constant
             IF (currentTime .le. tShock) THEN
-                tn(dstep) = ((currentTime/tShock)**4)*(maxTemp-initialTemp) + initialTemp
+                write(*,*) "currentTime < tShock"
+                tn(dstep) = ((currentTime/tShock)**3)*(maxTemp-initialTemp) + initialTemp
                 dens = (((currentTime/tShock)**4)*(4*initialDens))
 
                 IF (dens(1) .lt. initialDens) THEN
@@ -213,6 +198,7 @@ CONTAINS
                 END IF
 
             ELSE IF (currentTime .gt. tShock .AND. currentTime .le. tCool) THEN
+                write(*,*) "currentTime > tShock .AND. currentTime < tCool"
                 ! write(*,*) "d .gt. dCool .AND. d .le. dCool*1d8"
                 ! Otherwise we're in the cooling phase
                 tn(dstep) = maxTemp*EXP(-t_lambda*(currentTime/(tCool)))
