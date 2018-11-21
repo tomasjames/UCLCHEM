@@ -4,8 +4,8 @@
 
 !Initial physics variables and final  values. for temp, density and time
 initialTemp=10.0;maxTemp=300
-initialDens=2.00d2;finalDens=2.00d4
-currentTime=0.0;finalTime=1.00d7
+initialDens=2.00d4;finalDens=2.00d4
+currentTime=0.0;finalTime=1.00d6
 
 !radfield in habing, cosmic ray ionisation rates as multiple of standard
 radfield=1.0;zeta=1.0
@@ -23,7 +23,7 @@ rout=0.05;rin=0;baseAv=0.0;points=1
 !Behavioural switches
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !switch (0/1) -> finish model run at (finalTime/finalDens)
-switch=0
+switch=1
 
 !collapse (0/1/2/3/4) 1/0 are on/off for standard free-fall. 2/3/4 are different collapse modes noted in cloud.f90
 !collape=0/1 ONLY if not using cloud.f90

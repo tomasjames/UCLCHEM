@@ -8,10 +8,10 @@ import matplotlib.pyplot as plt
 matplotlib.use('TkAgg')
 
 # Get list of folders (assuming same folders between c and j)
-files = sorted(os.listdir('output/cshock/data/'))
+files = sorted(os.listdir('output/jshock/data/'))
 
 # pick species, any number is fine
-species = ["H2", "HCN", "HNCO"]
+species = ["SO", "SO2", "NH3", "CH3OH", "H2O"]
 
 # Loop through those folders
 for file in files:
@@ -26,8 +26,12 @@ for file in files:
     print('Plotting: '+file+'.png')
 
     # Pulls the velocity and density from the folder name
-    v = float(file[1:3])*100000 # Ensures v is in cm/s
-    n = float(file[4:-4])
+    if file[2] == 'n':
+        v =  float(file[1:2])*100000
+        n = float(file[3:-4])
+    else:
+        v = float(file[1:3])*100000 # Ensures v is in cm/s
+        n = float(file[4:-4])
 
     #call read_uclchem.
     ctime,cdens,ctemp,cabundances=read_uclchem('output/cshock/data/{0}'.format(file),species)
@@ -189,27 +193,27 @@ for file in files:
     ax.set_xlabel('t (yrs)')
     ax.set_ylabel('$n$ cm$^{-3}$')
     fig.savefig('plots/'+file_name+'jdens.png',dpi=200)
-    plt.close()
-
-    fig=plt.figure()
-    ax=fig.add_subplot(111)
+    plt.close()    
 
     for specIndx,specName in enumerate(species):
+        fig=plt.figure()
+        ax=fig.add_subplot(111)
+
         ax.loglog(ctime,cabundances[specIndx],label='C-shock: '+specName,linewidth='1.0')
         ax.loglog(jtime,jabundances[specIndx],label='J-shock: '+specName,linewidth='1.0')
 
-    ax.plot(ctime,1e-13*np.ones(len(ctime)),linestyle="--")
+        #ax.plot(ctime,1e-13*np.ones(len(ctime)),linestyle="--")
 
-    ax.legend(loc='best')
-    ax.set_xlabel('t (yrs)')
-    ax.set_ylabel("X$_{Species}$")
-    ax.set_title("Shock propogating at v="+str(v)+" km/s through \n medium of pre-shock density n="+str(n)+" cm$^{-3}$")
-    # ax.set_ylim([1e-13,1e-1])
+        ax.legend(loc='upper left')
+        ax.set_xlabel('t (yrs)')
+        ax.set_ylabel("X$_{Species}$")
+        ax.set_title("Shock propogating at v="+str(v)+" km/s through \n medium of pre-shock density n="+str(n)+" cm$^{-3}$")
+        #ax.set_xlim([1e-1,1e6])
 
-    fig.savefig('plots/'+file_name+".png",dpi=200,bbox_inches='tight')
-    plt.close()
+        fig.savefig('plots/'+specName+"_"+file_name+".png",dpi=200,bbox_inches='tight')
+        plt.close()
 
-
+    '''
     fig,ax=plt.subplots()
 
     for specIndx,specName in enumerate(species):
@@ -251,6 +255,7 @@ for file in files:
     fig.savefig('plots/jcombined'+file_name+".png",dpi=400,bbox_inches='tight')
     plt.close()
 
+    
     fig,ax=plt.subplots()
 
     for specIndx,specName in enumerate(species):
@@ -288,3 +293,4 @@ for file in files:
     ax.set_title("C-shock propogating at v="+str(v)+" km/s through \n medium of pre-shock density n="+str(n)+" cm$^{-3}$")
     fig.savefig('plots/ccombined'+file_name+".png",dpi=400,bbox_inches='tight')
     plt.close()
+    '''

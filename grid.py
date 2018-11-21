@@ -11,8 +11,8 @@ if __name__ == '__main__':
     outputFolder="output/"
     # f=open(outputFolder+"grid.dat","wb")
     
-    velocities = np.linspace(30,35,2)
-    densities = np.logspace(3,4,2)
+    velocities = np.linspace(10,12,3)
+    densities = np.logspace(3,5,3)
     
     modelNo=1
     modelsOne = []
