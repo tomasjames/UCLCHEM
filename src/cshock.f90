@@ -151,14 +151,16 @@ CONTAINS
                 targetTime=3.16d7*10.d-8
             ENDIF
         ELSE
-            IF (timeInYears .gt. 1.0d4) THEN
-                targetTime=(timeInYears+1000)/year
-            ELSE IF (timeInYears.gt. 1.0d3) THEN
-                targetTime=(timeInYears+100.)/year
-            ELSE IF (timeInYears .gt. 0.1) THEN
-                targetTime=(timeInYears+1.0)/year
-            ELSE IF (timeInYears .gt. 0.0001) THEN
-               targetTime=(timeInYears+0.01)/year
+            IF (timeInYears .gt. 1.0d5) THEN
+                targetTime=(timeInYears+1.0d4)/year
+            ELSE IF (timeInYears.gt. 1.0d4) THEN
+                targetTime=(timeInYears+1000.)/year                
+            ELSE IF (timeInYears .gt. 1000) THEN
+                targetTime=(timeInYears+50.)/year
+            ELSE IF (timeInYears .gt. 100) THEN
+                targetTime=(timeInYears+10.)/year
+            ELSE IF (timeInYears .gt. 10) THEN
+                targetTime=(timeInYears+1.)/year
             ELSE IF  (timeInYears.gt.0.0) THEN
                 targetTime=(timeInYears+0.00000001)/year
             ELSE

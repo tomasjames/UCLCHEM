@@ -78,6 +78,7 @@ def analyseChemistry(resultFile,outFile,reactionFile,speciesFile,speciesName,par
                     output_file.write("\n")
                 plotTimes.append(time)
                 oldTotalChange=totalChange
+                
         output_file.close()
         #resultFile.close()
     return times,abundances,destructions,formations

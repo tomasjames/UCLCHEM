@@ -16,7 +16,7 @@ fr=1.0;
 !Size of cloud set by inner and outer radii (rin and rout). used to calculate extinction.
 !baseAv is extinction at cloud edge
 !points is number of parcels to run model for. spaced  evenly between rin and rout
-rout=0.05;rin=0;baseAv=0.0;points=1
+rout=0.051847;rin=0;baseAv=0.0;points=1
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

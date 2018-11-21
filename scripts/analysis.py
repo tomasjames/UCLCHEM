@@ -14,7 +14,6 @@ resultFiles=glob("../output/jshock/data/*")
 reactionFile="../src/reactions.csv"
 speciesFile="../src/species.csv"
 parameterFile="../src/defaultparameters.f90"
-print(resultFiles)
 
 ################################################################################################
 #NO CHANGES REQUIRED BELOW THIS LINE

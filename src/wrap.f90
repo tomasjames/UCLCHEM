@@ -41,6 +41,7 @@ SUBROUTINE uclchem(init_dens,final_dens,shock_vel,phase_flag,outFile,startFile)
             baseAv=10
         END IF
         rout=(baseAv*(1.6e21)/(init_dens))/(3.086d18)
+
     ELSE
         switch=0
         readAbunds=1
@@ -90,4 +91,5 @@ SUBROUTINE uclchem(init_dens,final_dens,shock_vel,phase_flag,outFile,startFile)
             CALL output
         END DO
     END DO 
+
 END SUBROUTINE uclchem
