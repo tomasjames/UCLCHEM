@@ -222,46 +222,50 @@ CONTAINS
 
 !Writes physical variables and fractional abundances to output file, called every time step.
     SUBROUTINE output
-        !write out cloud properties
-        write(10,8020) timeInYears,dens(dstep),temp(dstep),av(dstep),radfield,zeta,h2form,fc,fo,&
-                        &fmg,fhe,dstep
-        !and a blank line
-        write(10,8000)
-        !and then all the abundances for this step
-        write(10,8010) (specname(i),abund(i,dstep),i=1,nspec) 
-        write(10,8000)
-        !If this is the last time step of phase I, write a start file for phase II
-        IF (readAbunds .eq. 0) THEN
-           IF (switch .eq. 0 .and. timeInYears .ge. finalTime& 
-               &.or. switch .eq. 1 .and.dens(dstep) .ge. finalDens) THEN
-               write(7,8020) timeInYears,dens(dstep),temp(dstep),av(dstep),radfield,zeta,h2form,fc,fo,&
-                       &fmg,fhe,dstep
-               write(7,8000)
-               write(7,8010) (specname(i),abund(i,dstep),i=1,nspec)
-               write(7,8000)
-           ENDIF
-        ENDIF
-        8000  format(/)
-        8010  format(4(1x,a15,'=',1x,1pe10.3,:))
-        8020 format(&
-        &'age of cloud             time  = ',1pe10.3,' years',/,&
-        &'total hydrogen density   dens  = ',1pe10.4,' cm-3',/,&
-        &'cloud temperature        temp  = ',0pf10.2,' k',/,&
-        &'visual extinction        av    = ',0pf12.4,' mags',/,&
-        &'radiation field          rad   = ',0pf10.2,' (habing = 1)',/,&
-        &'cosmic ray ioniz. rate   zeta  = ',0pf10.2,' (unit = 1.3e-17s-1)',/,&
-        &'h2 formation rate coef.        = ',1pe8.2,' cm3 s-1',/,&
-        &'c / htot = ',1pe7.1,4x,' o / htot = ',1pe7.1,/&
-        &'mg / htot = ',1pe7.1,&
-        &' he / htot = ',1pe7.1,&
-        &' depth     = ',i3)
+        IF (writeCounter==writeStep) THEN
+            !write out cloud properties
+            write(10,8020) timeInYears,dens(dstep),temp(dstep),av(dstep),radfield,zeta,h2form,fc,fo,&
+                            &fmg,fhe,dstep
+            !and a blank line
+            write(10,8000)
+            !and then all the abundances for this step
+            write(10,8010) (specname(i),abund(i,dstep),i=1,nspec) 
+            write(10,8000)
+            !If this is the last time step of phase I, write a start file for
+            !phase II
+            IF (readAbunds .eq. 0) THEN
+               IF (switch .eq. 0 .and. timeInYears .ge. finalTime& 
+                   &.or. switch .eq. 1 .and.dens(dstep) .ge. finalDens) THEN
+                   write(7,8020) timeInYears,dens(dstep),temp(dstep),av(dstep),radfield,zeta,h2form,fc,fo,&
+                           &fmg,fhe,dstep
+                   write(7,8000)
+                   write(7,8010) (specname(i),abund(i,dstep),i=1,nspec)
+                   write(7,8000)
+               ENDIF
+            ENDIF
+            8000  format(/)
+            8010  format(4(1x,a15,'=',1x,1pe10.3,:))
+            8020 format(&
+            &'age of cloud             time  = ',1pe10.3,' years',/,&
+            &'total hydrogen density   dens  = ',1pe10.4,' cm-3',/,&
+            &'cloud temperature        temp  = ',0pf10.2,' k',/,&
+            &'visual extinction        av    = ',0pf12.4,' mags',/,&
+            &'radiation field          rad   = ',0pf10.2,' (habing = 1)',/,&
+            &'cosmic ray ioniz. rate   zeta  = ',0pf10.2,' (unit =1.3e-17s-1)',/,&
+            &'h2 formation rate coef.        = ',1pe8.2,' cm3 s-1',/,&
+            &'c / htot = ',1pe7.1,4x,' o / htot = ',1pe7.1,/&
+            &'mg / htot = ',1pe7.1,&
+            &' he / htot = ',1pe7.1,&
+            &' depth     = ',i3)
 
-        !Every 'writestep' timesteps, write the chosen species out to separate file
-        !choose species you're interested in by looking at parameters.f90
-        IF (writeCounter==writeStep .and. columnFlag) THEN
-            writeCounter=0
-            write(11,8030) timeInYears,dens(dstep),temp(dstep),abund(outIndx,dstep)
-            8030  format(1pe11.3,1x,1pe11.4,1x,0pf8.2,6(1x,1pe10.3))
+            ! !Every 'writestep' timesteps, write the chosen species out to
+            ! separate file
+            ! !choose species you're interested in by looking at parameters.f90
+            ! IF (writeCounter==writeStep .and. columnFlag) THEN
+            !     writeCounter=0
+            !     write(11,8030)
+            !     timeInYears,dens(dstep),temp(dstep),abund(outIndx,dstep)
+            !     8030  format(1pe11.3,1x,1pe11.4,1x,0pf8.2,6(1x,1pe10.3))
         ELSE
             writeCounter=writeCounter+1
         END IF
@@ -338,7 +342,7 @@ CONTAINS
 
     SUBROUTINE  F (NEQ, T, Y, YDOT)
         INTEGER, PARAMETER :: WP = KIND(1.0D0)
-        INTEGER NEQ
+        INTEGER NEQ,integrateCount
         REAL(WP) T
         REAL(WP), DIMENSION(NEQ) :: Y, YDOT
         INTENT(IN)  :: NEQ, T, Y
@@ -346,6 +350,9 @@ CONTAINS
         DOUBLE PRECISION :: D,loss,prod
         !Set D to the gas density for use in the ODEs
         D=y(NEQ)
+        ! Open a file to log D and T
+        ! open(31,file='output/integrator-density.out',status='unknown')
+        ! WRITE(31,*) D,T
         ydot=0.0
         !The ODEs created by MakeRates go here, they are essentially sums of terms that look like k(1,2)*y(1)*y(2)*dens. Each species ODE is made up
         !of the reactions between it and every other species it reacts with.
@@ -360,7 +367,6 @@ CONTAINS
         !                             h2 formation - h2-photodissociation
         ydot(nh2) = ydot(nh2) + h2form*y(nh)*D - h2dis*y(nh2)
         !                       h2 formation  - h2-photodissociation
-
         ! get density change from physics module to send to DLSODE
         IF (collapse .eq. 1) ydot(NEQ)=densdot(y(NEQ))
     END SUBROUTINE F
@@ -394,6 +400,7 @@ CONTAINS
 
             !Co-desorption
             IF (coflag .eq. 1) THEN
+                write(*,*) "Desorbing material from the grains to the gas phase"
                 abund(gasGrainList,dstep)=abund(gasGrainList,dstep)+abund(grainList,dstep)
                 abund(grainList,dstep)=1d-30
                 coflag=2

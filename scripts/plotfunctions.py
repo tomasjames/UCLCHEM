@@ -83,7 +83,7 @@ def readTimestep(filename,chosenTime,cloud):
                 elif 'extinction' in bits:
                    cloud['av']=float(bits[-2].replace('D','E')) 
                 elif 'cosmic' in bits:
-                   cloud['zeta']=float(bits[-4].replace('D','E'))
+                   cloud['zeta']=float(bits[-3].replace('D','E'))
                 #then read until we hit abundances
                 if bits .count('=')>3:
                     for specPos in specPosArray:

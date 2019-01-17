@@ -10,10 +10,12 @@ def analyseChemistry(resultFile,outFile,reactionFile,speciesFile,speciesName,par
     cloud['fr']=0.0
     times,dens,temp,specAbundances=read_uclchem(resultFile,[speciesName])
 
-    times = times[1::50]
-    dens = dens[1::50]
-    temp = temp[1::50]
-    specAbundances = specAbundances[1::50]
+    print(len(times))
+
+    times = times[1001::10]
+    dens = dens[1001::10]
+    temp = temp[1001::10]
+    specAbundances = specAbundances[1001::10]
 
     oldMostForms=[]
     oldMostDestructs=[]
@@ -22,14 +24,17 @@ def analyseChemistry(resultFile,outFile,reactionFile,speciesFile,speciesName,par
     destructions=[]
     formations=[]
     for time in times:
-        # print(time)
+        #print(time)
         timeStep,cloud,species,abundances=readTimestep(resultFile,time,cloud)
         abundances=np.asarray(abundances)
         cloud['mantle']=sum(abundances[grains])
         changes,reacIndxs=getChanges(speciesName,species,masses,abundances,network,cloud)#speciesName,species,abundances,network,temp,dens
+        print(changes)
+        print(reacIndxs)
 
         A=list(zip(changes,reacIndxs))
         A.sort()
+        print(A)
         changes,reacIndxs=zip(*A)
         changes=np.asarray(changes)
 
@@ -58,7 +63,7 @@ def analyseChemistry(resultFile,outFile,reactionFile,speciesFile,speciesName,par
         if set(oldMostDestructs)!=set(mostDestructs) or set(oldMostForms) !=set(mostForms):
             oldMostDestructs=mostDestructs[:]
             oldMostForms=mostForms[:]
-            with open(speciesName+'_'+outFile+'_analysis.txt', 'a') as output_file:
+            with open('analysis/'+speciesName+'_'+outFile+'_analysis.txt', 'a') as output_file:
                 output_file.write("\n***************************\nNew Important Reactions At: {0:.2e}\n".format(time))
                 output_file.write("\n")
                 output_file.write("Formation = {0:.2e} from:".format(totalProd))

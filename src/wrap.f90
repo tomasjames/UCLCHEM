@@ -2,11 +2,11 @@
 !THIS IS A SERIES OF SUBROUTINES THAT CAN BE COMPILED WITH F2PY TO PRODUCE A PYTHON MODULE
 !EACH SUBROUTINE BECOMES A PYTHON FUNCTION
 
-SUBROUTINE uclchem(init_dens,final_dens,shock_vel,phase_flag,outFile,startFile)
+SUBROUTINE uclchem(init_dens,final_dens,r_out,shock_vel,phase_flag,outFile,startFile)
     USE physics
     USE chemistry
     IMPLICIT NONE
-    double precision, INTENT(IN) :: init_dens,final_dens,shock_vel
+    double precision, INTENT(IN) :: init_dens,final_dens,r_out,shock_vel
     integer, INTENT(IN) :: phase_flag
     character(LEN=*), INTENT(IN) :: outFile,startFile
     character(LEN=100):: abundFile,outputFile,columnFile
@@ -31,28 +31,21 @@ SUBROUTINE uclchem(init_dens,final_dens,shock_vel,phase_flag,outFile,startFile)
         readAbunds=0
         evap=0
         fr=1.0
-        desorb=0
-        h2desorb=0
-        crdesorb=0
-        uvcr=0
-        IF (init_dens .gt. 1e4) THEN
-            baseAv=20
-        ELSE
-            baseAv=10
-        END IF
-        rout=(baseAv*(1.6e21)/(init_dens))/(3.086d18)
-
-    ELSE
-        switch=0
-        readAbunds=1
-        evap=1
-        fr=0.0
         desorb=1
         h2desorb=1
         crdesorb=1
         uvcr=1
-        rout=rout
-        baseAv=baseAv
+        rout=r_out
+    ELSE
+        switch=0
+        readAbunds=1
+        evap=1
+        fr=1.0
+        desorb=1
+        h2desorb=1
+        crdesorb=1
+        uvcr=1
+        rout=r_out
     END IF
 
     CALL initializePhysics
@@ -91,5 +84,4 @@ SUBROUTINE uclchem(init_dens,final_dens,shock_vel,phase_flag,outFile,startFile)
             CALL output
         END DO
     END DO 
-
 END SUBROUTINE uclchem

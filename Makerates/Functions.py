@@ -78,9 +78,9 @@ def read_reaction_file(fileName, speciesList, ftype):
 		f = open(fileName, 'rb')
 		reader = csv.reader(f, delimiter=':', quotechar='|')
 		for row in reader:
-			if all(x in keepList for x in [row[2],row[3],row[4],row[5],row[6],row[7]]): #if all the reaction elements belong to the keeplist
+			# if all(x in keepList for x in [row[2],row[3],row[4],row[5],row[6],row[7]]): #if all the reaction elements belong to the keeplist
 				#umist file doesn't have third reactant so add space and has a note for how reactions there are so remove that
-				reactions.append(Reaction(row[2:4]+['']+row[4:8]+row[9:]))
+			reactions.append(Reaction(row[2:4]+['']+row[4:8]+row[9:]))
 	if ftype == 'UCL':	# if it is a ucl made (grain?) reaction file
 		f = open(fileName, 'rb')
 		reader = csv.reader(f, delimiter=',', quotechar='|')

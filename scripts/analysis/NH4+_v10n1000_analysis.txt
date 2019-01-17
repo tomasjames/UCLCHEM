@@ -1,0 +1,525 @@
+
+***************************
+New Important Reactions At: 1.10e-04
+
+Formation = 1.14e-21 from:
+H2 + NH3+ -> NH4+ + H: 80.22%
+H3+ + NH3 -> NH4+ + H2: 17.63%
+NH3 + HCO+ -> CO + NH4+: 0.71%
+NH3 + H3O+ -> NH4+ + H2O: 0.61%
+
+Destruction = -6.75e-19 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 3.10e-04
+
+Formation = 4.77e-20 from:
+H2 + NH3+ -> NH4+ + H: 99.87%
+
+Destruction = -1.81e-20 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 1.01e+00
+
+Formation = 5.86e-18 from:
+NH3 + H3S+ -> H2S + NH4+: 40.89%
+H2 + NH3+ -> NH4+ + H: 34.94%
+CH3+ + NH3 -> NH4+ + CH2: 11.11%
+NH3 + HS+ -> S + NH4+: 6.45%
+NH3 + H2S+ -> HS + NH4+: 2.14%
+H3+ + NH3 -> NH4+ + H2: 1.80%
+NH3 + HCO+ -> CO + NH4+: 0.69%
+NH3 + H3O+ -> NH4+ + H2O: 0.67%
+CH2+ + NH3 -> NH4+ + CH: 0.54%
+
+Destruction = -1.34e-17 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 9.01e+00
+
+Formation = 8.76e-18 from:
+NH3 + H3S+ -> H2S + NH4+: 54.17%
+H2 + NH3+ -> NH4+ + H: 29.69%
+CH3+ + NH3 -> NH4+ + CH2: 6.03%
+NH3 + H3O+ -> NH4+ + H2O: 2.55%
+NH3 + H2S+ -> HS + NH4+: 2.40%
+NH3 + HS+ -> S + NH4+: 1.78%
+H3+ + NH3 -> NH4+ + H2: 1.03%
+NH3 + HCO+ -> CO + NH4+: 0.67%
+CH2+ + NH3 -> NH4+ + CH: 0.56%
+NH3 + H2CO+ -> HCO + NH4+: 0.20%
+
+Destruction = -4.14e-16 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 1.10e+01
+
+Formation = 6.32e-18 from:
+NH3 + H3S+ -> H2S + NH4+: 47.26%
+H2 + NH3+ -> NH4+ + H: 35.99%
+CH3+ + NH3 -> NH4+ + CH2: 5.41%
+NH3 + H3O+ -> NH4+ + H2O: 2.78%
+NH3 + H2S+ -> HS + NH4+: 2.60%
+NH3 + HS+ -> S + NH4+: 2.35%
+H3+ + NH3 -> NH4+ + H2: 0.98%
+NH3 + HCO+ -> CO + NH4+: 0.72%
+CH2+ + NH3 -> NH4+ + CH: 0.63%
+NH3 + H2CO+ -> HCO + NH4+: 0.24%
+NH3 + C2H2+ -> C2H + NH4+: 0.19%
+
+Destruction = -4.39e-16 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 1.50e+01
+
+Formation = 3.05e-18 from:
+H2 + NH3+ -> NH4+ + H: 56.88%
+NH3 + H3S+ -> H2S + NH4+: 26.90%
+CH3+ + NH3 -> NH4+ + CH2: 3.94%
+NH3 + HS+ -> S + NH4+: 3.08%
+NH3 + H3O+ -> NH4+ + H2O: 2.85%
+NH3 + H2S+ -> HS + NH4+: 2.24%
+H3+ + NH3 -> NH4+ + H2: 0.83%
+NH3 + HCO+ -> CO + NH4+: 0.80%
+CH2+ + NH3 -> NH4+ + CH: 0.71%
+OH + NH3+ -> NH4+ + O: 0.32%
+NH3 + H2CO+ -> HCO + NH4+: 0.31%
+NH3 + C2H2+ -> C2H + NH4+: 0.26%
+
+Destruction = -4.25e-16 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 2.30e+01
+
+Formation = 8.79e-19 from:
+H2 + NH3+ -> NH4+ + H: 91.23%
+NH3 + H3S+ -> H2S + NH4+: 1.54%
+NH3 + H3O+ -> NH4+ + H2O: 1.37%
+NH3 + HS+ -> S + NH4+: 1.09%
+OH + NH3+ -> NH4+ + O: 0.90%
+CH3+ + NH3 -> NH4+ + CH2: 0.87%
+NH3 + HCO+ -> CO + NH4+: 0.63%
+CH2+ + NH3 -> NH4+ + CH: 0.36%
+H3+ + NH3 -> NH4+ + H2: 0.32%
+NH3 + H2S+ -> HS + NH4+: 0.30%
+NH3 + C2H2+ -> C2H + NH4+: 0.29%
+NH3 + HCS+ -> CS + NH4+: 0.23%
+
+Destruction = -3.13e-16 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 2.50e+01
+
+Formation = 6.80e-19 from:
+H2 + NH3+ -> NH4+ + H: 93.82%
+OH + NH3+ -> NH4+ + O: 1.03%
+NH3 + H3O+ -> NH4+ + H2O: 1.01%
+NH3 + HS+ -> S + NH4+: 0.68%
+NH3 + H3S+ -> H2S + NH4+: 0.61%
+NH3 + HCO+ -> CO + NH4+: 0.54%
+CH3+ + NH3 -> NH4+ + CH2: 0.48%
+NH3 + C2H2+ -> C2H + NH4+: 0.25%
+CH2+ + NH3 -> NH4+ + CH: 0.24%
+H3+ + NH3 -> NH4+ + H2: 0.22%
+NH3 + HCS+ -> CS + NH4+: 0.21%
+
+Destruction = -2.85e-16 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 2.70e+01
+
+Formation = 5.32e-19 from:
+H2 + NH3+ -> NH4+ + H: 95.39%
+OH + NH3+ -> NH4+ + O: 1.15%
+NH3 + H3O+ -> NH4+ + H2O: 0.73%
+NH3 + HCO+ -> CO + NH4+: 0.44%
+NH3 + HS+ -> S + NH4+: 0.41%
+CH3+ + NH3 -> NH4+ + CH2: 0.24%
+NH3 + H3S+ -> H2S + NH4+: 0.24%
+NH3 + C2H2+ -> C2H + NH4+: 0.20%
+NH3 + HCS+ -> CS + NH4+: 0.17%
+H3+ + NH3 -> NH4+ + H2: 0.15%
+
+Destruction = -2.58e-16 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 2.90e+01
+
+Formation = 4.21e-19 from:
+H2 + NH3+ -> NH4+ + H: 96.37%
+OH + NH3+ -> NH4+ + O: 1.25%
+NH3 + H3O+ -> NH4+ + H2O: 0.51%
+NH3 + HCO+ -> CO + NH4+: 0.34%
+NH3 + HS+ -> S + NH4+: 0.25%
+NH3 + C2H2+ -> C2H + NH4+: 0.15%
+CH + NH3+ -> NH4+ + C: 0.14%
+
+Destruction = -2.33e-16 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 3.10e+01
+
+Formation = 3.37e-19 from:
+H2 + NH3+ -> NH4+ + H: 96.99%
+OH + NH3+ -> NH4+ + O: 1.34%
+NH3 + H3O+ -> NH4+ + H2O: 0.35%
+NH3 + HCO+ -> CO + NH4+: 0.26%
+NH3 + HS+ -> S + NH4+: 0.14%
+
+Destruction = -2.09e-16 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 3.30e+01
+
+Formation = 2.72e-19 from:
+H2 + NH3+ -> NH4+ + H: 97.37%
+OH + NH3+ -> NH4+ + O: 1.42%
+NH3 + H3O+ -> NH4+ + H2O: 0.24%
+
+Destruction = -1.88e-16 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 3.50e+01
+
+Formation = 2.21e-19 from:
+H2 + NH3+ -> NH4+ + H: 97.62%
+OH + NH3+ -> NH4+ + O: 1.48%
+
+Destruction = -1.69e-16 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 1.70e+03
+
+Formation = 2.04e-20 from:
+H2 + NH3+ -> NH4+ + H: 96.63%
+OH + NH3+ -> NH4+ + O: 2.32%
+NH3+ + H2O -> NH4+ + OH: 1.00%
+
+Destruction = -5.78e-19 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 2.10e+03
+
+Formation = 1.96e-20 from:
+H2 + NH3+ -> NH4+ + H: 97.13%
+NH3+ + H2O -> NH4+ + OH: 1.89%
+
+Destruction = -4.15e-19 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 5.30e+03
+
+Formation = 3.53e-21 from:
+H2 + NH3+ -> NH4+ + H: 83.17%
+NH3+ + H2O -> NH4+ + OH: 15.80%
+H3+ + NH3 -> NH4+ + H2: 0.39%
+
+Destruction = -8.03e-21 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 5.90e+03
+
+Formation = 2.89e-21 from:
+H2 + NH3+ -> NH4+ + H: 75.55%
+NH3+ + H2O -> NH4+ + OH: 22.77%
+H3+ + NH3 -> NH4+ + H2: 0.64%
+NH3 + H3O+ -> NH4+ + H2O: 0.55%
+
+Destruction = -4.93e-21 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 7.90e+03
+
+Formation = 9.74e-21 from:
+H2 + NH3+ -> NH4+ + H: 51.02%
+NH3+ + H2O -> NH4+ + OH: 44.21%
+NH3 + H3O+ -> NH4+ + H2O: 2.94%
+NH3 + HCNH+ -> HNC + NH4+: 0.60%
+NH3 + HCNH+ -> HCN + NH4+: 0.60%
+
+Destruction = -4.43e-20 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 9.10e+03
+
+Formation = 5.19e-20 from:
+NH3 + HCNH+ -> HNC + NH4+: 33.99%
+NH3 + HCNH+ -> HCN + NH4+: 33.99%
+H2 + NH3+ -> NH4+ + H: 17.13%
+NH3+ + H2O -> NH4+ + OH: 11.41%
+NH3 + H3O+ -> NH4+ + H2O: 2.30%
+NH3 + HCS+ -> CS + NH4+: 0.99%
+
+Destruction = -1.50e-17 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 1.10e+04
+
+Formation = 6.54e-20 from:
+NH3 + HCNH+ -> HNC + NH4+: 45.94%
+NH3 + HCNH+ -> HCN + NH4+: 45.94%
+H2 + NH3+ -> NH4+ + H: 4.24%
+NH3 + HCS+ -> CS + NH4+: 2.16%
+NH3 + H3O+ -> NH4+ + H2O: 0.86%
+
+Destruction = -6.60e-17 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 1.30e+04
+
+Formation = 5.22e-20 from:
+NH3 + HCNH+ -> HNC + NH4+: 45.06%
+NH3 + HCNH+ -> HCN + NH4+: 45.06%
+H2 + NH3+ -> NH4+ + H: 5.54%
+NH3 + HCS+ -> CS + NH4+: 2.53%
+NH3+ + H2O -> NH4+ + OH: 0.94%
+
+Destruction = -5.59e-17 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 4.70e+04
+
+Formation = 1.90e-20 from:
+NH3 + HCNH+ -> HNC + NH4+: 38.95%
+NH3 + HCNH+ -> HCN + NH4+: 38.95%
+H2 + NH3+ -> NH4+ + H: 13.79%
+NH3 + HCS+ -> CS + NH4+: 5.02%
+NH3+ + H2O -> NH4+ + OH: 2.29%
+NH3 + H3O+ -> NH4+ + H2O: 0.85%
+
+Destruction = -2.20e-17 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 1.11e+05
+
+Formation = 1.18e-20 from:
+H2 + NH3+ -> NH4+ + H: 69.71%
+NH3 + HCS+ -> CS + NH4+: 11.52%
+NH3+ + H2O -> NH4+ + OH: 11.17%
+NH3 + H3O+ -> NH4+ + H2O: 6.12%
+NH3 + HCNH+ -> HNC + NH4+: 0.58%
+
+Destruction = -1.69e-17 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 1.15e+05
+
+Formation = 1.38e-20 from:
+H2 + NH3+ -> NH4+ + H: 71.40%
+NH3+ + H2O -> NH4+ + OH: 11.41%
+NH3 + HCS+ -> CS + NH4+: 9.57%
+NH3 + H3O+ -> NH4+ + H2O: 6.75%
+
+Destruction = -1.96e-17 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 1.47e+05
+
+Formation = 4.43e-20 from:
+H2 + NH3+ -> NH4+ + H: 72.37%
+NH3 + H3O+ -> NH4+ + H2O: 15.42%
+NH3+ + H2O -> NH4+ + OH: 11.22%
+
+Destruction = -5.97e-17 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 1.63e+05
+
+Formation = 3.49e-20 from:
+H2 + NH3+ -> NH4+ + H: 68.14%
+NH3 + H3O+ -> NH4+ + H2O: 20.51%
+NH3+ + H2O -> NH4+ + OH: 10.35%
+NH3 + SIOH+ -> NH4+ + SIO: 0.38%
+
+Destruction = -4.44e-17 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 3.67e+05
+
+Formation = 1.59e-19 from:
+NH3 + H3O+ -> NH4+ + H2O: 85.45%
+NH3 + SIOH+ -> NH4+ + SIO: 8.40%
+H2 + NH3+ -> NH4+ + H: 4.75%
+OH + NH3+ -> NH4+ + O: 0.52%
+
+Destruction = -1.59e-16 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 9.97e+05
+
+Formation = 1.52e-19 from:
+NH3 + H3O+ -> NH4+ + H2O: 86.71%
+H2 + NH3+ -> NH4+ + H: 7.37%
+NH3 + SIOH+ -> NH4+ + SIO: 3.89%
+OH + NH3+ -> NH4+ + O: 1.03%
+NH3 + HCO+ -> CO + NH4+: 0.30%
+
+Destruction = -6.71e-17 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 1.10e+06
+
+Formation = 1.57e-19 from:
+NH3 + H3O+ -> NH4+ + H2O: 84.09%
+H2 + NH3+ -> NH4+ + H: 10.21%
+NH3 + SIOH+ -> NH4+ + SIO: 2.55%
+NH3 + HCO+ -> CO + NH4+: 1.02%
+OH + NH3+ -> NH4+ + O: 0.94%
+H3+ + NH3 -> NH4+ + H2: 0.56%
+
+Destruction = -4.65e-17 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 1.30e+06
+
+Formation = 1.18e-19 from:
+NH3 + HCO+ -> CO + NH4+: 47.12%
+H2 + NH3+ -> NH4+ + H: 28.66%
+NH3 + HSO2+ -> SO2 + NH4+: 10.13%
+NH3 + H3O+ -> NH4+ + H2O: 8.03%
+H3+ + NH3 -> NH4+ + H2: 4.96%
+NH3 + N2H+ -> N2 + NH4+: 0.52%
+
+Destruction = -7.58e-18 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 2.30e+06
+
+Formation = 1.67e-19 from:
+NH3 + HCO+ -> CO + NH4+: 45.66%
+H2 + NH3+ -> NH4+ + H: 28.45%
+NH3 + HSO2+ -> SO2 + NH4+: 10.62%
+NH3 + H3O+ -> NH4+ + H2O: 7.72%
+H3+ + NH3 -> NH4+ + H2: 5.46%
+NH3 + N2H+ -> N2 + NH4+: 0.60%
+NH3 + HCNH+ -> HNC + NH4+: 0.50%
+
+Destruction = -1.04e-17 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 2.50e+06
+
+Formation = 1.67e-19 from:
+NH3 + HCO+ -> CO + NH4+: 45.46%
+H2 + NH3+ -> NH4+ + H: 28.40%
+NH3 + HSO2+ -> SO2 + NH4+: 10.69%
+NH3 + H3O+ -> NH4+ + H2O: 7.74%
+H3+ + NH3 -> NH4+ + H2: 5.55%
+NH3 + N2H+ -> N2 + NH4+: 0.61%
+NH3 + HCNH+ -> HNC + NH4+: 0.52%
+NH3 + HCNH+ -> HCN + NH4+: 0.52%
+
+Destruction = -1.02e-17 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%
+
+***************************
+New Important Reactions At: 1.71e+07
+
+Formation = 1.44e-19 from:
+NH3 + HCO+ -> CO + NH4+: 36.72%
+H2 + NH3+ -> NH4+ + H: 26.19%
+NH3 + HSO2+ -> SO2 + NH4+: 13.86%
+NH3 + H3O+ -> NH4+ + H2O: 11.20%
+H3+ + NH3 -> NH4+ + H2: 9.60%
+NH3 + N2H+ -> N2 + NH4+: 1.02%
+NH3 + HCNH+ -> HNC + NH4+: 0.41%
+
+Destruction = -6.02e-18 from:
+NH4+ + E- -> NH3 + H: 90.91%
+NH4+ + E- -> NH2 + H2: 5.05%
+NH4+ + E- -> NH2 + H: 4.04%

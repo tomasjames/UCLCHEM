@@ -73,7 +73,9 @@ CONTAINS
         ! Uses polynomial fit from max temperature attained in mhd_vode as function of
         ! shock velocity
         ! maxTemp = 57.14*(vs**2) - 314.3*vs + 2500
-        maxTemp = -0.4986*(vs**3) + 107.8*(vs**2) - 1511*(vs) + 1.02e+04
+        ! maxTemp = -0.4986*(vs**3) + 107.8*(vs**2) - 1511*(vs) + 1.02e+04
+        !maxTemp = 50.28*(vs**2) - 60.57*(vs) + 340
+        maxTemp = (5e3)*(vs/10)**2
         write(*,*) "maxTemp=",maxTemp
 
         ! Determine minimum velocity
@@ -160,16 +162,22 @@ CONTAINS
                 targetTime=3.16d7*10.d-8
             ENDIF
         ELSE
-            IF (timeInYears .gt. 1.0d4) THEN
+            IF (timeInYears .gt. 1e6) THEN
+                targetTime=(timeInYears+1e5)/year
+            ELSE IF (timeInYears .gt. 1.0d4) THEN
                 targetTime=(timeInYears+1000)/year
-            ELSE IF (timeInYears.gt. 1.0d3) THEN
+            ELSE IF (timeInYears .gt. 1.0d3) THEN
                 targetTime=(timeInYears+100.)/year
-            ELSE IF (timeInYears .gt. 0.1) THEN
-                targetTime=(timeInYears+1.0)/year
-            ELSE IF (timeInYears .gt. 0.0001) THEN
-               targetTime=(timeInYears+0.01)/year
+            ELSE IF (timeInYears .gt. 1.) THEN
+                targetTime=(timeInYears+1.)/year
+            ELSE IF (timeInYears .gt. 0.001) THEN
+                targetTime=(timeInYears+0.1)/year
+            ELSE IF (timeInYears .gt. 0.00001) THEN
+                targetTime=(timeInYears+0.0001)/year
+            ELSE IF (timeInYears .gt. 0.000001) THEN
+               targetTime=(timeInYears+0.0000001)/year
             ELSE IF  (timeInYears.gt.0.0) THEN
-                targetTime=(timeInYears+0.00000001)/year
+                targetTime=(timeInYears+0.0000000001)/year
             ELSE
                 targetTime=3.16d-03
             ENDIF
@@ -199,11 +207,12 @@ CONTAINS
             END IF
             ! Determine the shock width (of the order of the mean free path)
             ! dCool = 1/((2**0.5)*initialDens*(pi*(2*5.291d-09)**2))
-            mfp = ((SQRT(2.0)*initialDens*(pi*(2.4e-8)**2))**(-1))/100
+            mfp = ((SQRT(2.0)*(1e3)*(pi*(2.4e-8)**2))**(-1))/1d4
             tShock = mfp/(vs*1d5)
+            !write(*,*) "tShock=",tShock
             ! Determine shock width
             !tCool = (4*initialDens)*tShock*(1d2)
-            tCool = (1/initialDens)*1d7*(60*60*24*365)
+            tCool = (1/initialDens)*1d6*(60*60*24*365)
             ! Determine the final distance
             dMax = (finalTime*(60*60*24*365))*(vs*1d5)
             ! write(*,*) "dMax=",dMax," cm"
@@ -211,7 +220,7 @@ CONTAINS
             d = currentTime*vs*1d5
             ! write(*,*) "d=",d," cm"
             ! Determine the maximum density attained
-            maxDens = vs*initialDens*(0.17d3)
+            maxDens = vs*initialDens*(1d2)
             ! Determine the rate constants
             t_lambda = LOG(maxTemp/initialTemp)
             n_lambda = LOG(maxDens/initialDens)
@@ -219,16 +228,16 @@ CONTAINS
             ! Or whether it is in the post-shock cooling phase
             ! Or whether the temperature is now constant
             IF (currentTime .le. tShock) THEN
-                write(*,*) "currentTime < tShock"
-                tn(dstep) = ((currentTime/tShock)**3)*(maxTemp-initialTemp) + initialTemp
-                dens = (((currentTime/tShock)**4)*(4*initialDens))
+                !write(*,*) "currentTime (",currentTime,") < tShock (",tShock,")"
+                tn(dstep) = ((currentTime/tShock)**2)*(maxTemp) + initialTemp
+                dens = (((currentTime/tShock)**3)*(4*initialDens))
 
                 IF (dens(1) .lt. initialDens) THEN
                     dens = initialDens
                 END IF
 
             ELSE IF (currentTime .gt. tShock .AND. currentTime .le. tCool) THEN
-                write(*,*) "currentTime > tShock .AND. currentTime < tCool"
+                !write(*,*) "currentTime > tShock .AND. currentTime < tCool"
                 ! write(*,*) "d .gt. dCool .AND. d .le. dCool*1d8"
                 ! Otherwise we're in the cooling phase
                 tn(dstep) = maxTemp*EXP(-t_lambda*(currentTime/(tCool)))
@@ -256,6 +265,9 @@ CONTAINS
 
             !At tsat, all mantle species evaporated. These flags make chem module aware of it.
             IF (timeInYears .gt. tsat .and. coflag .eq. 0) THEN
+                evap=2
+                coflag=1
+            ELSE IF (temp(dstep) .gt. 373 .and. coflag .eq. 0) THEN
                 evap=2
                 coflag=1
             ENDIF

@@ -6,6 +6,7 @@ matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import csv
+from scipy.interpolate import interp1d
 
 #to read from uclchem's full output send the filename of the output and a list of species names to read_uclchem()
 #the list for example would be ["H","C","CO","#CO"]
@@ -28,7 +29,7 @@ def read_uclchem(filename,species):
     #so now do the following until end of file
     with open(filename) as file:
         for line in file:
-            bits=line.split()        
+            bits=line.split()
             #find time line
             if  'age' in bits:
                 time.append(float(bits[-2].replace('D','E')))
@@ -42,9 +43,10 @@ def read_uclchem(filename,species):
                 tempi=float(bits[-2].replace('D','E'))
                 temp.append(tempi)
             #then read until we hit abundances
-            if bits .count('=')>2:
+            if bits .count('=')>=1:
                 for specIndx,specName in enumerate(species):
                     if specName in bits:
+                        #print(specName," is in bits")
                         abunds[specIndx].append(float(bits[2+bits.index(specName)].replace('D','E')))
 
     return time,dens,temp,abunds
@@ -287,3 +289,84 @@ def getParameters(file):
                         else:
                             cloud[vals[0]]=float(vals[1].replace('d','e'))
     return cloud 
+
+
+def averageAbundance(abundances):
+    """
+    A function to determine the average abundance 
+    Inputs:
+        abundances (arr): an array of abundances corresponding to abundance at
+        as a function of time
+    Outputs:
+        average (float): the average abundance 
+    """
+
+    average = np.mean(abundances)
+
+    return average
+
+
+def maxAbundDiff(c_abundances, j_abundances, c_times, j_times):
+    """
+    A function to determine the maximum abundance and the time at which such
+    maximum occurs
+    Inputs:
+        c_abundances (arr): an array of abundances corresponding to C-shock
+        abundance as a function of time
+        c_abundances (arr): an array of abundances corresponding to J-shock
+        abundance as a function of time
+        c_times (arr): the times that correspond to the array c_abundances
+        j_times (arr): the times that correspond to the array j_abundances
+    Outputs:
+        max_abund (float): the maximum abundance difference
+        abund_time (float): the time at which max_abund occurs at
+        max_shock (str): the shock with greater abundance at abund_time
+    """
+
+    # Interpolate between points to ensure same number of elements in each array
+    if np.size(j_abundances) > np.size(c_abundances):
+        # Changes the shape of the array to be compatible with interp1d
+        c_abundances = np.array(c_abundances).reshape(np.size(c_abundances)) 
+        c_times = np.array(c_times).reshape(np.size(c_times))
+
+        abundance_interp = interp1d(c_times, c_abundances, fill_value='extrapolate')
+        c_abundances = abundance_interp(j_times)
+        times = j_times
+    elif np.size(c_abundances) > np.size(j_abundances):
+        # Changes the shape of the array to be compatible with interp1d
+        j_abundances = np.array(j_abundances).reshape(np.size(j_abundances)) 
+        j_times = np.array(j_times).reshape(np.size(j_times))
+
+        abundance_interp = interp1d(j_times, j_abundances, fill_value='extrapolate')
+        c_abundances = abundance_interp(c_times)
+        print(np.size(c_abundances))
+        times = c_times
+
+    # Determine the difference between each abundance point 
+    abundance_diff = abs(j_abundances - c_abundances)
+
+    # Determine which shock produces greater abundance
+    if np.max(j_abundances - c_abundances) < 0:
+        max_shock = "C"
+    elif np.max(j_abundances - c_abundances) > 0:
+        max_shock = "J"
+    else:
+        max_shock = "None"
+
+    # Find the maximum abundance difference and the time that this occurs
+    max_abund = np.max(abundance_diff)
+    # [time for times, abund in enumerate(abundance_diff) if abund == max_abund]
+    # time = times[np.where(abundance_diff == max_abund)[0][0]]
+    time = times[list(abundance_diff).index(max_abund)]
+
+    return max_abund, time, max_shock
+
+
+def enhancementRatio(abundances,times):
+
+    max_abund = np.max(abundances)
+    time = times[list(abundances).index(max_abund)]
+
+    enhance_ratio = max_abund/abundances[0]
+
+    return enhance_ratio, time

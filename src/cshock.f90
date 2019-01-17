@@ -151,16 +151,29 @@ CONTAINS
                 targetTime=3.16d7*10.d-8
             ENDIF
         ELSE
-            IF (timeInYears .gt. 1.0d5) THEN
-                targetTime=(timeInYears+1.0d4)/year
-            ELSE IF (timeInYears.gt. 1.0d4) THEN
-                targetTime=(timeInYears+1000.)/year                
-            ELSE IF (timeInYears .gt. 1000) THEN
-                targetTime=(timeInYears+50.)/year
-            ELSE IF (timeInYears .gt. 100) THEN
+            !IF (timeInYears.gt. 1.0d4) THEN
+            !    targetTime=(timeInYears+1000.)/year                
+            !ELSE IF (timeInYears .gt. 1000) THEN
+            !    targetTime=(timeInYears+50.)/year
+            !ELSE IF (timeInYears .gt. 100) THEN
+            !    targetTime=(timeInYears+10.)/year
+            !ELSE IF (timeInYears .gt. 10) THEN
+            !    targetTime=(timeInYears+1.)/year
+            !ELSE IF  (timeInYears.gt.0.0) THEN
+            !    targetTime=(timeInYears+0.00000001)/year
+            !ELSE
+            !    targetTime=3.16d-03
+            !ENDIF
+            IF (timeInYears .gt. 1d6) THEN
+                targetTime=(timeInYears+1d5)/year
+            ELSE IF (timeInYears .gt. 1.0d4) THEN
+                targetTime=(timeInYears+100)/year
+            ELSE IF (timeInYears.gt. 1.0d3) THEN
                 targetTime=(timeInYears+10.)/year
-            ELSE IF (timeInYears .gt. 10) THEN
-                targetTime=(timeInYears+1.)/year
+            ELSE IF (timeInYears .gt. 0.1) THEN
+                targetTime=(timeInYears+1.0)/year
+            ELSE IF (timeInYears .gt. 0.0000001) THEN
+               targetTime=(timeInYears+0.01)/year
             ELSE IF  (timeInYears.gt.0.0) THEN
                 targetTime=(timeInYears+0.00000001)/year
             ELSE
@@ -226,7 +239,7 @@ CONTAINS
             ENDIF
 
             !At tsat, all mantle species evaporated. These flags make chem module aware of it.
-            IF (timeInYears .gt. tsat .and. coflag .eq. 0) THEN
+            IF (((timeInYears .gt. tsat) .OR. (temp(dstep) .gt. 373)) .and. coflag .eq. 0) THEN
                 evap=2
                 coflag=1
             ENDIF

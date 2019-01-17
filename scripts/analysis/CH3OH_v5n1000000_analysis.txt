@@ -1,0 +1,770 @@
+
+***************************
+New Important Reactions At: 1.10e-04
+
+Formation = 2.70e-20 from:
+CH3OH2+ + E- -> CH3OH + H: 49.64%
+#CH3OH + DEUVCR -> CH3OH + NAN: 49.18%
+CH3OH2+ + NH3 -> CH3OH + NH4+: 1.14%
+
+Destruction = -3.12e-20 from:
+H3+ + CH3OH -> CH3+ + H2O: 38.88%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 20.29%
+HCO+ + CH3OH -> CH3OH2+ + CO: 11.90%
+H3+ + CH3OH -> CH3OH2+ + H2: 8.80%
+C+ + CH3OH -> HCO + CH3+: 4.17%
+HE+ + CH3OH -> OH+ + CH3: 3.43%
+HE+ + CH3OH -> OH + CH3+: 3.43%
+H+ + CH3OH -> H3CO+ + H2: 2.47%
+CH3+ + CH3OH -> H3CO+ + CH4: 1.92%
+CH3OH + CRPHOT -> H2CO + H2: 1.15%
+C+ + CH3OH -> H3CO+ + CH: 1.04%
+H+ + CH3OH -> HCO+ + H2: 0.57%
+CH3OH + CRPHOT -> OH + CH3: 0.55%
+H+ + CH3OH -> CH3+ + H2O: 0.38%
+H3CO+ + CH3OH -> CH3OH2+ + H2CO: 0.23%
+
+***************************
+New Important Reactions At: 3.10e-04
+
+Formation = 2.71e-20 from:
+CH3OH2+ + E- -> CH3OH + H: 49.46%
+#CH3OH + DEUVCR -> CH3OH + NAN: 48.98%
+CH3OH2+ + NH3 -> CH3OH + NH4+: 1.52%
+
+Destruction = -3.12e-20 from:
+H3+ + CH3OH -> CH3+ + H2O: 38.96%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 20.33%
+HCO+ + CH3OH -> CH3OH2+ + CO: 11.93%
+H3+ + CH3OH -> CH3OH2+ + H2: 8.82%
+CH3+ + CH3OH -> H3CO+ + CH4: 3.94%
+HE+ + CH3OH -> OH+ + CH3: 3.43%
+HE+ + CH3OH -> OH + CH3+: 3.43%
+H+ + CH3OH -> H3CO+ + H2: 2.48%
+C+ + CH3OH -> HCO + CH3+: 2.46%
+CH3OH + CRPHOT -> H2CO + H2: 1.15%
+C+ + CH3OH -> H3CO+ + CH: 0.62%
+H+ + CH3OH -> HCO+ + H2: 0.57%
+CH3OH + CRPHOT -> OH + CH3: 0.55%
+H+ + CH3OH -> CH3+ + H2O: 0.38%
+
+***************************
+New Important Reactions At: 7.10e-04
+
+Formation = 2.73e-20 from:
+CH3OH2+ + E- -> CH3OH + H: 49.09%
+#CH3OH + DEUVCR -> CH3OH + NAN: 48.60%
+CH3OH2+ + NH3 -> CH3OH + NH4+: 2.28%
+
+Destruction = -3.11e-20 from:
+H3+ + CH3OH -> CH3+ + H2O: 39.03%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 20.37%
+HCO+ + CH3OH -> CH3OH2+ + CO: 11.95%
+H3+ + CH3OH -> CH3OH2+ + H2: 8.84%
+CH3+ + CH3OH -> H3CO+ + CH4: 5.84%
+HE+ + CH3OH -> OH+ + CH3: 3.43%
+HE+ + CH3OH -> OH + CH3+: 3.43%
+H+ + CH3OH -> H3CO+ + H2: 2.50%
+CH3OH + CRPHOT -> H2CO + H2: 1.15%
+C+ + CH3OH -> HCO + CH3+: 0.86%
+H+ + CH3OH -> HCO+ + H2: 0.58%
+CH3OH + CRPHOT -> OH + CH3: 0.55%
+H+ + CH3OH -> CH3+ + H2O: 0.38%
+H3CO+ + CH3OH -> CH3OH2+ + H2CO: 0.23%
+
+***************************
+New Important Reactions At: 9.10e-04
+
+Formation = 2.74e-20 from:
+CH3OH2+ + E- -> CH3OH + H: 48.90%
+#CH3OH + DEUVCR -> CH3OH + NAN: 48.41%
+CH3OH2+ + NH3 -> CH3OH + NH4+: 2.65%
+
+Destruction = -3.11e-20 from:
+H3+ + CH3OH -> CH3+ + H2O: 39.05%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 20.38%
+HCO+ + CH3OH -> CH3OH2+ + CO: 11.96%
+H3+ + CH3OH -> CH3OH2+ + H2: 8.84%
+CH3+ + CH3OH -> H3CO+ + CH4: 6.26%
+HE+ + CH3OH -> OH+ + CH3: 3.43%
+HE+ + CH3OH -> OH + CH3+: 3.43%
+H+ + CH3OH -> H3CO+ + H2: 2.51%
+CH3OH + CRPHOT -> H2CO + H2: 1.15%
+H+ + CH3OH -> HCO+ + H2: 0.58%
+CH3OH + CRPHOT -> OH + CH3: 0.55%
+C+ + CH3OH -> HCO + CH3+: 0.50%
+H+ + CH3OH -> CH3+ + H2O: 0.39%
+
+***************************
+New Important Reactions At: 1.31e-03
+
+Formation = 2.76e-20 from:
+CH3OH2+ + E- -> CH3OH + H: 48.60%
+#CH3OH + DEUVCR -> CH3OH + NAN: 48.08%
+CH3OH2+ + NH3 -> CH3OH + NH4+: 3.28%
+
+Destruction = -3.11e-20 from:
+H3+ + CH3OH -> CH3+ + H2O: 39.06%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 20.39%
+HCO+ + CH3OH -> CH3OH2+ + CO: 11.97%
+H3+ + CH3OH -> CH3OH2+ + H2: 8.84%
+CH3+ + CH3OH -> H3CO+ + CH4: 6.65%
+HE+ + CH3OH -> OH+ + CH3: 3.43%
+HE+ + CH3OH -> OH + CH3+: 3.43%
+H+ + CH3OH -> H3CO+ + H2: 2.52%
+CH3OH + CRPHOT -> H2CO + H2: 1.15%
+H+ + CH3OH -> HCO+ + H2: 0.58%
+CH3OH + CRPHOT -> OH + CH3: 0.55%
+H+ + CH3OH -> CH3+ + H2O: 0.39%
+H3CO+ + CH3OH -> CH3OH2+ + H2CO: 0.23%
+
+***************************
+New Important Reactions At: 1.51e-03
+
+Formation = 2.77e-20 from:
+CH3OH2+ + E- -> CH3OH + H: 48.47%
+#CH3OH + DEUVCR -> CH3OH + NAN: 47.95%
+CH3OH2+ + NH3 -> CH3OH + NH4+: 3.54%
+
+Destruction = -3.12e-20 from:
+H3+ + CH3OH -> CH3+ + H2O: 39.06%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 20.39%
+HCO+ + CH3OH -> CH3OH2+ + CO: 11.97%
+H3+ + CH3OH -> CH3OH2+ + H2: 8.84%
+CH3+ + CH3OH -> H3CO+ + CH4: 6.74%
+HE+ + CH3OH -> OH+ + CH3: 3.43%
+HE+ + CH3OH -> OH + CH3+: 3.43%
+H+ + CH3OH -> H3CO+ + H2: 2.52%
+CH3OH + CRPHOT -> H2CO + H2: 1.15%
+H+ + CH3OH -> HCO+ + H2: 0.58%
+CH3OH + CRPHOT -> OH + CH3: 0.55%
+H+ + CH3OH -> CH3+ + H2O: 0.39%
+
+***************************
+New Important Reactions At: 1.01e+00
+
+Formation = 2.76e-20 from:
+CH3OH2+ + E- -> CH3OH + H: 52.13%
+#CH3OH + DEUVCR -> CH3OH + NAN: 47.83%
+
+Destruction = -4.57e-20 from:
+H+ + CH3OH -> H3CO+ + H2: 28.00%
+H3+ + CH3OH -> CH3+ + H2O: 15.47%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 14.28%
+HCO+ + CH3OH -> CH3OH2+ + CO: 13.29%
+C+ + CH3OH -> HCO + CH3+: 7.92%
+H+ + CH3OH -> HCO+ + H2: 6.45%
+H+ + CH3OH -> CH3+ + H2O: 4.30%
+H3+ + CH3OH -> CH3OH2+ + H2: 3.50%
+C+ + CH3OH -> H3CO+ + CH: 1.98%
+HE+ + CH3OH -> OH+ + CH3: 1.54%
+HE+ + CH3OH -> OH + CH3+: 1.54%
+CH3OH + CRPHOT -> H2CO + H2: 0.79%
+
+***************************
+New Important Reactions At: 3.01e+00
+
+Formation = 4.34e-20 from:
+CH3OH2+ + E- -> CH3OH + H: 73.02%
+#CH3OH + DEUVCR -> CH3OH + NAN: 26.95%
+
+Destruction = -1.58e-19 from:
+H3O+ + CH3OH -> CH3OH2+ + H2O: 55.41%
+H+ + CH3OH -> H3CO+ + H2: 30.23%
+H+ + CH3OH -> HCO+ + H2: 6.97%
+H+ + CH3OH -> CH3+ + H2O: 4.64%
+CH3+ + CH3OH -> H3CO+ + CH4: 0.76%
+HCO+ + CH3OH -> CH3OH2+ + CO: 0.55%
+H3CO+ + CH3OH -> CH3OH2+ + H2CO: 0.39%
+CH3OH + CRPHOT -> H2CO + H2: 0.23%
+
+***************************
+New Important Reactions At: 5.01e+00
+
+Formation = 2.35e-20 from:
+CH3OH2+ + E- -> CH3OH + H: 50.27%
+#CH3OH + DEUVCR -> CH3OH + NAN: 49.72%
+
+Destruction = -8.58e-20 from:
+H3O+ + CH3OH -> CH3OH2+ + H2O: 67.30%
+H+ + CH3OH -> H3CO+ + H2: 11.37%
+C+ + CH3OH -> HCO + CH3+: 7.27%
+CH3+ + CH3OH -> H3CO+ + CH4: 2.69%
+H+ + CH3OH -> HCO+ + H2: 2.62%
+C+ + CH3OH -> H3CO+ + CH: 1.82%
+H3+ + CH3OH -> CH3+ + H2O: 1.75%
+H+ + CH3OH -> CH3+ + H2O: 1.75%
+HCO+ + CH3OH -> CH3OH2+ + CO: 1.48%
+CH3OH + CRPHOT -> H2CO + H2: 0.42%
+H3+ + CH3OH -> CH3OH2+ + H2: 0.40%
+HE+ + CH3OH -> OH+ + CH3: 0.37%
+
+***************************
+New Important Reactions At: 7.01e+00
+
+Formation = 1.32e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 88.92%
+CH3OH2+ + E- -> CH3OH + H: 11.08%
+
+Destruction = -5.08e-20 from:
+H3O+ + CH3OH -> CH3OH2+ + H2O: 65.73%
+CH3+ + CH3OH -> H3CO+ + CH4: 8.06%
+H3+ + CH3OH -> CH3+ + H2O: 6.52%
+H+ + CH3OH -> H3CO+ + H2: 5.94%
+C+ + CH3OH -> HCO + CH3+: 3.86%
+HCO+ + CH3OH -> CH3OH2+ + CO: 1.72%
+H3+ + CH3OH -> CH3OH2+ + H2: 1.48%
+H+ + CH3OH -> HCO+ + H2: 1.37%
+HE+ + CH3OH -> OH+ + CH3: 1.17%
+HE+ + CH3OH -> OH + CH3+: 1.17%
+C+ + CH3OH -> H3CO+ + CH: 0.97%
+H+ + CH3OH -> CH3+ + H2O: 0.91%
+CH3OH + CRPHOT -> H2CO + H2: 0.70%
+
+***************************
+New Important Reactions At: 9.01e+00
+
+Formation = 1.22e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 96.03%
+CH3OH2+ + E- -> CH3OH + H: 3.97%
+
+Destruction = -6.01e-20 from:
+H3O+ + CH3OH -> CH3OH2+ + H2O: 63.43%
+CH3+ + CH3OH -> H3CO+ + CH4: 10.50%
+H3+ + CH3OH -> CH3+ + H2O: 9.90%
+C+ + CH3OH -> HCO + CH3+: 3.06%
+HCO+ + CH3OH -> CH3OH2+ + CO: 2.28%
+H+ + CH3OH -> H3CO+ + H2: 2.25%
+H3+ + CH3OH -> CH3OH2+ + H2: 2.24%
+HE+ + CH3OH -> OH+ + CH3: 1.88%
+HE+ + CH3OH -> OH + CH3+: 1.88%
+C+ + CH3OH -> H3CO+ + CH: 0.77%
+CH3OH + CRPHOT -> H2CO + H2: 0.60%
+H+ + CH3OH -> HCO+ + H2: 0.52%
+
+***************************
+New Important Reactions At: 1.10e+01
+
+Formation = 1.23e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 94.81%
+CH3OH2+ + E- -> CH3OH + H: 5.18%
+
+Destruction = -7.55e-20 from:
+H3O+ + CH3OH -> CH3OH2+ + H2O: 65.67%
+H3+ + CH3OH -> CH3+ + H2O: 13.42%
+CH3+ + CH3OH -> H3CO+ + CH4: 5.86%
+H3+ + CH3OH -> CH3OH2+ + H2: 3.04%
+HCO+ + CH3OH -> CH3OH2+ + CO: 2.99%
+C+ + CH3OH -> HCO + CH3+: 2.44%
+HE+ + CH3OH -> OH+ + CH3: 2.10%
+HE+ + CH3OH -> OH + CH3+: 2.10%
+H+ + CH3OH -> H3CO+ + H2: 0.67%
+C+ + CH3OH -> H3CO+ + CH: 0.61%
+CH3OH + CRPHOT -> H2CO + H2: 0.47%
+
+***************************
+New Important Reactions At: 1.90e+01
+
+Formation = 1.23e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 94.97%
+CH3OH2+ + E- -> CH3OH + H: 5.03%
+
+Destruction = -6.97e-20 from:
+H3O+ + CH3OH -> CH3OH2+ + H2O: 66.88%
+H3+ + CH3OH -> CH3+ + H2O: 17.32%
+H3+ + CH3OH -> CH3OH2+ + H2: 3.92%
+HCO+ + CH3OH -> CH3OH2+ + CO: 3.37%
+C+ + CH3OH -> HCO + CH3+: 1.77%
+HE+ + CH3OH -> OH+ + CH3: 1.71%
+HE+ + CH3OH -> OH + CH3+: 1.71%
+CH3+ + CH3OH -> H3CO+ + CH4: 1.32%
+CH3OH + CRPHOT -> H2CO + H2: 0.51%
+H+ + CH3OH -> H3CO+ + H2: 0.51%
+
+***************************
+New Important Reactions At: 4.50e+01
+
+Formation = 1.23e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 94.70%
+CH3OH2+ + E- -> CH3OH + H: 5.30%
+
+Destruction = -7.01e-20 from:
+H3O+ + CH3OH -> CH3OH2+ + H2O: 67.73%
+H3+ + CH3OH -> CH3+ + H2O: 17.65%
+H3+ + CH3OH -> CH3OH2+ + H2: 4.00%
+HCO+ + CH3OH -> CH3OH2+ + CO: 3.39%
+C+ + CH3OH -> HCO + CH3+: 1.64%
+HE+ + CH3OH -> OH+ + CH3: 1.63%
+HE+ + CH3OH -> OH + CH3+: 1.63%
+CH3OH + CRPHOT -> H2CO + H2: 0.51%
+H+ + CH3OH -> H3CO+ + H2: 0.49%
+C+ + CH3OH -> H3CO+ + CH: 0.41%
+
+***************************
+New Important Reactions At: 2.50e+03
+
+Formation = 1.21e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 96.45%
+CH3OH2+ + E- -> CH3OH + H: 3.55%
+
+Destruction = -4.10e-20 from:
+H3O+ + CH3OH -> CH3OH2+ + H2O: 67.20%
+H3+ + CH3OH -> CH3+ + H2O: 18.00%
+H3+ + CH3OH -> CH3OH2+ + H2: 4.08%
+HCO+ + CH3OH -> CH3OH2+ + CO: 3.85%
+C+ + CH3OH -> HCO + CH3+: 1.54%
+HE+ + CH3OH -> OH+ + CH3: 1.50%
+HE+ + CH3OH -> OH + CH3+: 1.50%
+H+ + CH3OH -> H3CO+ + H2: 0.48%
+CH3OH + CRPHOT -> H2CO + H2: 0.47%
+C+ + CH3OH -> H3CO+ + CH: 0.39%
+CH3+ + CH3OH -> H3CO+ + CH4: 0.34%
+
+***************************
+New Important Reactions At: 6.90e+03
+
+Formation = 1.18e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 98.76%
+CH3OH2+ + E- -> CH3OH + H: 1.24%
+
+Destruction = -1.53e-20 from:
+H3O+ + CH3OH -> CH3OH2+ + H2O: 59.24%
+H3+ + CH3OH -> CH3+ + H2O: 22.10%
+HCO+ + CH3OH -> CH3OH2+ + CO: 5.73%
+H3+ + CH3OH -> CH3OH2+ + H2: 5.00%
+C+ + CH3OH -> HCO + CH3+: 1.87%
+HE+ + CH3OH -> OH+ + CH3: 1.57%
+HE+ + CH3OH -> OH + CH3+: 1.57%
+H+ + CH3OH -> H3CO+ + H2: 0.59%
+CH3OH + CRPHOT -> H2CO + H2: 0.51%
+C+ + CH3OH -> H3CO+ + CH: 0.47%
+CH3+ + CH3OH -> H3CO+ + CH4: 0.35%
+H3CO+ + CH3OH -> CH3OH2+ + H2CO: 0.32%
+
+***************************
+New Important Reactions At: 8.10e+03
+
+Formation = 1.18e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.02%
+
+Destruction = -1.24e-20 from:
+H3O+ + CH3OH -> CH3OH2+ + H2O: 56.68%
+H3+ + CH3OH -> CH3+ + H2O: 23.42%
+HCO+ + CH3OH -> CH3OH2+ + CO: 6.39%
+H3+ + CH3OH -> CH3OH2+ + H2: 5.30%
+C+ + CH3OH -> HCO + CH3+: 1.99%
+HE+ + CH3OH -> OH+ + CH3: 1.59%
+HE+ + CH3OH -> OH + CH3+: 1.59%
+H+ + CH3OH -> H3CO+ + H2: 0.62%
+CH3OH + CRPHOT -> H2CO + H2: 0.52%
+C+ + CH3OH -> H3CO+ + CH: 0.50%
+CH3+ + CH3OH -> H3CO+ + CH4: 0.36%
+H3CO+ + CH3OH -> CH3OH2+ + H2CO: 0.34%
+
+***************************
+New Important Reactions At: 2.10e+04
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.74%
+
+Destruction = -4.80e-21 from:
+H3+ + CH3OH -> CH3+ + H2O: 39.28%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 23.85%
+HCO+ + CH3OH -> CH3OH2+ + CO: 16.59%
+H3+ + CH3OH -> CH3OH2+ + H2: 8.89%
+C+ + CH3OH -> HCO + CH3+: 3.35%
+HE+ + CH3OH -> OH+ + CH3: 1.86%
+HE+ + CH3OH -> OH + CH3+: 1.86%
+H+ + CH3OH -> H3CO+ + H2: 1.08%
+C+ + CH3OH -> H3CO+ + CH: 0.84%
+CH3OH + CRPHOT -> H2CO + H2: 0.64%
+CH3+ + CH3OH -> H3CO+ + CH4: 0.46%
+CH3OH + CRPHOT -> OH + CH3: 0.30%
+H3CO+ + CH3OH -> CH3OH2+ + H2CO: 0.29%
+
+***************************
+New Important Reactions At: 2.50e+04
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.78%
+
+Destruction = -4.65e-21 from:
+H3+ + CH3OH -> CH3+ + H2O: 42.93%
+HCO+ + CH3OH -> CH3OH2+ + CO: 19.75%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 15.69%
+H3+ + CH3OH -> CH3OH2+ + H2: 9.72%
+C+ + CH3OH -> HCO + CH3+: 3.56%
+HE+ + CH3OH -> OH+ + CH3: 1.88%
+HE+ + CH3OH -> OH + CH3+: 1.88%
+H+ + CH3OH -> H3CO+ + H2: 1.20%
+C+ + CH3OH -> H3CO+ + CH: 0.89%
+CH3OH + CRPHOT -> H2CO + H2: 0.66%
+CH3+ + CH3OH -> H3CO+ + CH4: 0.49%
+CH3OH + CRPHOT -> OH + CH3: 0.31%
+H+ + CH3OH -> HCO+ + H2: 0.28%
+
+***************************
+New Important Reactions At: 3.10e+04
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.79%
+
+Destruction = -4.65e-21 from:
+H3+ + CH3OH -> CH3+ + H2O: 46.15%
+HCO+ + CH3OH -> CH3OH2+ + CO: 23.38%
+H3+ + CH3OH -> CH3OH2+ + H2: 10.45%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 7.93%
+C+ + CH3OH -> HCO + CH3+: 3.62%
+HE+ + CH3OH -> OH+ + CH3: 1.87%
+HE+ + CH3OH -> OH + CH3+: 1.87%
+H+ + CH3OH -> H3CO+ + H2: 1.32%
+C+ + CH3OH -> H3CO+ + CH: 0.90%
+CH3OH + CRPHOT -> H2CO + H2: 0.67%
+CH3+ + CH3OH -> H3CO+ + CH4: 0.52%
+CH3OH + CRPHOT -> OH + CH3: 0.32%
+
+***************************
+New Important Reactions At: 3.70e+04
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.80%
+
+Destruction = -4.71e-21 from:
+H3+ + CH3OH -> CH3+ + H2O: 47.42%
+HCO+ + CH3OH -> CH3OH2+ + CO: 25.80%
+H3+ + CH3OH -> CH3OH2+ + H2: 10.74%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 4.24%
+C+ + CH3OH -> HCO + CH3+: 3.46%
+HE+ + CH3OH -> OH+ + CH3: 1.81%
+HE+ + CH3OH -> OH + CH3+: 1.81%
+H+ + CH3OH -> H3CO+ + H2: 1.39%
+C+ + CH3OH -> H3CO+ + CH: 0.86%
+CH3OH + CRPHOT -> H2CO + H2: 0.67%
+CH3+ + CH3OH -> H3CO+ + CH4: 0.54%
+H+ + CH3OH -> HCO+ + H2: 0.32%
+
+***************************
+New Important Reactions At: 1.45e+05
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.71%
+
+Destruction = -4.76e-21 from:
+H3+ + CH3OH -> CH3+ + H2O: 44.07%
+HCO+ + CH3OH -> CH3OH2+ + CO: 35.81%
+H3+ + CH3OH -> CH3OH2+ + H2: 9.98%
+H+ + CH3OH -> H3CO+ + H2: 2.05%
+C+ + CH3OH -> HCO + CH3+: 1.97%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 1.51%
+HE+ + CH3OH -> OH+ + CH3: 1.00%
+HE+ + CH3OH -> OH + CH3+: 1.00%
+C+ + CH3OH -> H3CO+ + CH: 0.49%
+H+ + CH3OH -> HCO+ + H2: 0.47%
+CH3OH + CRPHOT -> H2CO + H2: 0.47%
+H+ + CH3OH -> CH3+ + H2O: 0.31%
+
+***************************
+New Important Reactions At: 2.47e+05
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.73%
+
+Destruction = -4.72e-21 from:
+H3+ + CH3OH -> CH3+ + H2O: 43.89%
+HCO+ + CH3OH -> CH3OH2+ + CO: 35.38%
+H3+ + CH3OH -> CH3OH2+ + H2: 9.94%
+H+ + CH3OH -> H3CO+ + H2: 2.97%
+C+ + CH3OH -> HCO + CH3+: 2.18%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 1.37%
+HE+ + CH3OH -> OH+ + CH3: 0.79%
+HE+ + CH3OH -> OH + CH3+: 0.79%
+H+ + CH3OH -> HCO+ + H2: 0.68%
+C+ + CH3OH -> H3CO+ + CH: 0.55%
+H+ + CH3OH -> CH3+ + H2O: 0.46%
+
+***************************
+New Important Reactions At: 3.25e+05
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.74%
+
+Destruction = -4.71e-21 from:
+H3+ + CH3OH -> CH3+ + H2O: 44.23%
+HCO+ + CH3OH -> CH3OH2+ + CO: 35.25%
+H3+ + CH3OH -> CH3OH2+ + H2: 10.01%
+H+ + CH3OH -> H3CO+ + H2: 3.22%
+C+ + CH3OH -> HCO + CH3+: 1.74%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 1.40%
+HE+ + CH3OH -> OH+ + CH3: 0.76%
+HE+ + CH3OH -> OH + CH3+: 0.76%
+H+ + CH3OH -> HCO+ + H2: 0.74%
+H+ + CH3OH -> CH3+ + H2O: 0.49%
+CH3OH + CRPHOT -> H2CO + H2: 0.44%
+
+***************************
+New Important Reactions At: 4.10e+06
+
+Formation = 1.16e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.81%
+
+Destruction = -4.73e-21 from:
+HCO+ + CH3OH -> CH3OH2+ + CO: 50.36%
+H3+ + CH3OH -> CH3+ + H2O: 31.19%
+H3+ + CH3OH -> CH3OH2+ + H2: 7.06%
+H+ + CH3OH -> H3CO+ + H2: 3.67%
+C+ + CH3OH -> HCO + CH3+: 1.54%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 1.38%
+H+ + CH3OH -> HCO+ + H2: 0.85%
+CH3OH + CRPHOT -> H2CO + H2: 0.83%
+HE+ + CH3OH -> OH+ + CH3: 0.77%
+HE+ + CH3OH -> OH + CH3+: 0.77%
+H+ + CH3OH -> CH3+ + H2O: 0.56%
+CH3OH + CRPHOT -> OH + CH3: 0.40%
+
+***************************
+New Important Reactions At: 4.30e+06
+
+Formation = 1.16e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.82%
+
+Destruction = -4.73e-21 from:
+HCO+ + CH3OH -> CH3OH2+ + CO: 50.76%
+H3+ + CH3OH -> CH3+ + H2O: 30.76%
+H3+ + CH3OH -> CH3OH2+ + H2: 6.96%
+H+ + CH3OH -> H3CO+ + H2: 3.61%
+C+ + CH3OH -> HCO + CH3+: 1.65%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 1.38%
+CH3OH + CRPHOT -> H2CO + H2: 0.85%
+H+ + CH3OH -> HCO+ + H2: 0.83%
+HE+ + CH3OH -> OH+ + CH3: 0.78%
+HE+ + CH3OH -> OH + CH3+: 0.78%
+H+ + CH3OH -> CH3+ + H2O: 0.56%
+C+ + CH3OH -> H3CO+ + CH: 0.41%
+
+***************************
+New Important Reactions At: 6.30e+06
+
+Formation = 1.16e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.83%
+
+Destruction = -4.74e-21 from:
+HCO+ + CH3OH -> CH3OH2+ + CO: 53.33%
+H3+ + CH3OH -> CH3+ + H2O: 27.09%
+H3+ + CH3OH -> CH3OH2+ + H2: 6.13%
+C+ + CH3OH -> HCO + CH3+: 3.25%
+H+ + CH3OH -> H3CO+ + H2: 3.09%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 1.36%
+CH3OH + CRPHOT -> H2CO + H2: 1.01%
+HE+ + CH3OH -> OH+ + CH3: 0.95%
+HE+ + CH3OH -> OH + CH3+: 0.95%
+C+ + CH3OH -> H3CO+ + CH: 0.81%
+H+ + CH3OH -> HCO+ + H2: 0.71%
+CH3OH + CRPHOT -> OH + CH3: 0.48%
+
+***************************
+New Important Reactions At: 8.70e+06
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.85%
+
+Destruction = -4.73e-21 from:
+HCO+ + CH3OH -> CH3OH2+ + CO: 52.12%
+H3+ + CH3OH -> CH3+ + H2O: 22.82%
+C+ + CH3OH -> HCO + CH3+: 8.38%
+H3+ + CH3OH -> CH3OH2+ + H2: 5.17%
+H+ + CH3OH -> H3CO+ + H2: 2.56%
+C+ + CH3OH -> H3CO+ + CH: 2.09%
+HE+ + CH3OH -> OH+ + CH3: 1.22%
+HE+ + CH3OH -> OH + CH3+: 1.22%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 1.17%
+CH3OH + CRPHOT -> H2CO + H2: 1.11%
+H+ + CH3OH -> HCO+ + H2: 0.59%
+CH3+ + CH3OH -> H3CO+ + CH4: 0.55%
+
+***************************
+New Important Reactions At: 1.73e+07
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.92%
+
+Destruction = -4.71e-21 from:
+HCO+ + CH3OH -> CH3OH2+ + CO: 41.24%
+C+ + CH3OH -> HCO + CH3+: 27.61%
+H3+ + CH3OH -> CH3+ + H2O: 12.94%
+C+ + CH3OH -> H3CO+ + CH: 6.90%
+H3+ + CH3OH -> CH3OH2+ + H2: 2.93%
+H+ + CH3OH -> H3CO+ + H2: 2.13%
+HE+ + CH3OH -> OH+ + CH3: 1.30%
+HE+ + CH3OH -> OH + CH3+: 1.30%
+CH3OH + CRPHOT -> H2CO + H2: 1.04%
+CH3+ + CH3OH -> H3CO+ + CH4: 0.59%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 0.53%
+CH3OH + CRPHOT -> OH + CH3: 0.49%
+
+***************************
+New Important Reactions At: 2.01e+07
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.92%
+
+Destruction = -4.71e-21 from:
+HCO+ + CH3OH -> CH3OH2+ + CO: 43.22%
+C+ + CH3OH -> HCO + CH3+: 26.51%
+H3+ + CH3OH -> CH3+ + H2O: 12.52%
+C+ + CH3OH -> H3CO+ + CH: 6.63%
+H3+ + CH3OH -> CH3OH2+ + H2: 2.83%
+H+ + CH3OH -> H3CO+ + H2: 1.77%
+HE+ + CH3OH -> OH+ + CH3: 1.31%
+HE+ + CH3OH -> OH + CH3+: 1.31%
+CH3OH + CRPHOT -> H2CO + H2: 1.11%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 0.69%
+CH3+ + CH3OH -> H3CO+ + CH4: 0.54%
+CH3OH + CRPHOT -> OH + CH3: 0.53%
+H+ + CH3OH -> HCO+ + H2: 0.41%
+
+***************************
+New Important Reactions At: 2.09e+07
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.91%
+
+Destruction = -4.72e-21 from:
+HCO+ + CH3OH -> CH3OH2+ + CO: 48.59%
+C+ + CH3OH -> HCO + CH3+: 20.56%
+H3+ + CH3OH -> CH3+ + H2O: 13.34%
+C+ + CH3OH -> H3CO+ + CH: 5.14%
+H3+ + CH3OH -> CH3OH2+ + H2: 3.02%
+H+ + CH3OH -> H3CO+ + H2: 2.03%
+HE+ + CH3OH -> OH+ + CH3: 1.43%
+HE+ + CH3OH -> OH + CH3+: 1.43%
+CH3OH + CRPHOT -> H2CO + H2: 1.17%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 1.05%
+CH3OH + CRPHOT -> OH + CH3: 0.55%
+H+ + CH3OH -> HCO+ + H2: 0.47%
+CH3OH + S2+ -> H2S2+ + H2CO: 0.35%
+
+***************************
+New Important Reactions At: 2.21e+07
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.90%
+
+Destruction = -4.73e-21 from:
+HCO+ + CH3OH -> CH3OH2+ + CO: 52.96%
+C+ + CH3OH -> HCO + CH3+: 15.87%
+H3+ + CH3OH -> CH3+ + H2O: 13.88%
+C+ + CH3OH -> H3CO+ + CH: 3.97%
+H3+ + CH3OH -> CH3OH2+ + H2: 3.14%
+H+ + CH3OH -> H3CO+ + H2: 2.18%
+HE+ + CH3OH -> OH+ + CH3: 1.48%
+HE+ + CH3OH -> OH + CH3+: 1.48%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 1.33%
+CH3OH + CRPHOT -> H2CO + H2: 1.22%
+CH3OH + CRPHOT -> OH + CH3: 0.58%
+H+ + CH3OH -> HCO+ + H2: 0.50%
+CH3OH + S2+ -> H2S2+ + H2CO: 0.37%
+H+ + CH3OH -> CH3+ + H2O: 0.34%
+
+***************************
+New Important Reactions At: 2.29e+07
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.90%
+
+Destruction = -4.74e-21 from:
+HCO+ + CH3OH -> CH3OH2+ + CO: 54.89%
+H3+ + CH3OH -> CH3+ + H2O: 14.03%
+C+ + CH3OH -> HCO + CH3+: 13.97%
+C+ + CH3OH -> H3CO+ + CH: 3.49%
+H3+ + CH3OH -> CH3OH2+ + H2: 3.18%
+H+ + CH3OH -> H3CO+ + H2: 2.16%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 1.56%
+HE+ + CH3OH -> OH+ + CH3: 1.49%
+HE+ + CH3OH -> OH + CH3+: 1.49%
+CH3OH + CRPHOT -> H2CO + H2: 1.24%
+CH3OH + CRPHOT -> OH + CH3: 0.59%
+H+ + CH3OH -> HCO+ + H2: 0.50%
+H3CO+ + CH3OH -> CH3OH2+ + H2CO: 0.34%
+CH3OH + S2+ -> H2S2+ + H2CO: 0.34%
+
+***************************
+New Important Reactions At: 2.31e+07
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.90%
+
+Destruction = -4.73e-21 from:
+HCO+ + CH3OH -> CH3OH2+ + CO: 55.24%
+H3+ + CH3OH -> CH3+ + H2O: 14.04%
+C+ + CH3OH -> HCO + CH3+: 13.59%
+C+ + CH3OH -> H3CO+ + CH: 3.40%
+H3+ + CH3OH -> CH3OH2+ + H2: 3.18%
+H+ + CH3OH -> H3CO+ + H2: 2.14%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 1.69%
+HE+ + CH3OH -> OH+ + CH3: 1.49%
+HE+ + CH3OH -> OH + CH3+: 1.49%
+CH3OH + CRPHOT -> H2CO + H2: 1.24%
+CH3OH + CRPHOT -> OH + CH3: 0.59%
+H+ + CH3OH -> HCO+ + H2: 0.49%
+H3CO+ + CH3OH -> CH3OH2+ + H2CO: 0.35%
+H+ + CH3OH -> CH3+ + H2O: 0.33%
+
+***************************
+New Important Reactions At: 2.37e+07
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.90%
+
+Destruction = -4.74e-21 from:
+HCO+ + CH3OH -> CH3OH2+ + CO: 55.79%
+H3+ + CH3OH -> CH3+ + H2O: 14.06%
+C+ + CH3OH -> HCO + CH3+: 12.65%
+H3+ + CH3OH -> CH3OH2+ + H2: 3.18%
+C+ + CH3OH -> H3CO+ + CH: 3.16%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 2.51%
+H+ + CH3OH -> H3CO+ + H2: 2.04%
+HE+ + CH3OH -> OH+ + CH3: 1.48%
+HE+ + CH3OH -> OH + CH3+: 1.48%
+CH3OH + CRPHOT -> H2CO + H2: 1.26%
+CH3OH + CRPHOT -> OH + CH3: 0.60%
+H+ + CH3OH -> HCO+ + H2: 0.47%
+CH3OH + S2+ -> H2S2+ + H2CO: 0.32%
+
+***************************
+New Important Reactions At: 2.65e+07
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.89%
+
+Destruction = -4.75e-21 from:
+HCO+ + CH3OH -> CH3OH2+ + CO: 57.20%
+H3+ + CH3OH -> CH3+ + H2O: 14.37%
+C+ + CH3OH -> HCO + CH3+: 9.55%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 5.35%
+H3+ + CH3OH -> CH3OH2+ + H2: 3.25%
+C+ + CH3OH -> H3CO+ + CH: 2.39%
+H+ + CH3OH -> H3CO+ + H2: 1.53%
+HE+ + CH3OH -> OH+ + CH3: 1.48%
+HE+ + CH3OH -> OH + CH3+: 1.48%
+CH3OH + CRPHOT -> H2CO + H2: 1.38%
+CH3OH + CRPHOT -> OH + CH3: 0.65%
+CH3OH + S2+ -> H2S2+ + H2CO: 0.39%
+
+***************************
+New Important Reactions At: 3.15e+07
+
+Formation = 1.17e-20 from:
+#CH3OH + DEUVCR -> CH3OH + NAN: 99.86%
+
+Destruction = -4.75e-21 from:
+HCO+ + CH3OH -> CH3OH2+ + CO: 59.77%
+H3+ + CH3OH -> CH3+ + H2O: 15.14%
+H3O+ + CH3OH -> CH3OH2+ + H2O: 6.99%
+C+ + CH3OH -> HCO + CH3+: 5.95%
+H3+ + CH3OH -> CH3OH2+ + H2: 3.43%
+CH3OH + CRPHOT -> H2CO + H2: 1.63%
+C+ + CH3OH -> H3CO+ + CH: 1.49%
+HE+ + CH3OH -> OH+ + CH3: 1.41%
+HE+ + CH3OH -> OH + CH3+: 1.41%
+H+ + CH3OH -> H3CO+ + H2: 1.02%
+CH3OH + CRPHOT -> OH + CH3: 0.77%

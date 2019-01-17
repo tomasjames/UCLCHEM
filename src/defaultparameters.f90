@@ -4,8 +4,8 @@
 
 !Initial physics variables and final  values. for temp, density and time
 initialTemp=10.0;maxTemp=300
-initialDens=2.00d4;finalDens=2.00d4
-currentTime=0.0;finalTime=1.00d6
+initialDens=1.00d2;finalDens=1.00d4
+currentTime=0.0;finalTime=1.00d8
 
 !radfield in habing, cosmic ray ionisation rates as multiple of standard
 radfield=1.0;zeta=1.0
@@ -16,7 +16,7 @@ fr=1.0;
 !Size of cloud set by inner and outer radii (rin and rout). used to calculate extinction.
 !baseAv is extinction at cloud edge
 !points is number of parcels to run model for. spaced  evenly between rin and rout
-rout=0.051847;rin=0;baseAv=0.0;points=1
+rout=1.0;rin=0;baseAv=1.0;points=1
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -44,7 +44,7 @@ desorb=1;
 h2desorb=1;crdesorb=1;uvcr=1;
 
 !evap sets thermal desorption  (0/1/2) -> (none/temp dependent/ instantaneous)
-evap=0
+evap=1
 
 !ion sets ionization fraction of carbon. See chem.f90:initialise
 ion=2
@@ -75,7 +75,7 @@ fp=2.57d-09 ; ff = 3.6d-08 !fp depleted 1/100 of solar
 !outSpecies=(/'CO ','H2S','OCS','CS '/)
 
 !writeStep sets how often columns written out. Columns written every n steps for writeStep=n.
-writeStep=1
+writeStep=2
 
 !If readAbund=1, starting abundances are read from abundFile
 !If readAbund=0, final abundances are written to abundFile

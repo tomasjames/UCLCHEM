@@ -7,7 +7,7 @@ from plotfunctions import *
 #User Inputs Go Here
 ################################################
 
-speciesNames=["HCN","HNCO","SO","SO2","H2O"]
+speciesNames=["NH3"]
 resultFiles=glob("../output/jshock/data/*")
 #resultFile="../output/jshock/data/v5n1000.dat"
 #outFile="v5n1000"

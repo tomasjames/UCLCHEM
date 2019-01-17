@@ -1,0 +1,1211 @@
+
+***************************
+New Important Reactions At: 1.10e-04
+
+Formation = 2.16e-19 from:
+OH + S -> SO + H: 48.84%
+HSO+ + E- -> SO + H: 43.18%
+O + HS -> SO + H: 3.52%
+O2 + S -> SO + O: 3.08%
+O + OCS -> SO + CO: 0.42%
+
+Destruction = -1.19e-19 from:
+C + SO -> CS + O: 40.21%
+C + SO -> S + CO: 40.21%
+N + SO -> S + NO: 16.54%
+C+ + SO -> SO+ + C: 0.51%
+C+ + SO -> CS+ + O: 0.51%
+C+ + SO -> S+ + CO: 0.51%
+C+ + SO -> S + CO+: 0.51%
+OH + SO -> SO2 + H: 0.24%
+
+***************************
+New Important Reactions At: 3.10e-04
+
+Formation = 1.28e-16 from:
+OH + S -> SO + H: 56.36%
+O + HS -> SO + H: 42.45%
+O + CS -> SO + C: 0.98%
+
+Destruction = -5.89e-18 from:
+H + SO -> S + OH: 66.08%
+N + SO -> S + NO: 12.54%
+N + SO -> NS + O: 7.35%
+OH + SO -> SO2 + H: 3.45%
+C + SO -> CS + O: 3.23%
+C + SO -> S + CO: 3.23%
+H + SO -> HS + O: 3.08%
+S + SO -> S2 + O: 0.45%
+
+***************************
+New Important Reactions At: 5.10e-04
+
+Formation = 2.43e-16 from:
+OH + S -> SO + H: 56.70%
+O + HS -> SO + H: 42.70%
+
+Destruction = -6.15e-18 from:
+H + SO -> S + OH: 64.38%
+N + SO -> S + NO: 11.94%
+N + SO -> NS + O: 7.00%
+OH + SO -> SO2 + H: 6.42%
+C + SO -> CS + O: 3.07%
+C + SO -> S + CO: 3.07%
+H + SO -> HS + O: 3.00%
+S + SO -> S2 + O: 0.42%
+
+***************************
+New Important Reactions At: 1.31e-03
+
+Formation = 5.99e-16 from:
+OH + S -> SO + H: 57.23%
+O + HS -> SO + H: 42.55%
+
+Destruction = -7.07e-18 from:
+H + SO -> S + OH: 59.55%
+OH + SO -> SO2 + H: 15.07%
+N + SO -> S + NO: 10.18%
+N + SO -> NS + O: 5.97%
+H + SO -> HS + O: 2.78%
+C + SO -> CS + O: 2.59%
+C + SO -> S + CO: 2.59%
+CH + SO -> OCS + H: 0.34%
+
+***************************
+New Important Reactions At: 1.01e+00
+
+Formation = 4.50e-20 from:
+HSO+ + E- -> SO + H: 70.46%
+O + HS -> SO + H: 15.32%
+NH3 + SO+ -> SO + NH3+: 10.75%
+OH + S -> SO + H: 2.59%
+
+Destruction = -1.96e-17 from:
+H + SO -> S + OH: 95.46%
+H + SO -> HS + O: 4.45%
+
+***************************
+New Important Reactions At: 7.01e+00
+
+Formation = 1.24e-18 from:
+O + HS -> SO + H: 74.05%
+OH + S -> SO + H: 23.08%
+HSO+ + E- -> SO + H: 2.50%
+
+Destruction = -6.70e-17 from:
+H + SO -> S + OH: 95.90%
+H + SO -> HS + O: 4.05%
+
+***************************
+New Important Reactions At: 9.01e+00
+
+Formation = 4.30e-18 from:
+O + HS -> SO + H: 74.44%
+OH + S -> SO + H: 24.74%
+
+Destruction = -2.64e-17 from:
+H + SO -> S + OH: 96.03%
+H + SO -> HS + O: 3.93%
+
+***************************
+New Important Reactions At: 8.50e+01
+
+Formation = 1.12e-15 from:
+OH + S -> SO + H: 70.35%
+O + HS -> SO + H: 29.63%
+
+Destruction = -1.12e-15 from:
+H + SO -> S + OH: 99.02%
+
+***************************
+New Important Reactions At: 1.85e+02
+
+Formation = 3.33e-16 from:
+OH + S -> SO + H: 98.14%
+O + HS -> SO + H: 1.72%
+
+Destruction = -3.30e-16 from:
+H + SO -> S + OH: 98.98%
+OH + SO -> SO2 + H: 0.28%
+
+***************************
+New Important Reactions At: 1.91e+02
+
+Formation = 2.84e-16 from:
+OH + S -> SO + H: 98.46%
+O + HS -> SO + H: 1.38%
+
+Destruction = -2.81e-16 from:
+H + SO -> S + OH: 98.77%
+N + SO -> S + NO: 0.31%
+
+***************************
+New Important Reactions At: 1.95e+02
+
+Formation = 2.54e-16 from:
+OH + S -> SO + H: 98.63%
+O + HS -> SO + H: 1.19%
+
+Destruction = -2.50e-16 from:
+H + SO -> S + OH: 98.58%
+N + SO -> S + NO: 0.36%
+C + SO -> CS + O: 0.35%
+
+***************************
+New Important Reactions At: 1.99e+02
+
+Formation = 2.26e-16 from:
+OH + S -> SO + H: 98.77%
+O + HS -> SO + H: 1.02%
+
+Destruction = -2.22e-16 from:
+H + SO -> S + OH: 98.36%
+C + SO -> CS + O: 0.43%
+C + SO -> S + CO: 0.43%
+
+***************************
+New Important Reactions At: 2.09e+02
+
+Formation = 1.65e-16 from:
+OH + S -> SO + H: 99.02%
+
+Destruction = -1.60e-16 from:
+H + SO -> S + OH: 97.55%
+C + SO -> CS + O: 0.69%
+C + SO -> S + CO: 0.69%
+N + SO -> S + NO: 0.66%
+
+***************************
+New Important Reactions At: 2.35e+02
+
+Formation = 6.45e-17 from:
+OH + S -> SO + H: 99.00%
+C + SO2 -> CO + SO: 0.71%
+
+Destruction = -5.86e-17 from:
+H + SO -> S + OH: 91.56%
+C + SO -> CS + O: 2.80%
+C + SO -> S + CO: 2.80%
+N + SO -> S + NO: 2.31%
+
+***************************
+New Important Reactions At: 3.25e+02
+
+Formation = 1.33e-18 from:
+OH + S -> SO + H: 60.22%
+C + SO2 -> CO + SO: 39.24%
+
+Destruction = -6.46e-18 from:
+C + SO -> CS + O: 40.92%
+C + SO -> S + CO: 40.92%
+N + SO -> S + NO: 17.29%
+
+***************************
+New Important Reactions At: 5.15e+02
+
+Formation = 1.53e-18 from:
+OH + S -> SO + H: 90.19%
+C + SO2 -> CO + SO: 9.76%
+
+Destruction = -2.81e-18 from:
+C + SO -> CS + O: 49.52%
+C + SO -> S + CO: 49.52%
+
+***************************
+New Important Reactions At: 6.09e+02
+
+Formation = 1.40e-18 from:
+OH + S -> SO + H: 99.06%
+
+Destruction = -1.84e-18 from:
+C + SO -> CS + O: 49.97%
+C + SO -> S + CO: 49.97%
+
+***************************
+New Important Reactions At: 2.50e+03
+
+Formation = 7.40e-19 from:
+OH + S -> SO + H: 98.83%
+O + HS -> SO + H: 0.77%
+
+Destruction = -6.96e-19 from:
+C + SO -> CS + O: 49.94%
+C + SO -> S + CO: 49.94%
+
+***************************
+New Important Reactions At: 3.10e+03
+
+Formation = 5.90e-19 from:
+OH + S -> SO + H: 98.02%
+O + HS -> SO + H: 0.94%
+O + S2 -> SO + S: 0.71%
+
+Destruction = -5.10e-19 from:
+C + SO -> CS + O: 49.88%
+C + SO -> S + CO: 49.88%
+
+***************************
+New Important Reactions At: 4.10e+03
+
+Formation = 5.03e-19 from:
+OH + S -> SO + H: 95.49%
+O + S2 -> SO + S: 2.17%
+O + HS -> SO + H: 1.19%
+HSO+ + E- -> SO + H: 0.73%
+
+Destruction = -3.80e-19 from:
+C + SO -> CS + O: 49.64%
+C + SO -> S + CO: 49.64%
+
+***************************
+New Important Reactions At: 4.70e+03
+
+Formation = 4.91e-19 from:
+OH + S -> SO + H: 93.60%
+O + S2 -> SO + S: 3.20%
+O + HS -> SO + H: 1.35%
+HSO+ + E- -> SO + H: 1.27%
+
+Destruction = -3.79e-19 from:
+C + SO -> CS + O: 49.50%
+C + SO -> S + CO: 49.50%
+OH + SO -> SO2 + H: 0.30%
+
+***************************
+New Important Reactions At: 5.70e+03
+
+Formation = 4.92e-19 from:
+OH + S -> SO + H: 90.91%
+O + S2 -> SO + S: 4.60%
+HSO+ + E- -> SO + H: 2.00%
+O + HS -> SO + H: 1.68%
+
+Destruction = -4.26e-19 from:
+C + SO -> CS + O: 49.38%
+C + SO -> S + CO: 49.38%
+CH + SO -> OCS + H: 0.34%
+
+***************************
+New Important Reactions At: 7.10e+03
+
+Formation = 5.03e-19 from:
+OH + S -> SO + H: 88.37%
+O + S2 -> SO + S: 5.99%
+HSO+ + E- -> SO + H: 2.35%
+O + HS -> SO + H: 2.28%
+C + SO2 -> CO + SO: 0.44%
+
+Destruction = -4.84e-19 from:
+C + SO -> CS + O: 49.32%
+C + SO -> S + CO: 49.32%
+CH + SO -> OCS + H: 0.40%
+
+***************************
+New Important Reactions At: 8.70e+03
+
+Formation = 5.20e-19 from:
+OH + S -> SO + H: 85.89%
+O + S2 -> SO + S: 7.53%
+O + HS -> SO + H: 3.22%
+HSO+ + E- -> SO + H: 2.30%
+C + SO2 -> CO + SO: 0.49%
+
+Destruction = -5.13e-19 from:
+C + SO -> CS + O: 49.26%
+C + SO -> S + CO: 49.26%
+CH + SO -> OCS + H: 0.47%
+CH + SO -> CO + HS: 0.39%
+
+***************************
+New Important Reactions At: 1.10e+04
+
+Formation = 5.55e-19 from:
+OH + S -> SO + H: 80.78%
+O + S2 -> SO + S: 11.05%
+O + HS -> SO + H: 4.94%
+HSO+ + E- -> SO + H: 2.27%
+
+Destruction = -5.03e-19 from:
+C + SO -> CS + O: 48.92%
+C + SO -> S + CO: 48.92%
+CH + SO -> OCS + H: 0.82%
+CH + SO -> CO + HS: 0.67%
+
+***************************
+New Important Reactions At: 1.30e+04
+
+Formation = 5.95e-19 from:
+OH + S -> SO + H: 75.80%
+O + S2 -> SO + S: 15.64%
+O + HS -> SO + H: 4.40%
+HSO+ + E- -> SO + H: 3.44%
+
+Destruction = -3.37e-19 from:
+C + SO -> CS + O: 46.54%
+C + SO -> S + CO: 46.54%
+CH + SO -> OCS + H: 2.97%
+CH + SO -> CO + HS: 2.43%
+OH + SO -> SO2 + H: 0.86%
+
+***************************
+New Important Reactions At: 1.50e+04
+
+Formation = 6.27e-19 from:
+OH + S -> SO + H: 72.56%
+O + S2 -> SO + S: 17.29%
+HSO+ + E- -> SO + H: 7.28%
+O + HS -> SO + H: 2.28%
+
+Destruction = -1.38e-19 from:
+C + SO -> CS + O: 30.92%
+C + SO -> S + CO: 30.92%
+CH + SO -> OCS + H: 16.93%
+CH + SO -> CO + HS: 13.85%
+OH + SO -> SO2 + H: 4.59%
+O + SO -> SO2 + PHOTON: 1.11%
+H3+ + SO -> HSO+ + H2: 0.53%
+HE+ + SO -> S+ + O: 0.25%
+
+***************************
+New Important Reactions At: 1.70e+04
+
+Formation = 6.74e-19 from:
+OH + S -> SO + H: 68.37%
+O + S2 -> SO + S: 17.23%
+HSO+ + E- -> SO + H: 12.15%
+O + HS -> SO + H: 1.55%
+
+Destruction = -1.30e-19 from:
+CH + SO -> OCS + H: 29.35%
+CH + SO -> CO + HS: 24.01%
+C + SO -> CS + O: 16.93%
+C + SO -> S + CO: 16.93%
+OH + SO -> SO2 + H: 8.34%
+O + SO -> SO2 + PHOTON: 1.42%
+H3+ + SO -> HSO+ + H2: 0.95%
+HE+ + SO -> S+ + O: 0.44%
+HE+ + SO -> S + O+: 0.44%
+SO + CRPHOT -> S + O: 0.36%
+
+***************************
+New Important Reactions At: 2.10e+04
+
+Formation = 7.92e-19 from:
+OH + S -> SO + H: 60.21%
+HSO+ + E- -> SO + H: 21.04%
+O + S2 -> SO + S: 16.79%
+O + HS -> SO + H: 0.98%
+
+Destruction = -1.78e-19 from:
+CH + SO -> OCS + H: 36.39%
+CH + SO -> CO + HS: 29.78%
+OH + SO -> SO2 + H: 11.33%
+C + SO -> CS + O: 8.63%
+C + SO -> S + CO: 8.63%
+H3+ + SO -> HSO+ + H2: 1.25%
+O + SO -> SO2 + PHOTON: 1.25%
+HE+ + SO -> S+ + O: 0.59%
+HE+ + SO -> S + O+: 0.59%
+SO + CRPHOT -> S + O: 0.47%
+SO + CRPHOT -> SO+ + E-: 0.47%
+
+***************************
+New Important Reactions At: 2.30e+04
+
+Formation = 8.58e-19 from:
+OH + S -> SO + H: 56.82%
+HSO+ + E- -> SO + H: 24.79%
+O + S2 -> SO + S: 16.46%
+OCS+ + E- -> C + SO: 0.93%
+
+Destruction = -2.06e-19 from:
+CH + SO -> OCS + H: 37.71%
+CH + SO -> CO + HS: 30.85%
+OH + SO -> SO2 + H: 12.17%
+C + SO -> CS + O: 6.95%
+C + SO -> S + CO: 6.95%
+H3+ + SO -> HSO+ + H2: 1.32%
+O + SO -> SO2 + PHOTON: 1.14%
+HE+ + SO -> S+ + O: 0.62%
+HE+ + SO -> S + O+: 0.62%
+SO + CRPHOT -> S + O: 0.50%
+SO + CRPHOT -> SO+ + E-: 0.50%
+
+***************************
+New Important Reactions At: 4.50e+04
+
+Formation = 1.87e-18 from:
+OH + S -> SO + H: 44.57%
+HSO+ + E- -> SO + H: 41.52%
+O + S2 -> SO + S: 12.33%
+OCS+ + E- -> C + SO: 1.03%
+
+Destruction = -6.92e-19 from:
+CH + SO -> OCS + H: 42.03%
+CH + SO -> CO + HS: 34.39%
+OH + SO -> SO2 + H: 15.96%
+C + SO -> CS + O: 1.79%
+C + SO -> S + CO: 1.79%
+H3+ + SO -> HSO+ + H2: 1.14%
+HE+ + SO -> S+ + O: 0.55%
+HE+ + SO -> S + O+: 0.55%
+SO + CRPHOT -> S + O: 0.41%
+SO + CRPHOT -> SO+ + E-: 0.41%
+
+***************************
+New Important Reactions At: 7.10e+04
+
+Formation = 5.00e-18 from:
+OH + S -> SO + H: 50.35%
+HSO+ + E- -> SO + H: 41.59%
+O + S2 -> SO + S: 7.06%
+
+Destruction = -1.60e-18 from:
+OH + SO -> SO2 + H: 46.60%
+CH + SO -> OCS + H: 26.15%
+CH + SO -> CO + HS: 21.39%
+H3+ + SO -> HSO+ + H2: 1.20%
+C + SO -> CS + O: 0.90%
+C + SO -> S + CO: 0.90%
+HE+ + SO -> S+ + O: 0.58%
+HE+ + SO -> S + O+: 0.58%
+SO + CRPHOT -> S + O: 0.42%
+SO + CRPHOT -> SO+ + E-: 0.42%
+
+***************************
+New Important Reactions At: 8.10e+04
+
+Formation = 6.89e-18 from:
+OH + S -> SO + H: 47.59%
+HSO+ + E- -> SO + H: 45.98%
+O + S2 -> SO + S: 5.42%
+OCS+ + E- -> C + SO: 0.41%
+
+Destruction = -2.13e-18 from:
+OH + SO -> SO2 + H: 75.74%
+CH + SO -> OCS + H: 10.01%
+CH + SO -> CO + HS: 8.19%
+H3+ + SO -> HSO+ + H2: 1.34%
+C + SO -> CS + O: 0.77%
+C + SO -> S + CO: 0.77%
+HE+ + SO -> S+ + O: 0.64%
+HE+ + SO -> S + O+: 0.64%
+SO + CRPHOT -> S + O: 0.46%
+SO + CRPHOT -> SO+ + E-: 0.46%
+
+***************************
+New Important Reactions At: 8.30e+04
+
+Formation = 7.17e-18 from:
+HSO+ + E- -> SO + H: 47.14%
+OH + S -> SO + H: 46.62%
+O + S2 -> SO + S: 5.20%
+OCS+ + E- -> C + SO: 0.39%
+
+Destruction = -2.27e-18 from:
+OH + SO -> SO2 + H: 80.30%
+CH + SO -> OCS + H: 7.52%
+CH + SO -> CO + HS: 6.15%
+H3+ + SO -> HSO+ + H2: 1.35%
+C + SO -> CS + O: 0.74%
+C + SO -> S + CO: 0.74%
+HE+ + SO -> S+ + O: 0.64%
+HE+ + SO -> S + O+: 0.64%
+SO + CRPHOT -> S + O: 0.46%
+SO + CRPHOT -> SO+ + E-: 0.46%
+HCO+ + SO -> HSO+ + CO: 0.39%
+
+***************************
+New Important Reactions At: 9.10e+04
+
+Formation = 7.75e-18 from:
+HSO+ + E- -> SO + H: 51.66%
+OH + S -> SO + H: 42.49%
+O + S2 -> SO + S: 4.57%
+SO2 + CRPHOT -> SO + O: 0.40%
+
+Destruction = -2.87e-18 from:
+OH + SO -> SO2 + H: 90.09%
+CH + SO -> OCS + H: 2.34%
+CH + SO -> CO + HS: 1.92%
+H3+ + SO -> HSO+ + H2: 1.29%
+C + SO -> CS + O: 0.63%
+C + SO -> S + CO: 0.63%
+HE+ + SO -> S+ + O: 0.59%
+HE+ + SO -> S + O+: 0.59%
+SO + CRPHOT -> S + O: 0.44%
+SO + CRPHOT -> SO+ + E-: 0.44%
+O + SO -> SO2 + PHOTON: 0.40%
+
+***************************
+New Important Reactions At: 9.70e+04
+
+Formation = 7.70e-18 from:
+HSO+ + E- -> SO + H: 53.99%
+OH + S -> SO + H: 40.29%
+O + S2 -> SO + S: 4.15%
+SO2 + CRPHOT -> SO + O: 0.56%
+C + SO2 -> CO + SO: 0.42%
+
+Destruction = -3.29e-18 from:
+OH + SO -> SO2 + H: 92.33%
+CH + SO -> OCS + H: 1.33%
+H3+ + SO -> HSO+ + H2: 1.20%
+CH + SO -> CO + HS: 1.09%
+C + SO -> CS + O: 0.55%
+C + SO -> S + CO: 0.55%
+HE+ + SO -> S+ + O: 0.54%
+HE+ + SO -> S + O+: 0.54%
+O + SO -> SO2 + PHOTON: 0.47%
+SO + CRPHOT -> S + O: 0.40%
+SO + CRPHOT -> SO+ + E-: 0.40%
+
+***************************
+New Important Reactions At: 9.90e+04
+
+Formation = 7.63e-18 from:
+HSO+ + E- -> SO + H: 54.51%
+OH + S -> SO + H: 39.81%
+O + S2 -> SO + S: 3.98%
+SO2 + CRPHOT -> SO + O: 0.63%
+C + SO2 -> CO + SO: 0.46%
+
+Destruction = -3.42e-18 from:
+OH + SO -> SO2 + H: 92.74%
+CH + SO -> OCS + H: 1.18%
+H3+ + SO -> HSO+ + H2: 1.17%
+CH + SO -> CO + HS: 0.97%
+C + SO -> CS + O: 0.52%
+C + SO -> S + CO: 0.52%
+HE+ + SO -> S+ + O: 0.52%
+HE+ + SO -> S + O+: 0.52%
+O + SO -> SO2 + PHOTON: 0.50%
+SO + CRPHOT -> S + O: 0.39%
+
+***************************
+New Important Reactions At: 1.13e+05
+
+Formation = 6.42e-18 from:
+HSO+ + E- -> SO + H: 54.72%
+OH + S -> SO + H: 40.18%
+O + S2 -> SO + S: 2.23%
+SO2 + CRPHOT -> SO + O: 1.30%
+C + SO2 -> CO + SO: 0.76%
+
+Destruction = -4.11e-18 from:
+OH + SO -> SO2 + H: 94.71%
+H3+ + SO -> HSO+ + H2: 0.87%
+O + SO -> SO2 + PHOTON: 0.79%
+CH + SO -> OCS + H: 0.71%
+CH + SO -> CO + HS: 0.58%
+HE+ + SO -> S+ + O: 0.36%
+HE+ + SO -> S + O+: 0.36%
+C + SO -> CS + O: 0.30%
+C + SO -> S + CO: 0.30%
+
+***************************
+New Important Reactions At: 1.17e+05
+
+Formation = 5.91e-18 from:
+HSO+ + E- -> SO + H: 53.55%
+OH + S -> SO + H: 41.50%
+O + S2 -> SO + S: 1.61%
+SO2 + CRPHOT -> SO + O: 1.60%
+C + SO2 -> CO + SO: 0.81%
+
+Destruction = -4.25e-18 from:
+OH + SO -> SO2 + H: 95.24%
+O + SO -> SO2 + PHOTON: 0.90%
+H3+ + SO -> HSO+ + H2: 0.77%
+CH + SO -> OCS + H: 0.61%
+CH + SO -> CO + HS: 0.50%
+HE+ + SO -> S+ + O: 0.31%
+HE+ + SO -> S + O+: 0.31%
+SO + CRPHOT -> S + O: 0.25%
+SO + CRPHOT -> SO+ + E-: 0.25%
+
+***************************
+New Important Reactions At: 1.19e+05
+
+Formation = 5.63e-18 from:
+HSO+ + E- -> SO + H: 52.66%
+OH + S -> SO + H: 42.40%
+SO2 + CRPHOT -> SO + O: 1.78%
+O + S2 -> SO + S: 1.33%
+C + SO2 -> CO + SO: 0.82%
+OCS+ + E- -> C + SO: 0.37%
+
+Destruction = -4.30e-18 from:
+OH + SO -> SO2 + H: 95.52%
+O + SO -> SO2 + PHOTON: 0.95%
+H3+ + SO -> HSO+ + H2: 0.72%
+CH + SO -> OCS + H: 0.57%
+CH + SO -> CO + HS: 0.46%
+HE+ + SO -> S+ + O: 0.29%
+HE+ + SO -> S + O+: 0.29%
+SO + CRPHOT -> S + O: 0.23%
+
+***************************
+New Important Reactions At: 1.23e+05
+
+Formation = 5.04e-18 from:
+HSO+ + E- -> SO + H: 50.08%
+OH + S -> SO + H: 44.81%
+SO2 + CRPHOT -> SO + O: 2.22%
+O + S2 -> SO + S: 0.88%
+C + SO2 -> CO + SO: 0.80%
+OCS+ + E- -> C + SO: 0.40%
+
+Destruction = -4.39e-18 from:
+OH + SO -> SO2 + H: 96.08%
+O + SO -> SO2 + PHOTON: 1.03%
+H3+ + SO -> HSO+ + H2: 0.61%
+CH + SO -> OCS + H: 0.47%
+CH + SO -> CO + HS: 0.39%
+HE+ + SO -> S+ + O: 0.24%
+HE+ + SO -> S + O+: 0.24%
+
+***************************
+New Important Reactions At: 1.27e+05
+
+Formation = 4.41e-18 from:
+OH + S -> SO + H: 48.23%
+HSO+ + E- -> SO + H: 46.11%
+SO2 + CRPHOT -> SO + O: 2.82%
+C + SO2 -> CO + SO: 0.70%
+O + S2 -> SO + S: 0.59%
+OCS+ + E- -> C + SO: 0.45%
+MG + SO+ -> SO + MG+: 0.30%
+
+Destruction = -4.46e-18 from:
+OH + SO -> SO2 + H: 96.68%
+O + SO -> SO2 + PHOTON: 1.08%
+H3+ + SO -> HSO+ + H2: 0.49%
+CH + SO -> OCS + H: 0.38%
+CH + SO -> CO + HS: 0.31%
+HE+ + SO -> S+ + O: 0.19%
+
+***************************
+New Important Reactions At: 1.29e+05
+
+Formation = 4.07e-18 from:
+OH + S -> SO + H: 50.45%
+HSO+ + E- -> SO + H: 43.43%
+SO2 + CRPHOT -> SO + O: 3.20%
+C + SO2 -> CO + SO: 0.62%
+O + S2 -> SO + S: 0.48%
+OCS+ + E- -> C + SO: 0.47%
+O2 + S -> SO + O: 0.38%
+
+Destruction = -4.48e-18 from:
+OH + SO -> SO2 + H: 97.00%
+O + SO -> SO2 + PHOTON: 1.08%
+H3+ + SO -> HSO+ + H2: 0.42%
+CH + SO -> OCS + H: 0.33%
+CH + SO -> CO + HS: 0.27%
+
+***************************
+New Important Reactions At: 1.31e+05
+
+Formation = 3.73e-18 from:
+OH + S -> SO + H: 53.08%
+HSO+ + E- -> SO + H: 40.12%
+SO2 + CRPHOT -> SO + O: 3.66%
+O2 + S -> SO + O: 0.59%
+C + SO2 -> CO + SO: 0.52%
+OCS+ + E- -> C + SO: 0.51%
+O + S2 -> SO + S: 0.40%
+MG + SO+ -> SO + MG+: 0.38%
+
+Destruction = -4.49e-18 from:
+OH + SO -> SO2 + H: 97.33%
+O + SO -> SO2 + PHOTON: 1.07%
+H3+ + SO -> HSO+ + H2: 0.36%
+CH + SO -> OCS + H: 0.28%
+
+***************************
+New Important Reactions At: 1.33e+05
+
+Formation = 3.37e-18 from:
+OH + S -> SO + H: 56.13%
+HSO+ + E- -> SO + H: 36.02%
+SO2 + CRPHOT -> SO + O: 4.23%
+O2 + S -> SO + O: 1.04%
+OCS+ + E- -> C + SO: 0.56%
+MG + SO+ -> SO + MG+: 0.43%
+C + SO2 -> CO + SO: 0.41%
+O + HS -> SO + H: 0.36%
+
+Destruction = -4.47e-18 from:
+OH + SO -> SO2 + H: 97.68%
+O + SO -> SO2 + PHOTON: 1.02%
+H3+ + SO -> HSO+ + H2: 0.29%
+CH + SO -> OCS + H: 0.23%
+
+***************************
+New Important Reactions At: 1.35e+05
+
+Formation = 2.99e-18 from:
+OH + S -> SO + H: 59.30%
+HSO+ + E- -> SO + H: 30.95%
+SO2 + CRPHOT -> SO + O: 4.96%
+O2 + S -> SO + O: 2.06%
+OCS+ + E- -> C + SO: 0.62%
+MG + SO+ -> SO + MG+: 0.50%
+O + HS -> SO + H: 0.42%
+C + SO2 -> CO + SO: 0.35%
+
+Destruction = -4.40e-18 from:
+OH + SO -> SO2 + H: 98.08%
+O + SO -> SO2 + PHOTON: 0.92%
+H3+ + SO -> HSO+ + H2: 0.23%
+
+***************************
+New Important Reactions At: 1.37e+05
+
+Formation = 2.58e-18 from:
+OH + S -> SO + H: 62.19%
+HSO+ + E- -> SO + H: 24.78%
+SO2 + CRPHOT -> SO + O: 5.97%
+O2 + S -> SO + O: 4.02%
+OCS+ + E- -> C + SO: 0.71%
+MG + SO+ -> SO + MG+: 0.60%
+O + HS -> SO + H: 0.47%
+C + SO2 -> CO + SO: 0.35%
+
+Destruction = -4.23e-18 from:
+OH + SO -> SO2 + H: 98.54%
+O + SO -> SO2 + PHOTON: 0.75%
+
+***************************
+New Important Reactions At: 1.39e+05
+
+Formation = 2.07e-18 from:
+OH + S -> SO + H: 64.67%
+HSO+ + E- -> SO + H: 17.56%
+SO2 + CRPHOT -> SO + O: 7.70%
+O2 + S -> SO + O: 6.38%
+OCS+ + E- -> C + SO: 0.87%
+MG + SO+ -> SO + MG+: 0.78%
+O + HS -> SO + H: 0.53%
+HSO2+ + E- -> SO + OH: 0.45%
+HSO2+ + E- -> SO + O: 0.45%
+
+Destruction = -3.84e-18 from:
+OH + SO -> SO2 + H: 99.09%
+
+***************************
+New Important Reactions At: 1.43e+05
+
+Formation = 7.07e-19 from:
+OH + S -> SO + H: 59.41%
+SO2 + CRPHOT -> SO + O: 23.52%
+O2 + S -> SO + O: 4.48%
+OCS+ + E- -> C + SO: 2.66%
+MG + SO+ -> SO + MG+: 2.65%
+HSO+ + E- -> SO + H: 2.13%
+HSO2+ + E- -> SO + OH: 1.41%
+HSO2+ + E- -> SO + O: 1.41%
+C + SO2 -> CO + SO: 1.10%
+O + HS -> SO + H: 0.80%
+
+Destruction = -9.01e-19 from:
+OH + SO -> SO2 + H: 99.91%
+
+***************************
+New Important Reactions At: 1.47e+05
+
+Formation = 5.80e-19 from:
+OH + S -> SO + H: 55.84%
+SO2 + CRPHOT -> SO + O: 28.72%
+MG + SO+ -> SO + MG+: 3.88%
+OCS+ + E- -> C + SO: 3.58%
+HSO2+ + E- -> SO + OH: 1.76%
+HSO2+ + E- -> SO + O: 1.76%
+O2 + S -> SO + O: 1.68%
+C + SO2 -> CO + SO: 1.17%
+NH3 + SO+ -> SO + NH3+: 0.58%
+O + HS -> SO + H: 0.51%
+
+Destruction = -5.44e-19 from:
+OH + SO -> SO2 + H: 99.99%
+
+***************************
+New Important Reactions At: 1.49e+05
+
+Formation = 5.75e-19 from:
+OH + S -> SO + H: 55.70%
+SO2 + CRPHOT -> SO + O: 28.98%
+MG + SO+ -> SO + MG+: 4.06%
+OCS+ + E- -> C + SO: 3.66%
+HSO2+ + E- -> SO + OH: 1.79%
+HSO2+ + E- -> SO + O: 1.79%
+O2 + S -> SO + O: 1.35%
+C + SO2 -> CO + SO: 1.12%
+NH3 + SO+ -> SO + NH3+: 0.70%
+
+Destruction = -5.36e-19 from:
+OH + SO -> SO2 + H: 99.99%
+
+***************************
+New Important Reactions At: 1.79e+05
+
+Formation = 5.63e-19 from:
+OH + S -> SO + H: 55.15%
+SO2 + CRPHOT -> SO + O: 29.86%
+MG + SO+ -> SO + MG+: 4.46%
+OCS+ + E- -> C + SO: 3.34%
+HSO2+ + E- -> SO + OH: 2.13%
+HSO2+ + E- -> SO + O: 2.13%
+NH3 + SO+ -> SO + NH3+: 1.18%
+O2 + S -> SO + O: 0.76%
+
+Destruction = -5.21e-19 from:
+OH + SO -> SO2 + H: 100.00%
+
+***************************
+New Important Reactions At: 4.39e+05
+
+Formation = 7.18e-19 from:
+OH + S -> SO + H: 49.11%
+SO2 + CRPHOT -> SO + O: 24.52%
+HSO2+ + E- -> SO + OH: 9.44%
+HSO2+ + E- -> SO + O: 9.44%
+MG + SO+ -> SO + MG+: 3.06%
+O2 + S -> SO + O: 2.14%
+NH3 + SO+ -> SO + NH3+: 1.31%
+
+Destruction = -5.80e-19 from:
+OH + SO -> SO2 + H: 100.00%
+
+***************************
+New Important Reactions At: 5.85e+05
+
+Formation = 1.91e-18 from:
+HSO2+ + E- -> SO + OH: 29.35%
+HSO2+ + E- -> SO + O: 29.35%
+OH + S -> SO + H: 25.45%
+SO2 + CRPHOT -> SO + O: 9.32%
+O2 + S -> SO + O: 4.87%
+NH3 + SO+ -> SO + NH3+: 0.68%
+
+Destruction = -8.61e-19 from:
+OH + SO -> SO2 + H: 99.99%
+
+***************************
+New Important Reactions At: 6.21e+05
+
+Formation = 2.64e-18 from:
+HSO2+ + E- -> SO + OH: 32.53%
+HSO2+ + E- -> SO + O: 32.53%
+O2 + S -> SO + O: 17.96%
+OH + S -> SO + H: 8.69%
+SO2 + CRPHOT -> SO + O: 6.77%
+NH3 + SO+ -> SO + NH3+: 0.46%
+HSO+ + E- -> SO + H: 0.38%
+
+Destruction = -1.10e-18 from:
+OH + SO -> SO2 + H: 99.87%
+
+***************************
+New Important Reactions At: 6.27e+05
+
+Formation = 2.79e-18 from:
+HSO2+ + E- -> SO + OH: 31.37%
+HSO2+ + E- -> SO + O: 31.37%
+O2 + S -> SO + O: 25.17%
+SO2 + CRPHOT -> SO + O: 6.39%
+HSO+ + E- -> SO + H: 3.86%
+OH + S -> SO + H: 0.80%
+NH3 + SO+ -> SO + NH3+: 0.42%
+
+Destruction = -8.05e-19 from:
+OH + SO -> SO2 + H: 97.76%
+HCO+ + SO -> HSO+ + CO: 1.44%
+
+***************************
+New Important Reactions At: 6.29e+05
+
+Formation = 2.92e-18 from:
+HSO2+ + E- -> SO + OH: 30.34%
+HSO2+ + E- -> SO + O: 30.34%
+O2 + S -> SO + O: 24.57%
+HSO+ + E- -> SO + H: 7.37%
+SO2 + CRPHOT -> SO + O: 6.08%
+NH3 + SO+ -> SO + NH3+: 0.40%
+
+Destruction = -7.63e-19 from:
+OH + SO -> SO2 + H: 94.74%
+HCO+ + SO -> HSO+ + CO: 3.08%
+O + SO -> SO2 + PHOTON: 1.11%
+H3+ + SO -> HSO+ + H2: 0.63%
+
+***************************
+New Important Reactions At: 6.35e+05
+
+Formation = 3.36e-18 from:
+HSO2+ + E- -> SO + OH: 27.32%
+HSO2+ + E- -> SO + O: 27.32%
+O2 + S -> SO + O: 21.89%
+HSO+ + E- -> SO + H: 17.32%
+SO2 + CRPHOT -> SO + O: 5.23%
+
+Destruction = -7.80e-19 from:
+OH + SO -> SO2 + H: 81.66%
+HCO+ + SO -> HSO+ + CO: 8.42%
+O + SO -> SO2 + PHOTON: 7.05%
+H3+ + SO -> HSO+ + H2: 1.68%
+HE+ + SO -> S+ + O: 0.19%
+
+***************************
+New Important Reactions At: 6.37e+05
+
+Formation = 3.51e-18 from:
+HSO2+ + E- -> SO + OH: 26.40%
+HSO2+ + E- -> SO + O: 26.40%
+O2 + S -> SO + O: 21.07%
+HSO+ + E- -> SO + H: 20.27%
+SO2 + CRPHOT -> SO + O: 4.98%
+
+Destruction = -7.99e-19 from:
+OH + SO -> SO2 + H: 76.26%
+HCO+ + SO -> HSO+ + CO: 10.16%
+O + SO -> SO2 + PHOTON: 10.15%
+H3+ + SO -> HSO+ + H2: 2.02%
+HE+ + SO -> S+ + O: 0.23%
+HE+ + SO -> S + O+: 0.23%
+
+***************************
+New Important Reactions At: 6.39e+05
+
+Formation = 3.66e-18 from:
+HSO2+ + E- -> SO + OH: 25.54%
+HSO2+ + E- -> SO + O: 25.54%
+HSO+ + E- -> SO + H: 23.03%
+O2 + S -> SO + O: 20.31%
+SO2 + CRPHOT -> SO + O: 4.77%
+
+Destruction = -8.23e-19 from:
+OH + SO -> SO2 + H: 70.66%
+O + SO -> SO2 + PHOTON: 13.64%
+HCO+ + SO -> HSO+ + CO: 11.75%
+H3+ + SO -> HSO+ + H2: 2.32%
+HE+ + SO -> S+ + O: 0.26%
+HE+ + SO -> S + O+: 0.26%
+H+ + SO -> SO+ + H: 0.18%
+
+***************************
+New Important Reactions At: 6.41e+05
+
+Formation = 3.80e-18 from:
+HSO+ + E- -> SO + H: 25.55%
+HSO2+ + E- -> SO + OH: 24.73%
+HSO2+ + E- -> SO + O: 24.73%
+O2 + S -> SO + O: 19.63%
+SO2 + CRPHOT -> SO + O: 4.56%
+
+Destruction = -8.54e-19 from:
+OH + SO -> SO2 + H: 65.04%
+O + SO -> SO2 + PHOTON: 17.41%
+HCO+ + SO -> HSO+ + CO: 13.15%
+H3+ + SO -> HSO+ + H2: 2.59%
+HE+ + SO -> S+ + O: 0.29%
+HE+ + SO -> S + O+: 0.29%
+H+ + SO -> SO+ + H: 0.21%
+SO + CRPHOT -> S + O: 0.18%
+
+***************************
+New Important Reactions At: 6.45e+05
+
+Formation = 4.07e-18 from:
+HSO+ + E- -> SO + H: 29.93%
+HSO2+ + E- -> SO + OH: 23.33%
+HSO2+ + E- -> SO + O: 23.33%
+O2 + S -> SO + O: 18.45%
+SO2 + CRPHOT -> SO + O: 4.23%
+
+Destruction = -9.32e-19 from:
+OH + SO -> SO2 + H: 54.41%
+O + SO -> SO2 + PHOTON: 25.18%
+HCO+ + SO -> HSO+ + CO: 15.32%
+H3+ + SO -> HSO+ + H2: 2.99%
+HE+ + SO -> S+ + O: 0.33%
+HE+ + SO -> S + O+: 0.33%
+H+ + SO -> SO+ + H: 0.24%
+SO + CRPHOT -> S + O: 0.20%
+SO + CRPHOT -> SO+ + E-: 0.20%
+
+***************************
+New Important Reactions At: 6.87e+05
+
+Formation = 4.92e-18 from:
+HSO+ + E- -> SO + H: 40.20%
+HSO2+ + E- -> SO + OH: 20.01%
+HSO2+ + E- -> SO + O: 20.01%
+O2 + S -> SO + O: 15.72%
+SO2 + CRPHOT -> SO + O: 3.42%
+
+Destruction = -1.62e-18 from:
+O + SO -> SO2 + PHOTON: 65.73%
+HCO+ + SO -> HSO+ + CO: 14.87%
+OH + SO -> SO2 + H: 14.52%
+H3+ + SO -> HSO+ + H2: 2.82%
+HE+ + SO -> S+ + O: 0.32%
+HE+ + SO -> S + O+: 0.32%
+H+ + SO -> SO+ + H: 0.24%
+SO + CRPHOT -> S + O: 0.19%
+
+***************************
+New Important Reactions At: 7.17e+05
+
+Formation = 4.57e-18 from:
+HSO+ + E- -> SO + H: 35.10%
+HSO2+ + E- -> SO + OH: 21.72%
+HSO2+ + E- -> SO + O: 21.72%
+O2 + S -> SO + O: 17.02%
+SO2 + CRPHOT -> SO + O: 3.74%
+
+Destruction = -1.59e-18 from:
+O + SO -> SO2 + PHOTON: 73.71%
+HCO+ + SO -> HSO+ + CO: 12.41%
+OH + SO -> SO2 + H: 9.81%
+H3+ + SO -> HSO+ + H2: 2.35%
+HE+ + SO -> S+ + O: 0.26%
+HE+ + SO -> S + O+: 0.26%
+H+ + SO -> SO+ + H: 0.20%
+
+***************************
+New Important Reactions At: 7.55e+05
+
+Formation = 4.24e-18 from:
+HSO+ + E- -> SO + H: 29.81%
+HSO2+ + E- -> SO + OH: 23.45%
+HSO2+ + E- -> SO + O: 23.45%
+O2 + S -> SO + O: 18.42%
+SO2 + CRPHOT -> SO + O: 4.09%
+
+Destruction = -1.52e-18 from:
+O + SO -> SO2 + PHOTON: 79.35%
+HCO+ + SO -> HSO+ + CO: 10.33%
+OH + SO -> SO2 + H: 6.92%
+H3+ + SO -> HSO+ + H2: 1.95%
+HE+ + SO -> S+ + O: 0.22%
+HE+ + SO -> S + O+: 0.22%
+
+***************************
+New Important Reactions At: 8.13e+05
+
+Formation = 3.95e-18 from:
+HSO2+ + E- -> SO + OH: 25.08%
+HSO2+ + E- -> SO + O: 25.08%
+HSO+ + E- -> SO + H: 24.66%
+O2 + S -> SO + O: 19.87%
+SO2 + CRPHOT -> SO + O: 4.44%
+
+Destruction = -1.46e-18 from:
+O + SO -> SO2 + PHOTON: 84.23%
+HCO+ + SO -> HSO+ + CO: 8.35%
+OH + SO -> SO2 + H: 4.67%
+H3+ + SO -> HSO+ + H2: 1.58%
+HE+ + SO -> S+ + O: 0.18%
+
+***************************
+New Important Reactions At: 8.77e+05
+
+Formation = 3.76e-18 from:
+HSO2+ + E- -> SO + OH: 26.16%
+HSO2+ + E- -> SO + O: 26.16%
+HSO+ + E- -> SO + H: 21.07%
+O2 + S -> SO + O: 20.99%
+SO2 + CRPHOT -> SO + O: 4.70%
+
+Destruction = -1.43e-18 from:
+O + SO -> SO2 + PHOTON: 87.29%
+HCO+ + SO -> HSO+ + CO: 6.99%
+OH + SO -> SO2 + H: 3.40%
+H3+ + SO -> HSO+ + H2: 1.33%
+
+***************************
+New Important Reactions At: 1.10e+06
+
+Formation = 3.45e-18 from:
+HSO2+ + E- -> SO + OH: 27.77%
+HSO2+ + E- -> SO + O: 27.77%
+O2 + S -> SO + O: 23.41%
+HSO+ + E- -> SO + H: 14.83%
+SO2 + CRPHOT -> SO + O: 5.20%
+NH3 + SO+ -> SO + NH3+: 0.62%
+
+Destruction = -1.40e-18 from:
+O + SO -> SO2 + PHOTON: 91.88%
+HCO+ + SO -> HSO+ + CO: 4.72%
+OH + SO -> SO2 + H: 1.77%
+H3+ + SO -> HSO+ + H2: 0.92%
+
+***************************
+New Important Reactions At: 2.10e+06
+
+Formation = 3.01e-18 from:
+HSO2+ + E- -> SO + OH: 28.37%
+HSO2+ + E- -> SO + O: 28.37%
+O2 + S -> SO + O: 27.68%
+HSO+ + E- -> SO + H: 8.30%
+SO2 + CRPHOT -> SO + O: 6.06%
+NH3 + SO+ -> SO + NH3+: 0.71%
+
+Destruction = -1.38e-18 from:
+O + SO -> SO2 + PHOTON: 95.72%
+HCO+ + SO -> HSO+ + CO: 2.52%
+OH + SO -> SO2 + H: 0.76%
+
+***************************
+New Important Reactions At: 7.10e+06
+
+Formation = 2.40e-18 from:
+O2 + S -> SO + O: 33.19%
+HSO2+ + E- -> SO + OH: 25.79%
+HSO2+ + E- -> SO + O: 25.79%
+SO2 + CRPHOT -> SO + O: 7.96%
+HSO+ + E- -> SO + H: 5.62%
+NH3 + SO+ -> SO + NH3+: 0.80%
+
+Destruction = -1.35e-18 from:
+O + SO -> SO2 + PHOTON: 96.27%
+HCO+ + SO -> HSO+ + CO: 1.79%
+OH + SO -> SO2 + H: 0.94%
+H3+ + SO -> HSO+ + H2: 0.56%
+
+***************************
+New Important Reactions At: 1.03e+07
+
+Formation = 2.23e-18 from:
+O2 + S -> SO + O: 34.68%
+HSO2+ + E- -> SO + OH: 24.65%
+HSO2+ + E- -> SO + O: 24.65%
+SO2 + CRPHOT -> SO + O: 8.80%
+HSO+ + E- -> SO + H: 5.39%
+NH3 + SO+ -> SO + NH3+: 0.82%
+MG + SO+ -> SO + MG+: 0.68%
+
+Destruction = -1.33e-18 from:
+O + SO -> SO2 + PHOTON: 95.84%
+HCO+ + SO -> HSO+ + CO: 1.77%
+OH + SO -> SO2 + H: 1.28%
+H3+ + SO -> HSO+ + H2: 0.63%
+
+***************************
+New Important Reactions At: 7.83e+07
+
+Formation = 1.64e-18 from:
+O2 + S -> SO + O: 38.57%
+SO2 + CRPHOT -> SO + O: 18.85%
+HSO2+ + E- -> SO + OH: 17.61%
+HSO2+ + E- -> SO + O: 17.61%
+HSO+ + E- -> SO + H: 4.06%
+MG + SO+ -> SO + MG+: 2.31%
+
+Destruction = -1.34e-18 from:
+O + SO -> SO2 + PHOTON: 82.13%
+OH + SO -> SO2 + H: 14.46%
+HCO+ + SO -> HSO+ + CO: 1.55%
+H3+ + SO -> HSO+ + H2: 1.10%
