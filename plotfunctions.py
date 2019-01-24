@@ -362,11 +362,11 @@ def maxAbundDiff(c_abundances, j_abundances, c_times, j_times):
     return max_abund, time, max_shock
 
 
-def enhancementRatio(abundances,times):
+def enhancementRatio(abundances,relativeAbundance,times):
 
     max_abund = np.max(abundances)
-    time = times[list(abundances).index(max_abund)]
+    time = times[list(abundances).index(relativeAbundance)]
 
-    enhance_ratio = max_abund/abundances[0]
+    enhance_ratio = max_abund/relativeAbundance
 
     return enhance_ratio, time

@@ -3,5 +3,7 @@ plots-H/
 plots-S/
 plots1/
 plots2/
+plots/combined/
+enhance/
 output/
 scripts/*.txt
