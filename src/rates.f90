@@ -31,7 +31,7 @@ SUBROUTINE calculateReactionRates
                         IF (specname(i).eq.re1(j)) THEN
                             IF (beta(j).eq.0.0 ) THEN
                                 !taken from Rawlings et al. 1992
-                                rate(j)=4.57d4*alpha(j)*dsqrt(temp(dstep)/mass(i))*GRAIN_AREA*fr
+                                rate(j)=4.57d4*alpha(j)*dsqrt(temp(dstep)/mass(i))*GRAIN_AREA*fr    
                             ELSE
                                 !Make rates sets beta=1 for ion freeze out. this catches that and
                                 !freezes differently

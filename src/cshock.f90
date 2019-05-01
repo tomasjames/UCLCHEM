@@ -239,7 +239,8 @@ CONTAINS
             ENDIF
 
             !At tsat, all mantle species evaporated. These flags make chem module aware of it.
-            IF (((timeInYears .gt. tsat) .OR. (temp(dstep) .gt. 373)) .and. coflag .eq. 0) THEN
+            IF (((timeInYears .gt. tsat) .OR. (temp(dstep) .gt. 100)) .and.
+               coflag .eq. 0) THEN
                 evap=2
                 coflag=1
             ENDIF

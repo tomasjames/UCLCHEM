@@ -1,0 +1,46 @@
+
+################################################
+Reading and checking input
+################################################
+
+
+Removing unused species...
+	Species in input list that do not appear in final list:
+	 []
+
+
+Calculating molecular masses and elemental constituents...
+Sorting species by mass...
+Checking reactions...
+	Species with multiple freeze outs, check alphas:
+	H does not freeze out
+	H+ does not freeze out
+	H2 does not freeze out
+	H2+ does not freeze out
+	H3+ does not freeze out
+	HE does not freeze out
+	HE+ does not freeze out
+	HEH+ does not freeze out
+	CO freezes out through 3 routes
+	CH2OH does not freeze out
+
+	Possible duplicate reactions for manual removal:
+	None
+
+################################################
+Checks complete, writing output files
+################################################
+
+
+Writing final species file...
+('\tFinal Species File:', 'outputFiles/species.csv')
+Writing final reaction file...
+('\tFinal Reaction File:', 'outputFiles/reactions.csv')
+Writing system of ODEs in F95 format...
+('\tFinal ODE file:', 'outputFiles/odes.f90')
+Writing Network File...
+('\tFinal Network file:', 'outputFiles/network.f90')
+
+nspec= 216
+nreac= 2457
+ngrain=51

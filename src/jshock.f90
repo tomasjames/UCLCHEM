@@ -76,6 +76,7 @@ CONTAINS
         ! maxTemp = -0.4986*(vs**3) + 107.8*(vs**2) - 1511*(vs) + 1.02e+04
         !maxTemp = 50.28*(vs**2) - 60.57*(vs) + 340
         maxTemp = (5e3)*(vs/10)**2
+        write(*,*) "vs=",vs
         write(*,*) "maxTemp=",maxTemp
 
         ! Determine minimum velocity
@@ -243,8 +244,9 @@ CONTAINS
                 tn(dstep) = maxTemp*EXP(-t_lambda*(currentTime/(tCool)))
                 dens = (4*initialDens)*EXP(n_lambda*(currentTime/(tCool)))
 
-                IF (tn(dstep) .le. initialTemp) THEN
-                    tn(dstep) = initialTemp
+                ! Ensure the gas does not cool below around 100 K
+                IF (tn(dstep) .le. 100) THEN
+                    tn(dstep) = 100
                 END IF
 
                 IF (dens(1) .gt. maxDens) THEN
@@ -252,7 +254,7 @@ CONTAINS
                 END IF
 
             ELSE
-                tn(dstep) = initialTemp
+                tn(dstep) = 100
                 dens = maxDens
             END IF
             ! write(*,*) "Temperature, tn: ", tn(dstep)
@@ -267,7 +269,7 @@ CONTAINS
             IF (timeInYears .gt. tsat .and. coflag .eq. 0) THEN
                 evap=2
                 coflag=1
-            ELSE IF (temp(dstep) .gt. 373 .and. coflag .eq. 0) THEN
+            ELSE IF (temp(dstep) .gt. 100 .and. coflag .eq. 0) THEN
                 evap=2
                 coflag=1
             ENDIF

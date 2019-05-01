@@ -11,8 +11,8 @@ import itertools
 from Functions import *
 
 
-reactions1='inputFiles/umist12.csv'
-reactions2='inputFiles/umist12-ucledit.csv'
+reactions1='inputFiles/umist12-ucledit.csv'
+reactions2='inputFiles/kida.uva.2014.csv'
 speciesFile = 'inputFiles/uclspeciesbasic.csv'
 
 #differences are only relevant insofar as the missing reactions contain your species
@@ -24,10 +24,10 @@ make_capitals(speciesFile)
 
 
 print '\nReading reactions'
-nReactions2, reactions2 = read_reaction_file(reactions2,speciesList,'UMIST')
-nReactions1, reactions1 = read_reaction_file(reactions1, speciesList,'UMIST')
+nReactions1, reactions1 = read_reaction_file(reactions1, speciesList, 'UMIST')
+nReactions2, reactions2 = read_reaction_file(reactions2,speciesList,'KIDA')
 
-print "Reactions from file 1 not in file 2"
+print "Reactions from UMIST not in KIDA"
 for reaction1 in reactions1:
 	match=False
 	for reaction2 in reactions2:
@@ -35,9 +35,10 @@ for reaction1 in reactions1:
 			if set(reaction2.products)==set(reaction2.products):
 				match=True
 	if not match:
-		print reaction1.reactants,"-->",reaction1.products
+		if ("CH3OH" in reaction1.reactants) or ("CH3OH" in reaction1.products):
+			print reaction1.reactants, "-->", reaction1.products, "alpha:", reaction1.alpha, "beta:", reaction1.beta, "gamma:", reaction1.gamma, "delta T:", reaction1.templow, "-", reaction1.temphigh
 
-print "Reactions from file 2 not in file 1"
+print "Reactions from KIDA not in UMIST"
 for reaction1 in reactions2:
 	match=False
 	for reaction2 in reactions1:
@@ -45,4 +46,5 @@ for reaction1 in reactions2:
 			if set(reaction2.products)==set(reaction2.products):
 				match=True
 	if not match:
-		print reaction1.reactants,"-->",reaction1.products
+		if ("CH3OH" in reaction1.reactants) or ("CH3OH" in reaction1.products):
+			print reaction1.reactants, "-->", reaction1.products, "alpha:", reaction1.alpha, "beta:", reaction1.beta, "gamma:", reaction1.gamma, "delta T:", reaction1.templow, "-", reaction1.temphigh

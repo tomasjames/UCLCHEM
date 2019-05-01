@@ -1,0 +1,18 @@
+Reactions from UMIST not in KIDA
+['CH3OH', 'CRPHOT', 'NAN'] --> ['H2CO', 'H2', 'NAN', 'NAN'] alpha: 1.3e-17 beta: 0.0 gamma: 1584.0 delta T: 10 - 41000
+['CH3OH', 'CRPHOT', 'NAN'] --> ['OH', 'CH3', 'NAN', 'NAN'] alpha: 1.3e-17 beta: 0.0 gamma: 752.0 delta T: 10 - 41000
+['CH3+', 'CH3OH', 'NAN'] --> ['H3CO+', 'CH4', 'NAN', 'NAN'] alpha: 2.3e-09 beta: -0.5 gamma: 0.0 delta T: 10 - 41000
+['CH3OH2+', 'NH3', 'NAN'] --> ['CH3OH', 'NH4+', 'NAN', 'NAN'] alpha: 1e-09 beta: 0.0 gamma: 0.0 delta T: 10 - 300
+['CH3OH', 'S2+', 'NAN'] --> ['H2S2+', 'H2CO', 'NAN', 'NAN'] alpha: 7.83e-10 beta: -0.5 gamma: 0.0 delta T: 10 - 41000
+['H+', 'CH3OH', 'NAN'] --> ['CH3+', 'H2O', 'NAN', 'NAN'] alpha: 5.9e-10 beta: -0.5 gamma: 0.0 delta T: 10 - 41000
+['H+', 'CH3OH', 'NAN'] --> ['H3CO+', 'H2', 'NAN', 'NAN'] alpha: 3.84e-09 beta: -0.5 gamma: 0.0 delta T: 10 - 41000
+['H+', 'CH3OH', 'NAN'] --> ['HCO+', 'H2', 'H2', 'NAN'] alpha: 8.85e-10 beta: -0.5 gamma: 0.0 delta T: 10 - 41000
+['H2CO+', 'CH3OH', 'NAN'] --> ['CH3OH2+', 'HCO', 'NAN', 'NAN'] alpha: 2.16e-09 beta: -0.5 gamma: 0.0 delta T: 10 - 41000
+['H3CO+', 'CH3OH', 'NAN'] --> ['CH3OH2+', 'H2CO', 'NAN', 'NAN'] alpha: 1.9e-09 beta: -0.5 gamma: 0.0 delta T: 10 - 41000
+['O2+', 'CH3OH', 'NAN'] --> ['O2', 'H3CO+', 'H', 'NAN'] alpha: 5e-10 beta: -0.5 gamma: 0.0 delta T: 10 - 41000
+['SI+', 'CH3OH', 'NAN'] --> ['SIOH+', 'CH3', 'NAN', 'NAN'] alpha: 1.65e-09 beta: -0.5 gamma: 0.0 delta T: 10 - 41000
+
+Reactions from KIDA not in UMIST
+['CH3OH', 'CRP', 'NAN'] --> ['OH', 'CH3', 'NAN', 'NAN'] alpha: 1500.0 beta: 0.0 gamma: 0.0 delta T: -999 - 999
+['CH3OH', 'CRP', 'NAN'] --> ['H2', 'H2CO', 'NAN', 'NAN'] alpha: 3170.0 beta: 0.0 gamma: 0.0 delta T: -999 - 999
+['C', 'CH3OH', 'NAN'] --> ['HCO', 'CH3', 'NAN', 'NAN'] alpha: 3e-11 beta: -1.3 gamma: 20.0 delta T: 50 - 300
