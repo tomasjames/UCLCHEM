@@ -4,8 +4,8 @@
 
 !Initial physics variables and final  values. for temp, density and time
 initialTemp=10.0;maxTemp=300
-initialDens=1.00d2;finalDens=1.00d4
-currentTime=0.0;finalTime=1.00d8
+initialDens=1.00d2;finalDens=1.00d6
+currentTime=0.0;finalTime=1.00d7
 
 !radfield in habing, cosmic ray ionisation rates as multiple of standard
 radfield=1.0;zeta=1.0
@@ -16,7 +16,7 @@ fr=1.0;
 !Size of cloud set by inner and outer radii (rin and rout). used to calculate extinction.
 !baseAv is extinction at cloud edge
 !points is number of parcels to run model for. spaced  evenly between rin and rout
-rout=1.0;rin=0;baseAv=1.0;points=1
+rout=0.05;rin=0;baseAv=1.0;points=1
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -35,9 +35,9 @@ bc=1.0
 
 !If you want to read abundances from a file (abundFile) set to 1
 !If you set to zero, final abundances are written to abundFile
-readAbunds=0
+readAbunds=1
 !phase chooses behaviour. Basic clouds in phase 1. Hot core /cshock in phase 2 (depending on physics module)
-phase=1;
+phase=2;
 
 !non-thermal Desorption. Turn it all on/off. Turn off h2, cosmic ray induced and uv induced off separately too
 desorb=1;
@@ -56,7 +56,7 @@ tempindx=3
 
 
 !cshock module specific variable, uncomment or comment as  needed
-vs=20.0
+vs=60.0
 
 !initial fractional abundances of elements(from Asplund et al. 2009 ARAA table 1 -SOLAR)
 fh=0.0;fhe = 0.1;fc  = 2.6d-04;fo  = 4.6d-04;fn  = 6.1d-05
@@ -79,11 +79,11 @@ writeStep=2
 
 !If readAbund=1, starting abundances are read from abundFile
 !If readAbund=0, final abundances are written to abundFile
-abundFile="output/startcloud.dat"
+abundFile="output/start/n1000000.dat"
 !Full output written to outputFlie
-outputFile="output/fullcloud.dat"
+outputFile="output/start/v60n1000000.dat"
 !columnated output of time,dens,temp and outSpecies written to column file
-columnFile='output/columncloud.dat'
+columnFile='output/start/columncloud.dat'
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !More complicated parameters that affect core code below. Do not alter without reading articles associated  !
@@ -95,4 +95,4 @@ columnFile='output/columncloud.dat'
 !Desorption treatment is described in Roberts et al. 2007, these are rates and efficiencies of processes that cause desorption
 ebmaxh2=1.21d3;epsilon=0.01;ebmaxcrf=1.21d3;uvcreff=1.0d-3
 ebmaxcr=1.21d3;phi=1.0d5;ebmaxuvcr=1.0d4; uvy=0.1
-omega=0.5;
+omega=0.5;grainRadius=0.1d-06

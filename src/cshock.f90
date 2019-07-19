@@ -20,6 +20,8 @@ MODULE physics
     double precision :: cloudSize,rout,rin,baseAv,bc,tstart,maxTemp
     double precision, allocatable :: av(:),coldens(:),temp(:),dens(:)
 
+    double precision,parameter :: coolingTemp=10
+
     !Everything should be in cgs units. Helpful constants and conversions below
     double precision,parameter ::pi=3.141592654,mh=1.67e-24,kbolt=1.38d-23
     double precision, parameter :: year=3.16455d-08,pc=3.086d18,km=1.d5
@@ -36,7 +38,7 @@ MODULE physics
     double precision :: mun,tgc0,Frs,tgr0,tgr1,tgr2,tau100,trs0,G0
     double precision :: coshinv1,coshinv2,zmax,a1
 
-    integer :: inrad
+    integer :: inrad, tempFlag
     double precision, parameter::nu0=3.0d15,kb2=1.38d-16,bm0=1.e-6,bt=6.
     !*******************************************************************
 
@@ -64,7 +66,7 @@ CONTAINS
 
         !calculate initial column density as distance from core edge to current point * density
         DO dstep=1,points
-            coldens(dstep)=real(points-dstep+1)*cloudSize/real(points)*initialDens
+            coldens(dstep)=(real(points-dstep+1)*cloudSize/real(points))*initialDens
         END DO
 
 
@@ -140,7 +142,7 @@ CONTAINS
     SUBROUTINE updateTargetTime
         IF (phase .eq. 1) THEN
             IF (timeInYears .gt. 1.0d6) THEN
-                targetTime=(timeInYears+1.0d5)/year
+                targetTime=(timeInYears+1.0d4)/year
             ELSE IF (timeInYears .gt. 10000) THEN
                 targetTime=(timeInYears+1000.0)/year
             ELSE IF (timeInYears .gt. 1000) THEN
@@ -172,8 +174,10 @@ CONTAINS
                 targetTime=(timeInYears+10.)/year
             ELSE IF (timeInYears .gt. 0.1) THEN
                 targetTime=(timeInYears+1.0)/year
+            ELSE IF (timeInYears .gt. 0.00001) THEN
+               targetTime=(timeInYears+0.001)/year
             ELSE IF (timeInYears .gt. 0.0000001) THEN
-               targetTime=(timeInYears+0.01)/year
+               targetTime=(timeInYears+0.00001)/year
             ELSE IF  (timeInYears.gt.0.0) THEN
                 targetTime=(timeInYears+0.00000001)/year
             ELSE
@@ -212,13 +216,13 @@ CONTAINS
             !grain collisional heating
             tgc(dstep)=15*(dens6/grainRadius5)**(0.1818)*(tn(dstep)/1000.0)**(0.2727)
             !grain radiative heating
-            !        Frs=0.25*dens*mun*(vn*km)**3
-            !        G0=Frs/Hab
-            !        trs0=12.2*G0**0.2
-            !        tau100=2.7d2*G0/trs0**5
-            !        tgr1=8.9d-11*nu0*G0*dexp(1.8*av(dstep))+2.7**5
-            !        tgr2=3.4d-2*(0.42-log(3.5d-2*tau100*trs0))*tau100*trs0**6
-            !        tgr(dstep)=(tgr1+tgr2)**0.2
+            ! Frs=0.25*dens*mun*(vn*km)**3
+            ! G0=Frs/Hab
+            ! trs0=12.2*G0**0.2
+            ! tau100=2.7d2*G0/trs0**5
+            ! tgr1=8.9d-11*nu0*G0*dexp(1.8*av(dstep))+2.7**5
+            ! tgr2=3.4d-2*(0.42-log(3.5d-2*tau100*trs0))*tau100*trs0**6
+            ! tgr(dstep)=(tgr1+tgr2)**0.2
             !If we don't include the radiative heating that is characteristic
             !of J-type shocks
             tgr(dstep)=0.0
@@ -234,15 +238,23 @@ CONTAINS
             IF (timeInYears .gt. 0.0) THEN
                 tn(dstep)=initialTemp+((at*zn)**bt)/(dexp(zn/z3)-1)
                 temp(dstep)=tn(dstep)
+                IF (temp(dstep) .gt. coolingTemp) THEN
+                    tempFlag = 1
+                    write(*,*) "tempFlag = 1"
+                END IF
                 ti(dstep)=tn(dstep)+(mun*(dv*km)**2/(3*kb2))
                 tempi=ti(dstep)
             ENDIF
 
+            IF ((timeInYears .gt. tsat) .AND. (temp(dstep) .lt. coolingTemp) .AND. (phase .eq. 2) .AND. (tempFlag .eq. 1)) THEN
+                temp(dstep) = coolingTemp
+            END IF
+
             !At tsat, all mantle species evaporated. These flags make chem module aware of it.
-            IF (((timeInYears .gt. tsat) .OR. (temp(dstep) .gt. 100)) .and.
-               coflag .eq. 0) THEN
+            IF (((timeInYears .gt. tsat) .OR. (temp(dstep) .gt. 100)) .and. coflag .eq. 0) THEN
+                write(*,*) "evap"
                 evap=2
-                coflag=1
+                solidflag=1
             ENDIF
             write(68,*) zn
 
